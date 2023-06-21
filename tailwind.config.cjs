@@ -24,8 +24,8 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        h1: { "@apply text-[36px] sm:text-[40px] font-medium": {} },
-        h2: { "@apply text-[24px] sm:text-[28px] font-medium": {} },
+        h1: { "@apply text-[36px] sm:text-[42px] font-medium": {} },
+        h2: { "@apply text-[24px] sm:text-[36px] font-medium": {} },
         h3: { "@apply text-[20px] sm:text-[24px] font-medium": {} },
         h4: { "@apply text-[14px] sm:text-[16px] font-bold": {} },
         ".container-xs": { "@apply w-[95%] md:w-[80%] mx-auto max-w-[1120px]": {} },
