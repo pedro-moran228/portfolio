@@ -3,8 +3,8 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-	<main class="h-screen container flex items-center">
-		<div class="max-w-[510px] space-y-5">
+	<main class="h-screen container flex flex-wrap items-center justify-between">
+		<section class="max-w-[510px] space-y-5">
 			<h1 class="leading-8">Pedro Moran</h1>
 			<p>
 				<span class="font-medium">Frontend Developer</span> with <span
@@ -15,9 +15,7 @@ import Layout from "../layouts/Layout.astro";
 				Currently working at <a
 					class="font-medium text-blue-600 hover:underline duration-100 group"
 					href="https://crowdar.com.ar/"
-					target="blank"
-					>Crowd<span class="text-green-600">ar</span
-					></a
+					target="blank">Crowd<span class="text-green-600">ar</span></a
 				>
 				with a full-time development team building a product dedicated to the B2B
 				sector.<p></p>
@@ -27,47 +25,146 @@ import Layout from "../layouts/Layout.astro";
 					devs, QAs or automators.
 				</p>
 			</p>
-		</div>
+		</section>
+		<!-- [&>div]:shadow-md -->
+		<section class="relative flex-center">
+			<h3 class="absolute z-20">Skills</h3>
+			<div
+				class="animate-spin relative [&>div]:duration-100 [&>div]:absolute [&>div>img]:animate-spin-reverse w-[300px] h-[300px] rounded-full"
+			>
+				<div
+					class="hover:scale-110 left-1/2 -translate-x-1/2 w-[75px] p-[10px] bg-[#ffd600] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
+				>
+					<img
+						class="w-full h-full"
+						src="skills/javascript.svg"
+						alt="javascript"
+					/>
+				</div>
+				<div
+					class="hover:scale-110 left-1/2 -translate-x-1/2 bottom-0 w-[75px] p-[12px] bg-[#1976D2] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
+				>
+					<img
+						class="w-full h-full"
+						src="skills/typescript.svg"
+						alt="typescript"
+					/>
+				</div>
+				<div
+					class="hover:scale-110 left-0 top-1/2 -translate-y-1/2 w-[75px] p-[12px] bg-[#222222] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
+				>
+					<img
+						class="w-full h-full object-cover aspect-square"
+						src="skills/react.svg"
+						alt="react"
+					/>
+				</div>
+
+				<div
+					class="hover:scale-110 right-0 top-1/2 -translate-y-1/2 w-[75px] p-[14px] bg-[#0D1323] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
+				>
+					<img
+						class="w-full h-full object-cover aspect-square"
+						src="skills/astro.svg"
+						alt="astro"
+					/>
+				</div>
+			</div>
+
+			<!-- <div class="w-[75px]">
+				<img
+					class="w-full h-full object-cover aspect-square"
+					style={{ filter: "drop-shadow(0px 1px 2px rgb(0 0 0 / 0.4))" }}
+					src="skills/css.svg"
+					alt="css"
+				/>
+			</div> -->
+		</section>
 
 		<!-- TODO: create a circle of tecnologies (simular to the meet.google.com circle on the right of the page) that can ratate slowly (HTML, CSS, TailwindCss, Astro, Javascript, TypeScript React, Nextjs) -->
 	</main>
 
 	<section class="container h-screen">
 		<h2 class="mb-20">Experience</h2>
-		<section class="grid grid-cols-[repeat(auto-fit,_500px)] gap-y-10 place-content-center xl:place-content-between">
-			<article class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]">
+		<section
+			class="grid grid-cols-[repeat(auto-fit,_500px)] gap-y-10 place-content-center xl:place-content-between"
+		>
+			<article
+				class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]"
+			>
 				<header class="">
-					<img class="object-cover aspect-[16/11]" src="academy/1.png" alt="academy" />
+					<img
+						class="object-cover aspect-[16/11]"
+						src="academy/1.png"
+						alt="academy"
+					/>
 				</header>
 				<div class="p-4">
 					<h4 class="mb-1">Crowdar Academy</h4>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi id, quo molestias reiciendis cum, rerum voluptatem labore aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+						quasi id, quo molestias reiciendis cum, rerum voluptatem labore
+						aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut
+						in natus.
 					</p>
 				</div>
 			</article>
-			<article class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]">
+			<article
+				class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]"
+			>
 				<header class="">
-					<img class="object-cover aspect-[16/11]" src="academy/1.png" alt="academy" />
+					<img
+						class="object-cover aspect-[16/11]"
+						src="academy/1.png"
+						alt="academy"
+					/>
 				</header>
 				<div class="p-4">
 					<h4 class="mb-1">Lippia Test Manager</h4>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi id, quo molestias reiciendis cum, rerum voluptatem labore aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+						quasi id, quo molestias reiciendis cum, rerum voluptatem labore
+						aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut
+						in natus.
 					</p>
 				</div>
 			</article>
-			<arti cle class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]">
+			<arti
+				cle
+				class="border rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]"
+			>
 				<header class="">
-					<img class="object-cover aspect-[16/11]" src="academy/1.png" alt="academy" />
+					<img
+						class="object-cover aspect-[16/11]"
+						src="academy/1.png"
+						alt="academy"
+					/>
 				</header>
 				<div class="p-4">
 					<h4 class="mb-1">Tesla - Leading Page (Personal Project)</h4>
 					<p>
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi id, quo molestias reiciendis cum, rerum voluptatem labore aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.
+						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+						quasi id, quo molestias reiciendis cum, rerum voluptatem labore
+						aperiam tenetur repudiandae cupiditate modi odio facere, eos sunt ut
+						in natus.
 					</p>
 				</div>
 			</arti>
 		</section>
 	</section>
 </Layout>
+
+<style>
+	.animate-spin-reversee {
+		animation: spin-reverse 10s linear infinite;
+	}
+
+	@keyframes spin-reverse {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(-360deg);
+		}
+	}
+</style>

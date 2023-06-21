@@ -11,6 +11,10 @@ module.exports = {
         // xl	1280px
         // 2xl	1536px
       },
+      animation: {
+        'spin': 'spin 60s linear infinite',
+        'spin-reverse': 'spin 60s linear reverse infinite',
+      },
       fontSize: {
         xs: "10px",
         sm: "12px",
@@ -30,7 +34,7 @@ module.exports = {
         h4: { "@apply text-[18px] sm:text-[20px] font-medium": {} },
         ".container-xs": { "@apply w-[95%] md:w-[80%] mx-auto max-w-[1120px]": {} },
         ".container-sm": { "@apply w-[91%] mx-auto max-w-[1120px]": {} },
-        ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[1120px]": {} },
+        ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[1020px]": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
         body: { "@apply text-md": {} },
       });
