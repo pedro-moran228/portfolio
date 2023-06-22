@@ -29,12 +29,10 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         h1: { "@apply text-[36px] sm:text-[42px] font-bold": {} },
-        h2: { "@apply text-[24px] sm:text-[36px] font-bold": {} },
+        h2: { "@apply text-[32px] sm:text-[36px] font-bold": {} },
         h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
         h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
-        ".container-xs": { "@apply w-[95%] md:w-[80%] mx-auto max-w-[1120px]": {} },
-        ".container-sm": { "@apply w-[91%] mx-auto max-w-[1120px]": {} },
-        ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[1020px]": {} },
+        ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[640px] lg:max-w-[1020px]": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
         body: { "@apply text-md": {} },
       });
