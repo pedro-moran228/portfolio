@@ -28,8 +28,8 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        h1: { "@apply text-[36px] sm:text-[42px] font-bold": {} },
-        h2: { "@apply text-[32px] sm:text-[36px] font-bold": {} },
+        h1: { "@apply text-[38px] sm:text-[42px] font-bold": {} },
+        h2: { "@apply text-[34px] sm:text-[38px] font-bold": {} },
         h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
         h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
         ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[640px] lg:max-w-[1020px]": {} },

@@ -1,0 +1,51 @@
+---
+import CardProject from "./CardProject.astro";
+---
+
+<section class="container">
+  <section
+    class="mt-40 lg:mt-0 grid grid-cols-[repeat(auto-fit,minmax(330px,1fr))] grid-rows-[50px,_1fr] gap-10 place-content-center xl:place-content-between"
+  >
+    <h2 class="text-center col-span-full">Experience</h2>
+    <CardProject
+      description={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi
+      id, quo molestias reiciendis cum, rerum voluptatem labore aperiam
+      tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.`}
+      title={`Crowdar Academy`}
+    >
+      <img
+        slot="header-img"
+        class="object-cover aspect-[16/9]"
+        src="academy/1.png"
+        alt="academy"
+      />
+    </CardProject>
+    <CardProject
+      description={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi
+      id, quo molestias reiciendis cum, rerum voluptatem labore aperiam
+      tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.`}
+      title={`Lippia Test Manager`}
+    >
+      <img
+        slot="header-img"
+        class="object-cover aspect-[16/9]"
+        src="lippia/1.png"
+        alt="lippia"
+      />
+    </CardProject>
+
+    <CardProject
+      description={`Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni quasi
+      id, quo molestias reiciendis cum, rerum voluptatem labore aperiam
+      tenetur repudiandae cupiditate modi odio facere, eos sunt ut in natus.`}
+      title={`Tesla - Leading Page (Personal Project)`}
+    >
+      <img
+        slot="header-img"
+        class="object-cover aspect-[16/9]"
+        src="tesla/1.png"
+        alt="tesla"
+      />
+    </CardProject>
+  </section>
+</section>

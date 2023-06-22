@@ -1,0 +1,22 @@
+---
+export interface Props {
+	description: string;
+	title: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<article
+  class="bg-white rounded-lg overflow-hidden shadow-[0px_3px_20px_-9px_#00000042]"
+>
+  <header class="">
+    <slot name="header-img"/>
+  </header>
+  <div class="p-4">
+    <h4 class="mb-1">{title}</h4>
+    <p>
+      {description}
+    </p>
+  </div>
+</article>
