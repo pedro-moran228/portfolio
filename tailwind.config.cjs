@@ -12,8 +12,8 @@ module.exports = {
         // 2xl	1536px
       },
       animation: {
-        'spin': 'spin 60s linear infinite',
-        'spin-reverse': 'spin 60s linear reverse infinite',
+        'spin': 'spin 100s linear infinite',
+        'spin-reverse': 'spin 100s linear reverse infinite',
       },
       fontSize: {
         xs: "10px",
@@ -28,10 +28,10 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        h1: { "@apply text-[36px] sm:text-[42px] font-medium": {} },
-        h2: { "@apply text-[24px] sm:text-[36px] font-medium": {} },
-        h3: { "@apply text-[20px] sm:text-[24px] font-medium": {} },
-        h4: { "@apply text-[18px] sm:text-[20px] font-medium": {} },
+        h1: { "@apply text-[36px] sm:text-[42px] font-bold": {} },
+        h2: { "@apply text-[24px] sm:text-[36px] font-bold": {} },
+        h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
+        h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
         ".container-xs": { "@apply w-[95%] md:w-[80%] mx-auto max-w-[1120px]": {} },
         ".container-sm": { "@apply w-[91%] mx-auto max-w-[1120px]": {} },
         ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[1020px]": {} },
