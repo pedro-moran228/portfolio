@@ -32,6 +32,7 @@ module.exports = {
         h2: { "@apply text-[40px] sm:text-[43px] font-bold": {} },
         h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
         h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
+        h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
         ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
         ".btn": { "@apply inline-block py-[0.45rem] px-[1rem] text-lg font-medium shadow rounded duration-100": {} },
