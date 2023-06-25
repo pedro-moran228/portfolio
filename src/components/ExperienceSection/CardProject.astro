@@ -6,15 +6,13 @@ export interface Props {
 
 const { description, title } = Astro.props;
 ---
-<!-- #eaeaead1 -->
-<!-- #eaeaea -->
 <article
-  class="rounded-lg overflow-hidden bg-[#eaeaead1]"
+  class="rounded overflow-hidden shadow-lg"
 >
   <header class="">
     <slot name="header-img"/>
   </header>
-  <div class="p-4 shadow-[inset_0px_0px_3px_#c8c8c878]">
+  <div class="p-4">
     <h4 class="mb-1">{title}</h4>
     <p>
       {description}
