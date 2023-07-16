@@ -2,6 +2,106 @@
 ---
 
 <section
+  class={`
+    w-full 
+    place-content-center
+    [&>article>div]:w-[25px]
+    [&>article]:w-[180px]
+    [&>article]:h-[60px]
+    grid
+    grid-cols-[repeat(auto-fit,_180px)]
+    gap-3
+  `}
+>
+  <article
+    class="relative w-max flex items-center space-x-4 bg-[#E64C18] rounded-md p-4 shadow-md"
+  >
+    <div></div>
+    <img
+      class="w-[32px] absolute left-[-5px]"
+      src="skills/html.svg"
+      alt="css"
+    />
+    <h4 class="text-md text-white">HTML</h4>
+  </article>
+  <article
+    class="relative w-max flex items-center space-x-4 bg-[#0078D6] rounded-md p-4 shadow-md"
+  >
+    <div></div>
+    <img class="w-[32px] absolute left-[-5px]" src="skills/css.svg" alt="css" />
+    <h4 class="text-md text-white">CSS</h4>
+  </article>
+  <article
+    class="relative w-max flex items-center space-x-4 bg-[#ffd600] rounded-md p-4 shadow-md"
+  >
+    <div></div>
+    <img
+      class="w-[34px] absolute left-[-8px] top-[8px]"
+      src="skills/javascript.svg"
+      alt="javascript"
+    />
+    <h4 class="text-md">JavaScript</h4>
+  </article>
+
+  <article
+    class="relative w-max flex items-center space-x-4 bg-[#1976D2] rounded-md p-4 shadow-md"
+  >
+    <div></div>
+    <img
+      class="w-[30px] absolute left-[-5px] top-[9px]"
+      src="skills/typescript.svg"
+      alt="javascript"
+    />
+    <h4 class="text-md text-white">TypeScript</h4>
+  </article>
+
+  <article
+    class="w-max flex items-center space-x-4 bg-[#23272F] rounded-md p-4 shadow-md"
+  >
+    <div>
+      <img class="w-full" src="skills/react.svg" alt="react" />
+    </div>
+    <h4 class="text-md text-white">React</h4>
+  </article>
+
+  <article
+    class="w-max flex items-center space-x-4 rounded-md p-4 shadow-md"
+    style={{
+      background: `
+        linear-gradient(217deg, #181a1f, #4531728f 70%), 
+        linear-gradient(127deg, #181a1f, #4531728f 70%), 
+        linear-gradient(336deg, #181a1f, #4531728f 70%);`,
+    }}
+  >
+    <div>
+      <img
+        class="w-full h-full object-cover aspect-square"
+        src="skills/astro.svg"
+        alt="astro"
+      />
+    </div>
+    <h4 class="text-md text-white">Astro</h4>
+  </article>
+
+  <!-- <article
+    class="w-max flex items-center space-x-4 bg-black rounded-md p-4 shadow-md"
+  >
+    <h4 class="text-md text-white">Next.Js</h4>
+  </article> -->
+
+  <article
+    class="w-max flex items-center space-x-4 bg-white rounded-md p-4 shadow-md"
+  >
+    <div>
+      <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
+    </div>
+    <h4 class="text-md text-neutral-800">Tailwindcss</h4>
+  </article>
+
+
+</section>
+
+<!-- <section
   class="relative flex-center mx-auto w-[330px] h-[330px] md:w-[380px] md:h-[380px]"
 >
   <h3 class="absolute z-20 font-bold">Tecnologías</h3>
@@ -103,4 +203,4 @@
       </div>
     </section>
   </div>
-</section>
+</section> -->
