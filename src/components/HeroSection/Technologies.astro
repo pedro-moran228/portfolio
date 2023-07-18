@@ -6,7 +6,11 @@ import JestIcon from "./JestIcon.astro";
   class={`
     w-full 
     place-content-center
-    [&>article>div]:w-[25px]
+    [&>article>div]:flex-center
+    [&>article>div]:w-[50px]
+    [&>article>div>img]:w-[25px]
+    [&>article>div]:h-full
+    [&>article]:overflow-hidden
     [&>article]:w-[200px]
     [&>article]:h-[60px]
     grid
@@ -15,7 +19,7 @@ import JestIcon from "./JestIcon.astro";
   `}
 >
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#E64C18] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#E64C18] rounded-md shadow-md"
   >
     <div></div>
     <img
@@ -26,14 +30,14 @@ import JestIcon from "./JestIcon.astro";
     <h4 class="text-md text-white">HTML</h4>
   </article>
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#0078D6] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#0078D6] rounded-md shadow-md"
   >
     <div></div>
     <img class="w-[32px] absolute left-[-5px]" src="skills/css.svg" alt="css" />
     <h4 class="text-md text-white">CSS</h4>
   </article>
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#ffd600] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#ffd600] rounded-md shadow-md"
   >
     <div></div>
     <img
@@ -45,7 +49,7 @@ import JestIcon from "./JestIcon.astro";
   </article>
 
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#1976D2] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#1976D2] rounded-md shadow-md"
   >
     <div></div>
     <img
@@ -57,16 +61,16 @@ import JestIcon from "./JestIcon.astro";
   </article>
 
   <article
-    class="w-max flex items-center space-x-4 bg-[#23272F] rounded-md p-4 shadow-md"
+    class="w-max flex items-center space-x-4 rounded-md shadow-md"
   >
-    <div>
+    <div class="bg-[#23272F]">
       <img class="w-full" src="skills/react.svg" alt="react" />
     </div>
-    <h4 class="text-md text-white">React</h4>
+    <h4 class="text-lg text-neutral-800">React</h4>
   </article>
 
   <article
-    class="w-max flex items-center space-x-4 rounded-md p-4 shadow-md"
+    class="w-max flex items-center space-x-4 rounded-md shadow-md"
     style={{
       background: `
         linear-gradient(217deg, #181a1f, #4531728f 70%), 
@@ -85,13 +89,13 @@ import JestIcon from "./JestIcon.astro";
   </article>
 
   <!-- <article
-    class="w-max flex items-center space-x-4 bg-black rounded-md p-4 shadow-md"
+    class="w-max flex items-center space-x-4 bg-black rounded-md shadow-md"
   >
     <h4 class="text-md text-white">Next.Js</h4>
   </article> -->
 
   <article
-    class="w-max flex items-center space-x-4 bg-white rounded-md p-4 shadow-md"
+    class="w-max flex items-center space-x-4 bg-white rounded-md shadow-md"
   >
     <div>
       <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
@@ -100,7 +104,7 @@ import JestIcon from "./JestIcon.astro";
   </article>
 
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#242526] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#242526] rounded-md shadow-md"
   >
     <div></div>
     <img
@@ -111,7 +115,7 @@ import JestIcon from "./JestIcon.astro";
     <h4 class="text-md text-white">Testing Library</h4>
   </article>
   <article
-    class="relative w-max flex items-center space-x-4 bg-[#893F5C] rounded-md p-4 shadow-md"
+    class="relative w-max flex items-center space-x-4 bg-[#893F5C] rounded-md shadow-md"
   >
     <div>
       <JestIcon />
