@@ -4,212 +4,102 @@ import JestIcon from "./JestIcon.astro";
 
 <section
   class={`
-    w-full 
-    place-content-center
-    [&>article>h4]:text-md
-    [&>article>div]:flex-center
-    [&>article>div]:w-[50px]
-    [&>article>div>img]:w-[25px]
-    [&>article>div]:h-full
-    [&>article]:overflow-hidden
-    [&>article]:w-[200px]
-    [&>article]:h-[60px]
     grid
     grid-cols-[repeat(auto-fit,_200px)]
     gap-3
+    w-full 
+    place-content-center
+
+    
+    [&>article]:overflow-hidden
+    [&>article]:w-[200px]
+    [&>article]:h-[60px]
+    [&>article]:flex
+    [&>article]:items-center
+    [&>article]:space-x-2
+    [&>article]:rounded-md
+    [&>article]:shadow-md
+    [&>article>h4]:text-md
+
+    [&>article>div]:flex-center
+    [&>article>div]:w-[50px]
+    [&>article>div>img]:w-[30px]
+    [&>article>div]:h-full
+    [&>article>div]:relative
   `}
 >
-  <article
-    class="relative w-max flex items-center space-x-4 rounded-md shadow-md"
-  >
-    <div class="bg-[#E64C18]"></div>
-    <img
-      class="w-[32px] absolute left-[-5px]"
-      src="skills/html.svg"
-      alt="css"
-    />
+  <article>
+    <div>
+      <img style="width: 30px;" src="skills/html.svg" alt="css" />
+    </div>
     <h4>HTML</h4>
   </article>
-  <article
-    class="relative w-max flex items-center space-x-4 rounded-md shadow-md"
-  >
-    <div class="bg-[#0078D6]"></div>
-    <img class="w-[32px] absolute left-[-5px]" src="skills/css.svg" alt="css" />
+  <article>
+    <div>
+      <img style="width: 30px;" src="skills/css.svg" alt="css" />
+    </div>
     <h4>CSS</h4>
   </article>
-  <article
-    class="relative w-max flex items-center space-x-4 rounded-md shadow-md"
-  >
-    <div class="bg-[#ffd600]"></div>
-    <img
-      class="w-[33px] absolute left-[-10px] top-[9px]"
-      src="skills/javascript.svg"
-      alt="javascript"
-    />
-    <h4 class="">JavaScript</h4>
-  </article>
-
-  <article class="relative w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div class=" bg-[#1976D2]">
-    </div>
-    <img class="w-[29px] left-[-8px] top-[12px] absolute" src="skills/typescript.svg" alt="tailwind" />
-    <h4 class=" text-neutral-800">TypeScript</h4>
-  </article>
-
-  <article class="w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div class="bg-[#23272F]">
-      <img class="w-full" src="skills/react.svg" alt="react" />
-    </div>
-    <h4 class=" text-neutral-800">React</h4>
-  </article>
-
-  <article class="w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div
-      style={{
-        background: `
-      linear-gradient(217deg, #181a1f, #4531728f 70%), 
-      linear-gradient(127deg, #181a1f, #4531728f 70%), 
-      linear-gradient(336deg, #181a1f, #4531728f 70%);`,
-      }}
-    >
-      <img class="w-full" src="skills/astro.svg" alt="astro" />
-    </div>
-    <h4 class=" text-neutral-800">Astro</h4>
-  </article>
-
-  <!-- <article
-    class="w-max flex items-center space-x-4 bg-black rounded-md shadow-md"
-  >
-    <h4 class=" text-white">Next.Js</h4>
-  </article> -->
-
-
-  <article class="w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div class="">
-      <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
-    </div>
-      <h4 class=" text-neutral-800">Tailwindcss</h4>
-  </article>
-
-  <article class="w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div class="bg-[#242526]">
-      <img
-        class="w-full"
-        src="skills/testing-library.png"
-        alt="testing-library"
-      />
-    </div>
-    <h4 class="">Testing Library</h4>
-  </article>
-
-  <article class="w-max flex items-center space-x-4 rounded-md shadow-md">
-    <div class="bg-[#893F5C]">
-      <div class="w-[25px]"><JestIcon /></div>
-    </div>
-    <h4 class="">Jest</h4>
-  </article>
-</section>
-
-<!-- <section
-  class="relative flex-center mx-auto w-[330px] h-[330px] md:w-[380px] md:h-[380px]"
->
-  <h3 class="absolute z-20 font-bold">Tecnologías</h3>
-  <div
-    class="w-full h-full animate-spin [&>section>div]:animate-spin-reverse relative [&>section]:duration-100 [&>section]:absolute rounded-full"
-  >
-    <section class="left-1/2 -translate-x-1/2 hover:scale-110">
-      <div
-        class="w-[72px] h-[70px] p-[10px] bg-[#ffd600] rounded-lg overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.3)]"
-      >
+  <article>
+    <div>
+      <div class="rounded bg-[#ffd600] p-[3px]">
         <img
-          class="w-full h-full"
+          class=""
+          style="width: 25px;"
           src="skills/javascript.svg"
           alt="javascript"
         />
       </div>
-    </section>
-    <section class="top-[12%] right-[11%] hover:scale-110">
-      <div
-        class="bg-[#1976D2] rounded-lg overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)] w-[72px] h-[70px] p-[12px]"
-      >
+    </div>
+    <h4>JavaScript</h4>
+  </article>
+
+  <article>
+    <div>
+      <div class="rounded bg-[#1976D2] p-[3px]">
         <img
-          class="w-full h-full"
+          class=""
+          style="width: 25px;"
           src="skills/typescript.svg"
           alt="typescript"
         />
       </div>
-    </section>
-    <section class="top-1/2 -translate-y-1/2 right-0 hover:scale-110">
-      <div
-        class="w-[75px] p-[12px] bg-[#222222] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
-      >
-        <img
-          class="w-full h-full object-cover aspect-square"
-          src="skills/react.svg"
-          alt="react"
-        />
-      </div>
-    </section>
-    <section class="bottom-[12%] right-[11%] hover:scale-110">
-      <div
-        class="w-[75px] p-[14px] bg-[#0D1323] rounded-full overflow-hidden shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
-        style={{
-          background: `
-        linear-gradient(217deg, #181a1f, #4531728f 70%), 
-        linear-gradient(127deg, #181a1f, #4531728f 70%), 
-        linear-gradient(336deg, #181a1f, #4531728f 70%);`,
-        }}
-      >
-        <img
-          class="w-full h-full object-cover aspect-square"
-          src="skills/astro.svg"
-          alt="astro"
-        />
-      </div>
-    </section>
-    <section class="left-1/2 -translate-x-1/2 bottom-0 hover:scale-110">
-      <div class="w-[75px] rounded-full">
-        <img
-          class="w-full h-full object-cover aspect-square"
-          style={{ filter: "drop-shadow(0px 1px 2px rgb(0 0 0 / 0.4))" }}
-          src="skills/css.svg"
-          alt="css"
-        />
-      </div>
-    </section>
-    <section class="bottom-[12%] left-[11%] hover:scale-110">
-      <div class="w-[75px] rounded-full">
-        <img
-          class="w-full h-full object-cover aspect-square"
-          style={{ filter: "drop-shadow(0px 1px 2px rgb(0 0 0 / 0.4))" }}
-          src="skills/html.svg"
-          alt="html"
-        />
-      </div>
-    </section>
-    <section class="top-1/2 -translate-y-1/2 left-0 hover:scale-110">
-      <div
-        class="flex-center bg-black p-[10px] w-[75px] h-[75px] rounded-full shadow-[0px_1px_3px_rgb(0_0_0_/_0.4)]"
-      >
-        <img
-          class="w-full"
-          style={{ filter: "drop-shadow(0px 1px 1px rgb(0 0 0 / 0.4))" }}
-          src="skills/next.svg"
-          alt="next"
-        />
-      </div>
-    </section>
-    <section class="top-[12%] left-[11%] hover:scale-110">
-      <div
-        class="flex-center bg-white p-[10px] w-[75px] h-[75px] rounded-full shadow-md"
-      >
-        <img
-          class="w-full"
-          style={{ filter: "drop-shadow(0px 1px 1px rgb(0 0 0 / 0.4))" }}
-          src="skills/tailwind.svg"
-          alt="tailwind"
-        />
-      </div>
-    </section>
-  </div>
-</section> -->
+    </div>
+    <h4 class="text-neutral-800">TypeScript</h4>
+  </article>
+
+  <article>
+    <div>
+        <img src="skills/react.svg" alt="react" />
+    </div>
+    <h4 class="text-neutral-800">React</h4>
+  </article>
+
+  <article>
+    <div>
+      <img style="width: 33px;" src="skills/astro.png" alt="astro" />
+    </div>
+    <h4 class="text-neutral-800">Astro</h4>
+  </article>
+
+  <article>
+    <div>
+      <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
+    </div>
+    <h4 class="text-neutral-800">Tailwindcss</h4>
+  </article>
+
+  <article>
+    <div>
+      <img src="skills/testing-library.png" alt="testing-library" />
+    </div>
+    <h4 class="text-neutral-800">Testing Library</h4>
+  </article>
+
+  <article>
+    <div>
+      <div class="w-[30px]"><JestIcon /></div>
+    </div>
+    <h4>Jest</h4>
+  </article>
+</section>
