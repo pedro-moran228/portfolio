@@ -23,8 +23,11 @@ module.exports = {
         lg: "18px",
         xl: "21px",
       },
+      colors: {
+        primary: '#1E1F22',
+      },
       textColor: {
-        default: '#161616'
+        default: '#161616',
       }
     },
   },
