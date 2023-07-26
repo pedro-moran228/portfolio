@@ -35,7 +35,7 @@ module.exports = {
         h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
         ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
-        ".btn": { "@apply inline-block py-[0.45rem] px-[1rem] text-lg font-medium shadow rounded duration-100": {} },
+        ".btn": { "@apply inline-block py-[0.50rem] px-[1rem] font-medium shadow rounded duration-100": {} },
         ".divider-x": { "@apply container bg-gradient-to-r from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent h-[2px]": {} },
         ".divider-y": { "@apply container bg-gradient-to-b from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent w-[2px] h-full": {} },
         body: { "@apply text-md": {} },

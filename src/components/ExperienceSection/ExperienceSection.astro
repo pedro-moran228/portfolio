@@ -2,8 +2,44 @@
 import CardProject from "./CardProject.astro";
 ---
 
+<section>
+  <article
+    class="relative h-[600px] pt-10 pb-16 lg:pt-[6rem] lg:pb-[6rem] px-2 space-y-20 lg:mt-0 lg:space-y-0 container flex flex-col items-center lg:grid grid-cols-2 place-content-center gap-x-10"
+  >
+    <section>
+      <header>
+        <h3>Crowdar Academy</h3>
+      </header>
+      <footer>
+        <p>
+          Landing page dedicada a la promocion de cursos y servicion para el area testing y devops.
+        </p>
+      </footer>
+    </section>
+    <div class="relative">
+      <div class="absolute top-1/2 -translate-y-1/2 shadow rounded overflow-hidden w-[125%]">
+        <div class="absolute rotate-45 w-full bg-black h-2 z-10"></div>
+        <div class="relative">
+          <img
+            class="object-cover aspect-[16/9]"
+            src="academy/1.png"
+            alt="academy"
+            style="clip-path: polygon(0 0, 0 100%, 100% 0);"
+          />
+          <img
+            class="object-cover aspect-[16/9]"
+            src="academy/4.png"
+            alt="academy"
+            style="clip-path: polygon(0 0, 0 100%, 100% 0);position: absolute;top: 0;z-index: 2; clip-path: polygon(100% 100%, 0 100%, 100% 0);"
+          />
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
 <section
-  class="lg:mt-0 py-[7rem] container max-w-[800px] flex flex-col space-y-10 sm:space-y-20  gap-10 place-content-center xl:place-content-between"
+  class="lg:mt-0 py-[7rem] container max-w-[800px] flex flex-col space-y-10 sm:space-y-20 gap-10 place-content-center xl:place-content-between"
 >
   <CardProject
     title={`Crowdar Academy`}
