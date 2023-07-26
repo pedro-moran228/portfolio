@@ -9,11 +9,10 @@ import Technologies from "./Technologies.astro";
     <article class="lg:max-w-[540px] space-y-4">
       <header>
         <h1>Pedro Moran</h1>
-        <p>
-          <span class="font-bold">Frontend Developer</span> con <span
-            class="text-orange-500 font-bold">+2 años</span
-          > de experiencia.
-        </p>
+        <h2 class="text-[26px]">
+          <span class="text-orange-500">+2 años</span>
+          Siendo Frontend Developer
+        </h2>
       </header>
       <section class="space-y-4">
         <p>
@@ -24,13 +23,17 @@ import Technologies from "./Technologies.astro";
           > con un equipo de desarrollo a tiempo completo construyendo un producto
           dedicado al sector B2B.
         </p>
-        <p>
-          A cargo de planificar, analizar, refinar, tomar decisiones y realizar
-          nuevas implementaciones, ayudando también a diferentes miembros del
-          equipo como desarrolladores, QAs y automatizadores.
-        </p>
+        <div>
+          <h3 class="">A cargo de:</h3>
+          <ul class="pl-5 mt-1 space-y-1 [&>li]:marker">
+            <li>Análisis e implementación de nuevas funcionalidades.</li>
+            <li>Mantenimiento y refactorización de código.</li>
+            <li>Capacitación para nuevos integrantes del equipo.</li>
+            <li>Toma de decisiones.</li>
+          </ul>
+        </div>
       </section>
-      <footer class="grid grid-cols-2 gap-4">
+      <footer class="pt-2 grid grid-cols-2 gap-4">
         <a
           href="https://www.linkedin.com/in/pedro-moran228"
           target="_blank"
