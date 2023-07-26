@@ -42,7 +42,7 @@ module.exports = {
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[calc(50%-0.5px)] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-orange-500 before:rounded": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
-        ".btn": { "@apply inline-block py-[0.65rem] px-[1rem] font-medium shadow rounded duration-100": {} },
+        ".btn": { "@apply font-medium inline-block py-[0.65rem] px-[1rem]  shadow rounded duration-100": {} },
         ".divider-x": { "@apply container bg-gradient-to-r from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent h-[2px]": {} },
         ".divider-y": { "@apply container bg-gradient-to-b from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent w-[2px] h-full": {} },
         body: { "@apply text-md text-default": {} },
