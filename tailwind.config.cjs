@@ -39,7 +39,7 @@ module.exports = {
         h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
         h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
         h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
-        ".container": { "@apply w-[87%] md:w-[80%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
+        ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[calc(50%-0.5px)] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-orange-500 before:rounded": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
         ".btn": { "@apply inline-block py-[0.65rem] px-[1rem] font-medium shadow rounded duration-100": {} },
