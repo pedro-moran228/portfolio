@@ -4,16 +4,20 @@ import JestIcon from "./JestIcon.astro";
 
 <section
   class={`
-    grid
-    grid-cols-[repeat(auto-fit,_200px)]
-    gap-3
+    sm:min-w-[414px]
+    flex flex-col space-y-2 sm:space-y-0
+    sm:grid
+    sm:grid-cols-[repeat(auto-fit,_200px)]
+    sm:gap-3
     w-full 
     place-content-center
 
     
+    [&>article]:pl-[30px]
+    sm:[&>article]:pl-0
     [&>article]:bg-white
     [&>article]:overflow-hidden
-    [&>article]:w-[200px]
+    [&>article]:w-full
     [&>article]:h-[60px]
     [&>article]:flex
     [&>article]:items-center
