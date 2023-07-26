@@ -2,7 +2,7 @@
 import Technologies from "./Technologies.astro";
 ---
 
-<div class="bg-[#FAFAFA]">
+<div class="bg-[#efefef99]">
   <main
     class="relative pt-10 pb-16 lg:pt-[6rem] lg:pb-[6rem] px-2 space-y-20 lg:mt-0 lg:space-y-0 lg:h-full container flex flex-col items-center lg:grid grid-cols-2 place-content-center gap-x-10"
   >
@@ -10,8 +10,17 @@ import Technologies from "./Technologies.astro";
       <header>
         <h1>Pedro Moran</h1>
         <h2 class="text-[26px]">
-          <span class="text-orange-500">+2 años</span>
-          Siendo Frontend Developer
+          <span
+            class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-500 relative inline-block"
+            ><span class="relative text-black">+2 años</span></span
+          >
+          Siendo
+          <span
+            class="before:block before:absolute before:-inset-1 before:bg-[#232323] relative inline-block"
+            ><span class="relative text-orange-500">
+              Frontend Developer</span
+            ></span
+          >
         </h2>
       </header>
       <section class="space-y-4">
