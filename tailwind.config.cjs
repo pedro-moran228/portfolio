@@ -40,7 +40,7 @@ module.exports = {
         h3: { "@apply text-[20px] sm:text-[30px] font-bold leading-[2.25]": {} },
         h4: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
         h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
-        ul: { "@apply ml-7": {} },
+        ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10": {} },
         ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:rotate-3 after:bg-primary after:-z-10": {} },
