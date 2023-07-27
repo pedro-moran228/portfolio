@@ -1,9 +1,8 @@
 ---
-import CardProject from "./CardProject.astro";
 ---
 
 <section
-  class="mt-[250px] relative bg-primary before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10"
+  class="mt-[250px] relative bg-primary pb-[120px] mark-triangle--before mark-triangle--after"
 >
   <header class="text-right container">
     <h2
@@ -12,62 +11,50 @@ import CardProject from "./CardProject.astro";
       <span class="relative text-orange-500 bg-primary">Experiencia</span>
     </h2>
   </header>
-  <article
-    class="text-white h-[600px] pt-10 pb-16 lg:pt-[6rem] lg:pb-[6rem] px-2 space-y-20 lg:mt-0 lg:space-y-0 container flex flex-col items-center lg:grid grid-cols-2 place-content-center gap-x-10"
-  >
-    <div>
-      <img src="academy/1.png" alt="academy" />
-    </div>
-    <header>
-      <h3>Crowdar Academy</h3>
-    </header>
-    <footer>
+  <article class="container mt-10 space-y-8 text-white">
+    <section class="container relative">
+      <header class="max-w-[calc(100%-125px)] pb-8 pr-12">
+        <h3 class="">Crowdar Academy</h3>
+        <p class="">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+          porro autem aliquid expedita ad numquam voluptatibus itaque, rerum
+          ullam deleniti a amet beatae nulla cum, libero repellat cumque
+          consequatur sit.
+        </p>
+      </header>
+      <div class="mx-auto shadow-[0px_0px_40px_10px_#0000006e]">
+        <img class="rounded shadow-2xl" src="academy/1.png" alt="academy" />
+      </div>
+
+      <div class="absolute top-0 right-[-125px] w-[250px]">
+        <img
+          class="rounded shadow-2xl"
+          src="academy/mobile1.png"
+          alt="academy-mobile"
+        />
+      </div>
+      <div class="absolute bottom-0 left-[-125px] w-[250px]">
+        <img
+          class="rounded shadow-2xl"
+          src="academy/mobile2.png"
+          alt="academy-mobile"
+        />
+      </div>
+      <footer class="ml-auto max-w-[calc(100%-125px)] pt-8 pl-12">
+        <h4 class="text-[24px]">Características</h4>
+        <ul class="pl-5 mt-1 space-y-1 [&>li]:marker">
+          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        </ul>
+      </footer>
+    </section>
+    <!-- <footer>
       <p>
         Landing page dedicada a la promocion de cursos y servicion para el area
         testing y devops.
       </p>
-    </footer>
+    </footer> -->
   </article>
-</section>
-
-<section
-  class="lg:mt-0 py-[7rem] container max-w-[800px] flex flex-col space-y-10 sm:space-y-20 gap-10 place-content-center xl:place-content-between"
->
-  <CardProject
-    title={`Crowdar Academy`}
-    description={`Landing page dedicada a la promocion de cursos y servicion para el area testing y devops.`}
-    elements={["NextJS", "SASS"]}
-  >
-    <img
-      slot="header-img"
-      class="object-cover aspect-[16/9]"
-      src="academy/1.png"
-      alt="academy"
-    />
-  </CardProject>
-  <CardProject
-    title={`Lippia Test Manager`}
-    description={`Aplicacion web para gestion de pruebas manuales y automatizadas, con la posibilidad de ejecutarlas en paralelo y visualizar los resultados en tiempo real.`}
-    elements={["ReactJS", "TailwindCSS", "NestJS", "PostgreSQL", "Keycloak"]}
-  >
-    <img
-      slot="header-img"
-      class="object-cover aspect-[16/9]"
-      src="lippia/1.png"
-      alt="lippia"
-    />
-  </CardProject>
-
-  <CardProject
-    title={`Tesla - Landing Page`}
-    description={``}
-    elements={["Astro", "JavaScript", "TailwindCSS"]}
-  >
-    <img
-      slot="header-img"
-      class="object-cover aspect-[16/9]"
-      src="tesla/1.png"
-      alt="tesla"
-    />
-  </CardProject>
 </section>

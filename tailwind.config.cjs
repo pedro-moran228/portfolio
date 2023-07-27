@@ -36,10 +36,12 @@ module.exports = {
       addComponents({
         h1: { "@apply text-[45px] sm:text-[50px] font-bold": {} },
         h2: { "@apply text-[40px] sm:text-[43px] font-bold": {} },
-        h3: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
+        h3: { "@apply text-[20px] sm:text-[30px] font-bold": {} },
         h4: { "@apply text-[18px] sm:text-[20px] font-bold": {} },
         h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
+        ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10": {} },
+        ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:-rotate-3 after:bg-primary after:-z-10": {} },
         ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[calc(50%-0.5px)] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-orange-500 before:rounded": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
         ".btn": { "@apply font-medium inline-block py-[0.65rem] px-[1rem]  shadow rounded duration-100": {} },
