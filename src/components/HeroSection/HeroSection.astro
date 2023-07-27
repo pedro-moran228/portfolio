@@ -10,7 +10,7 @@ import Technologies from "./Technologies.astro";
     lg:grid 
     lg:grid-cols-2 
     lg:place-content-center 
-    lg:gap-x-10
+    lg:gap-x-[100px]
   `}
 >
   <article class="space-y-6">
@@ -18,13 +18,13 @@ import Technologies from "./Technologies.astro";
       <h1>Pedro Moran</h1>
       <h2 class="text-[26px]">
         <span
-          class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-orange-500 relative inline-block"
+          class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary relative inline-block"
           ><span class="relative text-black">+2 años</span></span
         >
         <span class="px-1">Siendo</span>
         <span
           class="before:block before:absolute before:-inset-1 before:bg-primary relative inline-block"
-          ><span class="relative text-orange-500">
+          ><span class="relative text-secondary">
             Frontend Developer</span
           ></span
         >
@@ -41,7 +41,7 @@ import Technologies from "./Technologies.astro";
       </p>
       <div>
         <h3>A cargo de:</h3>
-        <ul class="pl-5 mt-[-5px] space-y-1 [&>li]:marker">
+        <ul class="mt-[-5px] space-y-1 [&>li]:marker">
           <li>Análisis e implementación de nuevas funcionalidades.</li>
           <li>Mantenimiento y refactorización de código.</li>
           <li>Capacitación para nuevos integrantes del equipo.</li>
@@ -53,7 +53,7 @@ import Technologies from "./Technologies.astro";
       <a
         href="https://www.linkedin.com/in/pedro-moran228"
         target="_blank"
-        class="btn inline-block text-center bg-[#0A66C2] text-white hover:bg-white hover:text-[#0A66C2] group"
+        class="btn text-center bg-[#0A66C2] text-white hover:bg-white hover:text-[#0A66C2] group"
         >Linked <span
           class="ml-[1px] leading-5 inline-block px-[3px] duration-100 rounded-sm bg-white text-[#0A66C2] group-hover:bg-[#0A66C2] group-hover:text-white"
           >in</span
