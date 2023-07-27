@@ -43,7 +43,7 @@ module.exports = {
         ul: { "@apply ml-7": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10": {} },
-        ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:-rotate-3 after:bg-primary after:-z-10": {} },
+        ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:rotate-3 after:bg-primary after:-z-10": {} },
         ".divide-line--before": { "@apply before:absolute before:top-[-100px] before:w-full before:h-[5px] before:bg-secondary": {} },
         ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[13px] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-secondary before:rounded": {} },
         ".flex-center": { "@apply flex items-center justify-center": {} },
