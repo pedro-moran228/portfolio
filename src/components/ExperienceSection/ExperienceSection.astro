@@ -1,64 +1,20 @@
 ---
+import CrowdarAcademy from "./CrowdarAcademy.astro";
+import LippiaTestManager from "./LippiaTestManager.astro";
 ---
 
 <section
-  class="mt-[250px] relative bg-primary pb-[120px] mark-triangle--before mark-triangle--after"
+  class="mt-[250px] space-y-[200px] relative bg-primary pb-[120px] mark-triangle--before mark-triangle--after text-white"
 >
-  <header class="text-right container">
+  <header
+    class="mx-auto left-1/2 -translate-x-1/2 absolute text-right container"
+  >
     <h2
       class="abosolute top-[-135px] -rotate-3 before:block before:absolute before:-inset-1 before:bg-primary relative inline-block"
     >
       <span class="relative text-orange-500 bg-primary">Experiencia</span>
     </h2>
   </header>
-  <article class="container mt-10 space-y-8 text-white">
-    <section class="container relative">
-      <header class="max-w-[calc(100%-125px)] pb-12 pr-20">
-        <h3 class="">Crowdar Academy</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
-          porro autem aliquid expedita ad numquam voluptatibus itaque, rerum
-          ullam deleniti a amet beatae nulla cum, libero repellat cumque
-          consequatur sit.
-        </p>
-      </header>
-      <div class="mx-auto shadow-[0px_0px_40px_10px_#0000006e]">
-        <img class="rounded shadow-2xl" src="academy/1.png" alt="academy" />
-      </div>
-
-      <div
-        class="absolute top-0 shadow-[0px_0px_15px_0px_rgb(0_0_0_/_0.25)] right-[-125px] w-[250px]"
-      >
-        <img
-          class="rounded shadow-2xl"
-          src="academy/mobile1.png"
-          alt="academy-mobile"
-        />
-      </div>
-      <div
-        class="absolute bottom-0 shadow-[0px_0px_15px_0px_rgb(0_0_0_/_0.25)] left-[-125px] w-[250px]"
-      >
-        <img
-          class="rounded shadow-2xl"
-          src="academy/mobile2.png"
-          alt="academy-mobile"
-        />
-      </div>
-      <footer class="ml-auto max-w-[calc(100%-125px)] pt-12 pl-20">
-        <h4 class="text-[24px]">Características</h4>
-        <ul class="pl-5 mt-1 space-y-1 [&>li]:marker">
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-          <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-        </ul>
-      </footer>
-    </section>
-    <!-- <footer>
-      <p>
-        Landing page dedicada a la promocion de cursos y servicion para el area
-        testing y devops.
-      </p>
-    </footer> -->
-  </article>
+  <LippiaTestManager />
+  <CrowdarAcademy />
 </section>
