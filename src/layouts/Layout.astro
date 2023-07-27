@@ -32,7 +32,11 @@ const { title } = Astro.props;
   body {
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
-    background-color: #efefef99;
+    /* background-color: #efefef99; */
+  }
+
+  .mask-triangle--before::before {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0);
   }
   /* .mask {
 		background: linear-gradient(

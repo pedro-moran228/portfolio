@@ -3,7 +3,7 @@ import CardProject from "./CardProject.astro";
 ---
 
 <section
-  class="mt-[250px] relative bg-primary before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary"
+  class="mt-[250px] relative bg-primary before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10"
 >
   <header class="text-right container">
     <h2
@@ -13,40 +13,20 @@ import CardProject from "./CardProject.astro";
     </h2>
   </header>
   <article
-    class="relative h-[600px] pt-10 pb-16 lg:pt-[6rem] lg:pb-[6rem] px-2 space-y-20 lg:mt-0 lg:space-y-0 container flex flex-col items-center lg:grid grid-cols-2 place-content-center gap-x-10"
+    class="text-white h-[600px] pt-10 pb-16 lg:pt-[6rem] lg:pb-[6rem] px-2 space-y-20 lg:mt-0 lg:space-y-0 container flex flex-col items-center lg:grid grid-cols-2 place-content-center gap-x-10"
   >
-    <section>
-      <header>
-        <h3>Crowdar Academy</h3>
-      </header>
-      <footer>
-        <p>
-          Landing page dedicada a la promocion de cursos y servicion para el
-          area testing y devops.
-        </p>
-      </footer>
-    </section>
-    <div class="relative">
-      <div
-        class="absolute top-1/2 -translate-y-1/2 shadow rounded overflow-hidden w-[125%]"
-      >
-        <div class="absolute rotate-45 w-full bg-black h-2 z-10"></div>
-        <div class="relative">
-          <img
-            class="object-cover aspect-[16/9]"
-            src="academy/1.png"
-            alt="academy"
-            style="clip-path: polygon(0 0, 0 100%, 100% 0);"
-          />
-          <img
-            class="object-cover aspect-[16/9]"
-            src="academy/4.png"
-            alt="academy"
-            style="clip-path: polygon(0 0, 0 100%, 100% 0);position: absolute;top: 0;z-index: 2; clip-path: polygon(100% 100%, 0 100%, 100% 0);"
-          />
-        </div>
-      </div>
+    <div>
+      <img src="academy/1.png" alt="academy" />
     </div>
+    <header>
+      <h3>Crowdar Academy</h3>
+    </header>
+    <footer>
+      <p>
+        Landing page dedicada a la promocion de cursos y servicion para el area
+        testing y devops.
+      </p>
+    </footer>
   </article>
 </section>
 
