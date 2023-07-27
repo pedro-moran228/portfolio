@@ -38,7 +38,7 @@ module.exports = {
         h1: { "@apply text-[45px] sm:text-[50px] font-bold": {} },
         h2: { "@apply text-[40px] sm:text-[43px] font-bold": {} },
         h3: { "@apply text-[20px] sm:text-[30px] font-bold leading-[2.25]": {} },
-        h4: { "@apply text-[20px] sm:text-[24px] font-bold": {} },
+        h4: { "@apply text-[20px] sm:text-[24px] font-bold leading-[2.3]": {} },
         h5: { "@apply text-[17px] sm:text-[18px] font-medium": {} },
         ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },

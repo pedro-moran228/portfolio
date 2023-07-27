@@ -1,3 +1,14 @@
+---
+import AstroIcon from "../Icons/Tech/AstroIcon.astro";
+import HtmlIcon from "../Icons/Tech/HtmlIcon.astro";
+import JavaScriptIcon from "../Icons/Tech/JavaScriptIcon.astro";
+import JestIcon from "../Icons/Tech/JestIcon.astro";
+import NextIcon from "../Icons/Tech/NextIcon.astro";
+import ReactIcon from "../Icons/Tech/ReactIcon.astro";
+import TailwindcssIcon from "../Icons/Tech/TailwindcssIcon.astro";
+import TypescriptIcon from "../Icons/Tech/TypescriptIcon.astro";
+---
+
 <article class="pt-[80px] relative space-y-12">
   <header>
     <h3>Lippia Test Manager</h3>
@@ -12,13 +23,91 @@
   >
     <img src="lippia/1.png" alt="academy" />
   </div>
-  <footer class="mt-12">
-    <h4 class="text-[24px]">Características</h4>
-    <ul class="space-y-1 [&>li]:marker">
-      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-      <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
-    </ul>
+  <footer class="space-y-12 mt-12">
+    <article>
+      <h4 class="text-[24px]">Características</h4>
+      <ul class="space-y-1 [&>li]:marker">
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+      </ul>
+    </article>
+    <article>
+      <h4 class="text-[24px]">Tecnologías</h4>
+      <section
+        class={`
+    sm:min-w-[414px]
+    flex flex-col space-y-2 sm:space-y-0
+    sm:grid
+    sm:grid-cols-[repeat(2,_1fr)]
+    md:grid-cols-3
+    sm:gap-3
+    w-full 
+    text-primary 
+    place-content-center
+
+    [&>article]:pl-[30px]
+    sm:[&>article]:pl-0
+    [&>article]:bg-white
+    [&>article]:overflow-hidden
+    [&>article]:w-full
+    [&>article]:h-[60px]
+    [&>article]:flex
+    [&>article]:items-center
+    [&>article]:space-x-2
+    [&>article]:rounded-md
+    [&>article]:shadow-md
+    [&>article>p]:font-medium
+
+    [&>article>div]:flex-center
+    [&>article>div]:w-[50px]
+    [&>article>div>img]:w-[30px]
+    [&>article>div]:h-full
+    [&>article>div]:relative
+  `}
+      >
+        <article>
+          <div>
+            <img src="skills/react.svg" alt="react" />
+          </div>
+          <p>React</p>
+        </article>
+        <article>
+          <div>
+            <div class="rounded bg-[#1976D2] p-[3px]">
+              <img
+                class=""
+                style="width: 25px;"
+                src="skills/typescript.svg"
+                alt="typescript"
+              />
+            </div>
+          </div>
+          <p>TypeScript</p>
+        </article>
+
+        <article>
+          <div>
+            <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
+          </div>
+          <p>Tailwindcss</p>
+        </article>
+
+        <article>
+          <div>
+            <img src="skills/testing-library.png" alt="testing-library" />
+          </div>
+          <p>Testing Library</p>
+        </article>
+
+        <article>
+          <div>
+            <div class="w-[30px]"><JestIcon /></div>
+          </div>
+          <p>Jest</p>
+        </article>
+      </section>
+    </article>
   </footer>
 </article>
