@@ -22,22 +22,23 @@ const { title } = Astro.props;
       rel="stylesheet"
     />
   </head>
-  <body class="bg-gray-100">
+  <body class="contents">
     <slot />
     <Footer />
   </body>
-</html>
-<style is:global>
-  html,
-  body {
-    overflow-x: hidden;
-    font-family: "Poppins", sans-serif;
-  }
 
-  .mask-triangle--before::before {
-    clip-path: polygon(0 100%, 100% 100%, 100% 0);
-  }
-  /* .mask {
+  <style is:global>
+    html,
+    body {
+      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    .mask-triangle--before::before {
+      clip-path: polygon(0 100%, 100% 100%, 100% 0);
+    }
+    /* .mask {
 		background: linear-gradient(
 				217deg,
 				rgba(208, 208, 208, 0.5),
@@ -59,4 +60,5 @@ const { title } = Astro.props;
 				rgba(255, 255, 255, 0) 50%
 			);
 	} */
-</style>
+  </style>
+</html>
