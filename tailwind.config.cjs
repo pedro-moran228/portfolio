@@ -34,8 +34,9 @@ module.exports = {
       addComponents({
         h1: { "@apply text-[45px] sm:text-[50px] font-bold text-primary/95": {} },
         h2: { "@apply text-[40px] sm:text-[43px] font-bold text-primary/95": {} },
-        h3: { "@apply text-[28px] sm:text-[36px] font-bold text-primary/95 leading-[2.25]": {} },
+        h3: { "@apply text-[28px] sm:text-[36px] font-bold text-primary/95 leading-[1.5]": {} },
         h4: { "@apply text-[22px] sm:text-[26px] font-bold text-primary/95 leading-[2.3]": {} },
+        p: { "@apply mt-5": {} },
         ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10": {} },
