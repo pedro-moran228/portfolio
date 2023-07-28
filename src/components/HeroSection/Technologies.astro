@@ -3,116 +3,244 @@ import AstroIcon from "../Icons/Tech/AstroIcon.astro";
 import HtmlIcon from "../Icons/Tech/HtmlIcon.astro";
 import JavaScriptIcon from "../Icons/Tech/JavaScriptIcon.astro";
 import JestIcon from "../Icons/Tech/JestIcon.astro";
+import NestJsIcon from "../Icons/Tech/NestJsIcon.astro";
 import NextIcon from "../Icons/Tech/NextIcon.astro";
+import PostgreSqlIcon from "../Icons/Tech/PostgreSqlIcon.astro";
 import ReactIcon from "../Icons/Tech/ReactIcon.astro";
 import TailwindcssIcon from "../Icons/Tech/TailwindcssIcon.astro";
 import TypescriptIcon from "../Icons/Tech/TypescriptIcon.astro";
+
+interface Props {
+  theme?: "dark" | "light";
+  technologies?: (
+    | "HTML"
+    | "CSS"
+    | "JavaCcript"
+    | "TypeScript"
+    | "Astro"
+    | "React"
+    | "Tailwind"
+    | "Testing_Library"
+    | "Jest"
+    | "NestJS"
+    | "SASS"
+    | "NextJS"
+    | "PostgreSQL"
+  )[];
+  grid3Col?: boolean;
+}
+
+const { theme = "light", grid3Col = false, technologies } = Astro.props;
+
+const HTML_Only = !technologies || technologies.includes("HTML");
+const CSS_Only = !technologies || technologies.includes("CSS");
+const JavaCcript_Only = !technologies || technologies.includes("JavaCcript");
+const TypeScript_Only = !technologies || technologies.includes("TypeScript");
+const Astro_Only = !technologies || technologies.includes("Astro");
+const React_Only = !technologies || technologies.includes("React");
+const Tailwind_Only = !technologies || technologies.includes("Tailwind");
+const Testing_Library_Only =
+  !technologies || technologies.includes("Testing_Library");
+const Jest_Only = !technologies || technologies.includes("Jest");
+const NestJS_Only = technologies?.includes("NestJS");
+const PostgreSQL_Only = technologies?.includes("PostgreSQL");
+const NextJS_Only = !technologies || technologies?.includes("NextJS");
+const SASS_Only = technologies?.includes("SASS");
 ---
 
-<section
+<ol
   class={`
     sm:min-w-[414px]
     flex flex-col space-y-2 sm:space-y-0
     sm:grid
     sm:grid-cols-[repeat(2,_1fr)]
-    md:grid-cols-[repeat(auto-fit,_1fr)]
+    ${grid3Col ? "md:grid-cols-3" : "md:grid-cols-[repeat(auto-fit,_1fr)]"}
     sm:gap-3
     w-full 
     place-content-center
-    text-primary
 
-    [&>article]:pl-[30px]
-    sm:[&>article]:pl-0
-    [&>article]:bg-white
-    [&>article]:overflow-hidden
-    [&>article]:w-full
-    [&>article]:h-[60px]
-    [&>article]:flex
-    [&>article]:items-center
-    [&>article]:space-x-2
-    [&>article]:rounded-md
-    [&>article]:shadow-md
-    [&>article>p]:font-medium
+    [&>li]:pl-[30px]
+    sm:[&>li]:pl-0
+    
+    ${theme === "dark" ? "[&>li]:bg-[#292b2f] text-white" : "[&>li]:bg-white"}
 
-    [&>article>div]:flex-center
-    [&>article>div]:w-[50px]
-    [&>article>div>img]:w-[30px]
-    [&>article>div]:h-full
-    [&>article>div]:relative
+    [&>li]:overflow-hidden
+    [&>li]:w-full
+    [&>li]:h-[60px]
+    [&>li]:flex
+    [&>li]:items-center
+    [&>li]:space-x-2
+    [&>li]:rounded-md
+    [&>li]:shadow-md
+    [&>li>p]:font-medium
+
+    [&>li>div]:flex-center
+    [&>li>div]:w-[50px]
+    [&>li>div>img]:w-[30px]
+    [&>li>div]:h-full
+    [&>li>div]:relative
   `}
 >
-  <article>
-    <div>
-      <HtmlIcon width="30px" />
-    </div>
-    <p>HTML</p>
-  </article>
-  <article>
-    <div>
-      <img style="width: 30px;" src="skills/css.svg" alt="css" />
-    </div>
-    <p>CSS</p>
-  </article>
-  <article>
-    <div>
-      <div class="rounded bg-[#ffd600] p-[3px]">
-        <img
-          class=""
-          style="width: 25px;"
-          src="skills/javascript.svg"
-          alt="javascript"
-        />
-      </div>
-    </div>
-    <p>JavaScript</p>
-  </article>
+  {
+    HTML_Only && (
+      <li>
+        <div>
+          <HtmlIcon width="32px" />
+        </div>
+        <p>HTML</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <div class="rounded bg-[#1976D2] p-[3px]">
-        <img
-          class=""
-          style="width: 25px;"
-          src="skills/typescript.svg"
-          alt="typescript"
-        />
-      </div>
-    </div>
-    <p>TypeScript</p>
-  </article>
+  {
+    CSS_Only && (
+      <li>
+        <div>
+          <img style="width: 32px;" src="skills/css.svg" alt="css" />
+        </div>
+        <p>CSS</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <img src="skills/react.svg" alt="react" />
-    </div>
-    <p>React</p>
-  </article>
+  {
+    JavaCcript_Only && (
+      <li>
+        <div>
+          <div class="rounded bg-[#ffd600] p-[3px]">
+            <img
+              class=""
+              style="width: 25px;"
+              src="skills/javascript.svg"
+              alt="javascript"
+            />
+          </div>
+        </div>
+        <p>JavaScript</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <AstroIcon width="25" />
-    </div>
-    <p>Astro</p>
-  </article>
+  {
+    TypeScript_Only && (
+      <li>
+        <div>
+          <div class="rounded bg-[#1976D2] p-[3px]">
+            <img
+              class=""
+              style="width: 25px;"
+              src="skills/typescript.svg"
+              alt="typescript"
+            />
+          </div>
+        </div>
+        <p>TypeScript</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
-    </div>
-    <p>Tailwindcss</p>
-  </article>
+  {
+    React_Only && (
+      <li>
+        <div>
+          <img src="skills/react.svg" alt="react" />
+        </div>
+        <p>React</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <img src="skills/testing-library.png" alt="testing-library" />
-    </div>
-    <p>Testing Library</p>
-  </article>
+  {
+    Astro_Only && (
+      <li>
+        <div>
+          <AstroIcon width={25} />
+        </div>
+        <p>Astro</p>
+      </li>
+    )
+  }
 
-  <article>
-    <div>
-      <div class="w-[30px]"><JestIcon /></div>
-    </div>
-    <p>Jest</p>
-  </article>
-</section>
+  {
+    Tailwind_Only && (
+      <li>
+        <div>
+          <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
+        </div>
+        <p>Tailwindcss</p>
+      </li>
+    )
+  }
+
+  {
+    Testing_Library_Only && (
+      <li>
+        <div>
+          <img src="skills/testing-library.png" alt="testing-library" />
+        </div>
+        <p>Testing Library</p>
+      </li>
+    )
+  }
+
+  {
+    Jest_Only && (
+      <li>
+        <div>
+          <div class="w-[30px]">
+            <JestIcon />
+          </div>
+        </div>
+        <p>Jest</p>
+      </li>
+    )
+  }
+
+  {
+    NestJS_Only && (
+      <li>
+        <div>
+          <NestJsIcon height={30} />
+        </div>
+        <p>NestJS</p>
+      </li>
+    )
+  }
+
+  {
+    PostgreSQL_Only && (
+      <li>
+        <div>
+          <PostgreSqlIcon height={30} />
+        </div>
+        <p>PostgreSQL</p>
+      </li>
+    )
+  }
+
+  {
+    NextJS_Only && (
+      <li>
+        <div>
+          <img
+            class={`${theme === "light" && "invert-[.85]"}`}
+            src="skills/nextjs.png"
+            alt="nextjs"
+          />
+        </div>
+        <p>NextJS</p>
+      </li>
+    )
+  }
+
+  {
+    SASS_Only && (
+      <li>
+        <div>
+          <img src="skills/sass.png" alt="sass" />
+        </div>
+        <p>SASS</p>
+      </li>
+    )
+  }
+</ol>
