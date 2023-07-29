@@ -39,14 +39,23 @@ module.exports = {
         p: { "@apply mt-5": {} },
         ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
-        ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:-z-10": {} },
-        ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:rotate-3 after:bg-primary after:-z-10": {} },
+
+        ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:z-0": {} },
+
+        ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:rotate-3 after:bg-primary after:z-0": {} },
+
         ".divide-line--before": { "@apply before:absolute before:top-[-100px] before:w-full before:h-[5px] before:bg-secondary": {} },
+
         ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[13px] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-secondary before:rounded": {} },
+
         ".flex-center": { "@apply flex items-center justify-center": {} },
+
         ".btn": { "@apply font-sans font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
+
         ".divider-x": { "@apply container bg-gradient-to-r from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent h-[2px]": {} },
+
         ".divider-y": { "@apply container bg-gradient-to-b from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent w-[2px] h-full": {} },
+        
         body: { "@apply text-lg text-primary": {} },
       });
     },

@@ -1,19 +1,11 @@
 ---
 import Technologies from "../HeroSection/Technologies.astro";
-// -110%
+import TimeLapseLine from "./TimeLapseLine.astro";
 ---
 
 <article class="relative z-0 space-y-12">
-  <aside
-  class="absolute -z-10 container left-1/2 -translate-x-1/2 h-full top-0 before:block before:bg-secondary before:w-[7px] before:h-full before:rounded"
-  >
-  <p
-    class="sticky top-14 mt-[-110%] ml-[-114px] pr-[6px] text-[20px] font-bold before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary w-max"
-  >
-    <span class="relative text-black">2021 - 2023</span>
-  </p>
-  </aside>
-  <header class="container max-w-[800px]">
+  <TimeLapseLine label="2021 - 2023" />
+  <header class="container max-w-[800px]"> 
     <h3 class="text-current">Lippia Test Manager</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo porro

@@ -1,17 +1,10 @@
 ---
 import Technologies from "../HeroSection/Technologies.astro";
+import TimeLapseLine from "./TimeLapseLine.astro";
 ---
 
 <article class="relative z-0 mt-[200px]">
-  <aside
-  class="absolute -z-10 container left-1/2 -translate-x-1/2 h-full top-0 before:block before:bg-secondary before:w-[7px] before:h-full before:rounded"
-  >
-  <p
-    class="sticky top-14 mt-[-103%] ml-[-51px] pr-[6px] text-[20px] font-bold before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary w-max"
-  >
-    <span class="relative text-black">2023</span>
-  </p>
-  </aside>
+  <TimeLapseLine label="2023" />
   <header class="container max-w-[800px]">
     <h3 class="text-current">Crowdar Academy</h3>
     <p>
