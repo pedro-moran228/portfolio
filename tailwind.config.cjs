@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        smallXL: "1230px",
+        'xl-small': "1230px",
         xs: "460px",
         // sm	640px
         // md	768px
@@ -40,6 +40,7 @@ module.exports = {
         p: { "@apply mt-5": {} },
         ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
+        ".container-sm": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[800px]": {} },
 
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:z-0": {} },
 

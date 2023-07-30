@@ -1,0 +1,48 @@
+---
+import Technologies from "../../HeroSection/Technologies.astro";
+import TimeLapseLine from "../TimeLapseLine.astro";
+---
+
+<article class="relative z-0 space-y-12">
+  <TimeLapseLine label="2022 - 2023" />
+  <header class="container-sm"> 
+    <h3 class="text-current">Lippia Test Manager</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo porro
+      autem aliquid expedita ad numquam voluptatibus itaque, rerum ullam
+      deleniti a amet beatae nulla cum, libero repellat cumque consequatur sit.
+    </p>
+  </header>
+  <div
+    class="container-sm rounded-2xl overflow-hidden mx-auto shadow-[0px_0px_40px_10px_#0000006e]"
+  >
+    <img src="lippia/1.png" alt="academy" />
+  </div>
+  <footer class="container-sm space-y-12 mt-12">
+    <article>
+      <h4 class="text-current">Características</h4>
+      <ul class="space-y-1 [&>li]:marker">
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+        <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+      </ul>
+    </article>
+    <article>
+      <h4 class="text-current">Tecnologías</h4>
+      <Technologies
+        theme="dark"
+        grid3Col
+        technologies={[
+          "React",
+          "TypeScript",
+          "Tailwind",
+          "Jest",
+          "Testing_Library",
+          "NestJS",
+          "PostgreSQL",
+        ]}
+      />
+    </article>
+  </footer>
+</article>
