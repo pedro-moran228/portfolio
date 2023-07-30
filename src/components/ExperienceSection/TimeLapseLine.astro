@@ -10,9 +10,13 @@ const { label } = Astro.props;
   class="hidden smallXL:block absolute -z-10 mx-auto w-[97%] max-w-[1335px] left-1/2 -translate-x-1/2 h-[calc(100%+40px)] top-[-40px]"
 >
   <section class="relative h-full inline-block w-[140px] pt-[50px]">
-    <div class="absolute top-0 w-max right-0 h-full ">
+    <div class="absolute top-0 w-max right-0 h-full">
       <div class="relative flex justify-center w-[20px] h-full">
-        <section class="absolute z-10 w-[10px] h-full bg-secondary"></section>
+        <section
+          data-label="line"
+          class="absolute z-10 w-[10px] h-full rounded bg-secondary"
+        >
+        </section>
         <section
           data-label="circle-icon"
           class="sticky z-30 top-[30px] mb-[67px] h-[20px] w-[20px] rounded-full bg-secondary"
@@ -40,7 +44,7 @@ const { label } = Astro.props;
       before:bg-secondary
         `}
     >
-      <span class="relative text-black">{label ?? "LABEL"}</span>
+      <span class="relative text-primary brightness-[.25]">{label ?? "LABEL"}</span>
     </div>
   </section>
 </aside>
