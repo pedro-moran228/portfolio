@@ -1,0 +1,27 @@
+---
+interface Props {
+  year: string;
+  projectName: string;
+  href: string;
+}
+
+const { year, projectName, href } = Astro.props;
+---
+
+<a id="time-lapse-item" href={href} class="flex w-max ml-auto items-center hover:scale-110 transition-none duration-100" style="opacity: 0.4;">
+  <p
+    data-label="label"
+    class={`
+              relative m-0 ml-auto mr-[10px] px-[6px] py-[4px] w-max font-bold z-30
+    
+            before:block 
+            before:absolute 
+            before:inset-0 
+            before:-skew-y-3 
+            before:bg-secondary
+              `}
+  >
+    <span class="text-primary brightness-[.25]">{ year }</span>
+  </p>
+  <p class="m-0 font-bold">{ projectName }</p>
+</a>
