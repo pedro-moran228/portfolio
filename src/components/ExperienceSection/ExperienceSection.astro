@@ -27,8 +27,8 @@ import TimeLapseItem from "./TimeLapseItem.astro";
       <LippiaReportServer />
     </div>
     <aside class="relative hidden xl:block h-full">
-      <div class="sticky flex space-x-[50px] justify-end top-[10vh] h-[80vh]">
-        <section class="h-full flex flex-col justify-between">
+      <div class="sticky grid gap-x-[30px] grid-cols-[1fr,20px] justify-end top-[10vh] h-fit">
+        <section class="h-fit flex flex-col space-y-[100px] justify-between">
           <TimeLapseItem
             href="lippiatestmanager"
             year="2022 - 2023"
@@ -45,7 +45,7 @@ import TimeLapseItem from "./TimeLapseItem.astro";
             projectName="Lippia Report Server"
           />
         </section>
-        <section class="relative w-[10px] h-full">
+        <section class="relative place-self-center w-[10px] h-full">
           <div
           class="absolute overflow-hidden right-0 top-0 w-full h-full rounded bg-secondary/40"
           >
