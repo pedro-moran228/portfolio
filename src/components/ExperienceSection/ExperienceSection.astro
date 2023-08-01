@@ -18,15 +18,16 @@ import TimeLapseItem from "./TimeLapseItem.astro";
       </div>
     </section>
   </header>
+  <!-- relative container-sm xl:max-w-[1280px] xl:w-[90%] xl:grid xl:grid-cols-[minmax(300px,800px),1fr] xl:gap-x-[50px] -->
   <section
-    class="relative container-sm xl:max-w-[1280px] xl:w-[90%] xl:grid xl:grid-cols-[minmax(300px,800px),1fr] xl:gap-x-[50px]"
+    class="relative"
   >
     <div>
       <LippiaTestManager />
       <CrowdarAcademy />
       <LippiaReportServer />
     </div>
-    <aside class="relative hidden xl:block h-full">
+    <!-- <aside class="relative hidden xl:block h-full">
       <div class="sticky grid gap-x-[30px] grid-cols-[1fr,20px] justify-end top-[10vh] h-fit">
         <section class="h-fit flex flex-col space-y-[100px] justify-between">
           <TimeLapseItem
@@ -55,7 +56,7 @@ import TimeLapseItem from "./TimeLapseItem.astro";
           <section id="progress-line-circle" class="absolute rounded z-50 bottom-0 top-[-2%] right-[-5px] w-[20px] h-[20px] bg-secondary"></section>
         </section>
       </div>
-    </aside>
+    </aside> -->
   </section>
 </section>
 
