@@ -9,6 +9,8 @@ import PostgreSqlIcon from "../Icons/Tech/PostgreSqlIcon.astro";
 import ReactIcon from "../Icons/Tech/ReactIcon.astro";
 import TailwindcssIcon from "../Icons/Tech/TailwindcssIcon.astro";
 import TypescriptIcon from "../Icons/Tech/TypescriptIcon.astro";
+import ViteIcon from "../Icons/Tech/ViteIcon.astro";
+
 
 interface Props {
   theme?: "dark" | "light";
@@ -26,6 +28,7 @@ interface Props {
     | "SASS"
     | "NextJS"
     | "PostgreSQL"
+    | "Vite"
   )[];
   grid3Col?: boolean;
 }
@@ -44,6 +47,7 @@ const Testing_Library_Only =
 const Jest_Only = !technologies || technologies.includes("Jest");
 const NestJS_Only = technologies?.includes("NestJS");
 const PostgreSQL_Only = technologies?.includes("PostgreSQL");
+const Vite_Only = !technologies || technologies?.includes("Vite");
 const NextJS_Only = !technologies || technologies?.includes("NextJS");
 const SASS_Only = technologies?.includes("SASS");
 ---
@@ -241,6 +245,17 @@ const SASS_Only = technologies?.includes("SASS");
           <img src="skills/sass.png" alt="sass" />
         </div>
         <p>SASS</p>
+      </li>
+    )
+  }
+  
+  {
+    Vite_Only && (
+      <li>
+        <div>
+          <ViteIcon size={28} />
+        </div>
+        <p>Vite</p>
       </li>
     )
   }
