@@ -2,33 +2,65 @@
 import Technologies from "../../HeroSection/Technologies.astro";
 ---
 
-<article id="box-project-experience" class="relative z-0 space-y-12">
-  <!-- <TimeLapseLine label="2022 - 2023" /> -->
-  <header class="container-sm"> 
+<article id="box-project-experience" class="container-sm relative z-0">
+  <header>
     <h3 class="text-current">Lippia Test Manager</h3>
-    <p>
-      Creación de una primera y segunda del Test Manager.
-      Esta segundo versión del Test Manager fue realizada como un mvp.
-    </p>
   </header>
-  <div
-    class="container-sm rounded-2xl overflow-hidden shadow-[0px_0px_40px_10px_#0000006e]"
-  >
-    <img src="lippia/1.png" alt="academy" />
-  </div>
-  <footer class="container-sm space-y-12 mt-12">
-    <article>
-      <h4 class="text-current">Características</h4>
-      <ul class="space-y-1 [&>li]:marker">
-        <li>Rutas dinamicas con Single Page Application.</li>
-        <li>Estados globales con <span class="font-bold">context</span> y <span class="font-bold">useReducer</span>.</li>
-        <li>Custom hooks.</li>
-        <li>Formularios.</li>
-        <li>Autenticación con Herramienta de Gestión (<span class="font-bold">Keycloak</span>).</li>
-        <li>Fetching de datos.</li>
-        <li>Tablas con multifuncionales.</li>
-      </ul>
-    </article>
+  <section class="mt-8">
+    <p>
+      Participé en una primera y segunda version (MVP) de Lippia Test Manager.
+    </p>
+    <p>
+      En la primera versión, me encangué de participar en la planificación,
+      diseño funcional y desarrollo de la aplicación. Implementando
+      caracteristicas como:
+    </p>
+    <ul class="space-y-1 mt-2 [&>li]:marker">
+      <li>Rutas dinamicas con Single Page Application.</li>
+      <li>
+        Estados globales con <span class="font-bold">useContext</span> y <span
+          class="font-bold">useReducer</span
+        >.
+      </li>
+      <li>React Custom hooks.</li>
+      <li>Formularios.</li>
+      <li>
+        Autenticación con Herramienta de Gestión (<span class="font-bold"
+          >Keycloak</span
+        >).
+      </li>
+      <li>Fetching de datos.</li>
+      <li>Tablas con multifuncionales.</li>
+    </ul>
+    <p>
+      Esta primera version fue descartada y se decidió iniciar una segunda
+      version planteada como un MVP.
+    </p>
+    <div
+      class="my-12 rounded-2xl overflow-hidden shadow-[0px_0px_40px_10px_#0000006e]"
+    >
+      <img src="lippia/1.png" alt="academy" />
+    </div>
+    <p>
+      Uno de los grandes desaficios logrados para la segunda version de Lippia
+      Test Manager fue la migracion de la herramienta <span class="font-bold"
+        >Create React App</span
+      > a <span class="font-bold">Vite</span>.
+    </p>
+    <p>
+      Mejoré la calidad del software tanto en eficiencia como en escalabilidad
+      estandarizando patrones de diseños como <span class="font-bold"
+        >S.O.L.I.D</span
+      > y tecnicas como <span class="font-bold">lazy loading</span>.
+    </p>
+    <p>
+      Aparte de mi rol en el frontend tambien he ayudado con el desarrollo del
+      backend al estar hecho en NodeJs (Javascript). Con mis aportes pude
+      mejorar hasta en un <span class="font-bold">300%</span> la eficiencia del
+      backend en ciertas operaciones como obtecion y recopilacion de datos.
+    </p>
+  </section>
+  <footer class="mt-8 space-y-12">
     <article>
       <h4 class="text-current">Tecnologías</h4>
       <Technologies
