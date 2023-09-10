@@ -6,7 +6,7 @@ module.exports = {
       screens: {
         'xl-small': "1230px",
         xs: "460px",
-        // sm	640px
+        sm: "670px"
         // md	768px
         // lg	1024px
         // xl	1280px
@@ -33,14 +33,14 @@ module.exports = {
   plugins: [
     function ({ addComponents }) {
       addComponents({
-        h1: { "@apply text-[45px] sm:text-[50px] font-bold text-primary/95": {} },
+        h1: { "@apply text-[40px] sm:text-[43px] md:text-[50px] font-bold text-primary/95": {} },
         h2: { "@apply text-[40px] sm:text-[43px] font-bold text-primary/95": {} },
         h3: { "@apply text-[28px] sm:text-[36px] font-bold text-primary/95 leading-[1.5]": {} },
         h4: { "@apply text-[22px] sm:text-[26px] font-bold text-primary/95 leading-[2.3]": {} },
         p: { "@apply mt-5": {} },
         ul: { "@apply ml-7 space-y-2": {} },
-        ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[640px] lg:max-w-[1080px]": {} },
-        ".container-sm": { "@apply w-[87%] md:w-full mx-auto max-w-[640px] lg:max-w-[800px]": {} },
+        ".container": { "@apply w-[87%] md:w-[84%] mx-auto max-w-[1080px]": {} },
+        ".container-sm": { "@apply w-[87%] mx-auto max-w-[800px]": {} },
 
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:z-0": {} },
 
@@ -54,6 +54,8 @@ module.exports = {
 
         ".btn": { "@apply font-sans font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
 
+        ".circle-clip": { "@apply font-sans font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
+        // shape-outside: circle(50%); clip-path: circle(50%); shape-margin: 20px;
         ".divider-x": { "@apply container bg-gradient-to-r from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent h-[2px]": {} },
 
         ".divider-y": { "@apply container bg-gradient-to-b from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent w-[2px] h-full": {} },
