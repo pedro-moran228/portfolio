@@ -4,7 +4,9 @@ import GithubButton from "./GithubButton.astro";
 import GmailButton from "./GmailButton.astro";
 ---
 
-<article class="text-white p-10 space-y-6 bg-primary rounded-2xl shadow-2xl">
+<main
+  class="xs:container-sm w-full rounded-none mt-0 xs:mt-[3rem] sm:mt-[6rem] text-white p-10 space-y-6 bg-primary xs:rounded-2xl shadow-2xl"
+>
   <header class="space-y-2 md:space-y-0">
     <div class="flex flex-col-reverse sm:block">
       <div
@@ -32,7 +34,7 @@ import GmailButton from "./GmailButton.astro";
         </header>
         <p class="mt-10">
           Actualmente trabajando en <a
-            class="font-medium text-secondary brightness-[0.9] hover:underline"
+            class="font-medium text-secondary brightness-150 hover:underline"
             href="https://crowdar.com.ar/"
             target="blank">Crowdar</a
           > con un equipo de desarrollo a tiempo completo construyendo un
@@ -56,4 +58,4 @@ import GmailButton from "./GmailButton.astro";
     <GithubButton />
     <GmailButton />
   </footer>
-</article>
+</main>

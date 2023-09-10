@@ -2,7 +2,6 @@
 import CrowdarAcademy from "./Projects/CrowdarAcademy.astro";
 import LippiaTestManager from "./Projects/LippiaTestManager.astro";
 import LippiaReportServer from "./Projects/LippiaReportServer.astro";
-import TimeLapseItem from "./TimeLapseItem.astro";
 ---
 
 <section class="mt-[250px] pt-[80px] pb-[380px] relative bg-primary text-white">
@@ -12,8 +11,7 @@ import TimeLapseItem from "./TimeLapseItem.astro";
         <h2
           class="abosolute top-[-135px] -rotate-3 before:block before:absolute before:-inset-1 before:bg-primary relative inline-block"
         >
-          <span class="relative text-secondary brightness-110">Experiencia</span
-          >
+          <span class="relative text-white">Experiencia</span>
         </h2>
       </div>
     </section>
@@ -25,94 +23,5 @@ import TimeLapseItem from "./TimeLapseItem.astro";
       <CrowdarAcademy />
       <LippiaReportServer />
     </div>
-    <!-- <aside class="relative hidden xl:block h-full">
-      <div class="sticky grid gap-x-[30px] grid-cols-[1fr,20px] justify-end top-[10vh] h-fit">
-        <section class="h-fit flex flex-col space-y-[100px] justify-between">
-          <TimeLapseItem
-            href="lippiatestmanager"
-            year="2022 - 2023"
-            projectName="Lippia Test Manager"
-          />
-          <TimeLapseItem
-            href="crowdaracademy"
-            year="2023"
-            projectName="Crowdar Academy"
-          />
-          <TimeLapseItem
-            href="lippiareportcerver"
-            year="2021"
-            projectName="Lippia Report Server"
-          />
-        </section>
-        <section class="relative place-self-center w-[10px] h-full">
-          <div
-          class="absolute overflow-hidden right-0 top-0 w-full h-full rounded bg-secondary/40"
-          >
-            <section id="progress-line" class="relative w-full bg-secondary">
-            </section>
-          </div>
-          <section id="progress-line-circle" class="absolute rounded z-50 bottom-0 top-[-2%] right-[-5px] w-[20px] h-[20px] bg-secondary"></section>
-        </section>
-      </div>
-    </aside> -->
   </section>
 </section>
-
-<script>
-  const boxesProjectExperience = [
-    ...document.querySelectorAll("#box-project-experience"),
-  ] as HTMLElement[];
-  boxesProjectExperience.pop();
-  const timeLapseItems = [
-    ...document.querySelectorAll("#time-lapse-item"),
-  ] as HTMLElement[];
-
-  timeLapseItems[0].style.opacity = "1";
-  timeLapseItems.forEach((item, index) => {
-    item.style.transitionProperty = "opacity, transform";
-  });
-  const progressLine = document.querySelector("#progress-line") as HTMLElement;
-  const progressLineCircle = document.querySelector(
-    "#progress-line-circle"
-  ) as HTMLElement;
-
-  document.addEventListener("scroll", () => {
-    boxesProjectExperience.forEach((box, index) => {
-      const boxHeight = box.offsetHeight;
-      const boxTop = box.getBoundingClientRect().top;
-      const boxScroll = Math.abs(boxTop - boxHeight);
-      const boxScrollPorcentage = Math.trunc(
-        (boxScroll / boxHeight) * 100 - 100
-      );
-      const individualPorcentage =
-        boxScrollPorcentage / boxesProjectExperience.length;
-
-      const porcetageOfEachSlide = 100 / boxesProjectExperience.length;
-      const newProgressLinePorcentage =
-        individualPorcentage + index * porcetageOfEachSlide;
-
-      if (index === 0 && boxScrollPorcentage < 0) {
-        progressLine.style.height = "0%";
-        progressLineCircle.style.top = `${0 - 2}%`;
-        return;
-      }
-
-      if (boxScrollPorcentage > 0) {
-        timeLapseItems[index].style.opacity = "1";
-        progressLine.style.height = `${newProgressLinePorcentage}%`;
-        progressLineCircle.style.top = `${newProgressLinePorcentage - 2}%`;
-      } else if (boxScrollPorcentage < 0) {
-        timeLapseItems[index].style.opacity = "0.5";
-      }
-
-      const isLastElement = index === boxesProjectExperience.length - 1;
-      if (isLastElement && boxScrollPorcentage > 100) {
-        progressLine.style.height = "100%";
-        progressLineCircle.style.top = `${100 - 2}%`;
-        timeLapseItems[index + 1].style.opacity = "1";
-      } else if (isLastElement && boxScrollPorcentage < 100) {
-        timeLapseItems[index + 1].style.opacity = "0.5";
-      }
-    });
-  });
-</script>
