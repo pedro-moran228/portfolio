@@ -4,16 +4,7 @@ import Profile from "./Profile.astro";
 ---
 
 <main
-  class={`
-    relative pt-[3rem] sm:pt-[6rem] container 
-    flex flex-col items-center space-y-20 lg:space-y-0 
-    
-    lg:grid 
-    lg:grid-cols-2 
-    lg:place-content-center 
-    lg:gap-x-[104px]
-  `}
+  class={"max-w-[700px] mx-auto relative pt-[3rem] sm:pt-[6rem] flex justify-center"}
 >
   <Profile />
-  <Technologies />
 </main>

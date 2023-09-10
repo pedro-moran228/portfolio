@@ -26,7 +26,7 @@ module.exports = {
       },
       colors: {
         primary: '#1E1F22',
-        secondary: '#1B9C85',
+        secondary: '#6c426e',
       },
     },
   },
@@ -57,7 +57,7 @@ module.exports = {
         ".divider-x": { "@apply container bg-gradient-to-r from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent h-[2px]": {} },
 
         ".divider-y": { "@apply container bg-gradient-to-b from-transparent via-[rgba(185,_185,_185,_1)] sm:via-[rgba(185,_185,_185,_0.85)] lg:via-[rgba(185,_185,_185,_0.45)] to-transparent w-[2px] h-full": {} },
-        
+
         body: { "@apply text-lg text-primary": {} },
       });
     },
