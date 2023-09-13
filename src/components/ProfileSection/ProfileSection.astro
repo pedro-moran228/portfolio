@@ -58,9 +58,43 @@ import GmailButton from "./GmailButton.astro";
       </ul>
     </article>
   </section>
-  <footer class="pt-2 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 gap-4">
+  <footer
+    id="profile-footer"
+    aria-label="Social media links"
+    class="pt-2 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 gap-4"
+  >
     <LinkedinButton />
     <GithubButton />
     <GmailButton />
   </footer>
 </main>
+
+<script>
+  const profileFooter = document.getElementById("profile-footer");
+
+  profileFooter?.addEventListener("mouseover", (e) => {
+    const target = e.target as HTMLElement;
+    const isAchor = target.closest("a");
+    if (!isAchor) return;
+
+    [...profileFooter.children].forEach((a) => {
+      if (isAchor.getAttribute("aria-label") === a.getAttribute("aria-label"))
+        return;
+
+      a.classList.add("opacity-50");
+    });
+  });
+
+  profileFooter?.addEventListener("mouseout", (e) => {
+    const target = e.target as HTMLElement;
+    const isAchor = target.closest("a");
+    if (!isAchor) return;
+
+    [...profileFooter.children].forEach((a) => {
+      if (isAchor.getAttribute("aria-label") === a.getAttribute("aria-label"))
+        return;
+
+      a.classList.remove("opacity-50");
+    });
+  });
+</script>
