@@ -20,11 +20,66 @@ import Technologies from "../../common/Technologies.astro";
       <li>Estados globales con <span class="font-bold">useContext</span>.</li>
     </ul>
   </header>
-  <div
-    class="container-sm rounded-2xl overflow-hidden shadow-[0px_0px_40px_10px_#0000006e]"
+  <section
+    id="slider-lrs"
+    class="relative container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]"
   >
-    <img loading="lazy" src="LRS/LRS_4.png" alt="academy" />
-  </div>
+    <div
+      id="slider-img-box-lrs"
+      class={`
+      flex overflow-hidden rounded-2xl 
+      [&>img]:transition-transform 
+      [&>img]:duration-500 
+      group
+      after:content-[''] 
+      after:absolute 
+      after:top-0 
+      after:left-0 
+      after:w-full 
+      after:h-full
+      after:opacity-0
+      hover:after:opacity-100
+      after:bg-[linear-gradient(90deg,_rgba(10,_27,_59,_0.45),_rgba(255,0,0,0)_10%),linear-gradient(-90deg,_rgba(10,_27,_59,_0.45),_rgba(255,0,0,0)_10%);] 
+      after:duration-200`}
+    >
+      <img data-index="1" loading="lazy" src="LRS/LRS_1.png" alt="academy" />
+      <img data-index="2" loading="lazy" src="LRS/LRS_2.png" alt="academy" />
+      <img data-index="3" loading="lazy" src="LRS/LRS_3.png" alt="academy" />
+      <img data-index="4" loading="lazy" src="LRS/LRS_4.png" alt="academy" />
+      <button
+        id="slider-btn-prev-lrs"
+        class="left-0 hidden h-full absolute z-20 top-1/2 -translate-y-1/2 w-[70px] flex-center group-hover:flex hover:scale-125 duration-100"
+        ><svg
+          stroke="#FFF"
+          fill="#FFF"
+          class="rotate-180 transform group-hover:scale-125 transition-transform duration-100"
+          viewBox="0 0 1024 1024"
+          height="20px"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163 254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475 13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z"
+          ></path></svg
+        ></button
+      >
+      <button
+        id="slider-btn-next-lrs"
+        class="right-0 hidden h-full absolute z-20 top-1/2 -translate-y-1/2 w-[70px] flex-center group-hover:flex hover:scale-125 duration-100"
+        ><svg
+          stroke="#FFF"
+          fill="#FFF"
+          class="transform group-hover:scale-125 transition-transform duration-100"
+          viewBox="0 0 1024 1024"
+          height="20px"
+          width="20px"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163 254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475 13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z"
+          ></path></svg
+        ></button
+      >
+    </div>
+  </section>
   <footer class="container-sm space-y-12 mt-12">
     <p>
       Mi participación en el proyecto fue de <span class="font-bold"
@@ -42,3 +97,48 @@ import Technologies from "../../common/Technologies.astro";
     </article>
   </footer>
 </article>
+
+<script>
+  let activeSlide = 0;
+  const slider = document.querySelector("#slider-img-box-lrs");
+  const sliderWidth = slider?.clientWidth;
+
+  const btnNext = document.querySelector("#slider-btn-next-lrs");
+  const btnPrev = document.querySelector("#slider-btn-prev-lrs");
+
+  btnNext?.addEventListener("click", () => {
+    if (!sliderWidth) return;
+
+    const currSlide = slider?.children.item(activeSlide) as HTMLElement;
+    const nextSlide = slider?.children.item(activeSlide + 1) as HTMLElement;
+
+    if (!currSlide || !nextSlide) return;
+
+    currSlide.style.transform = `translateX(-${
+      sliderWidth * (activeSlide + 1)
+    }px)`;
+    nextSlide.style.transform = `translateX(-${
+      sliderWidth * (activeSlide + 1)
+    }px)`;
+
+    activeSlide++;
+  });
+
+  btnPrev?.addEventListener("click", () => {
+    if (!sliderWidth) return;
+
+    const currSlide = slider?.children.item(activeSlide) as HTMLElement;
+    const prevSlide = slider?.children.item(activeSlide - 1) as HTMLElement;
+
+    if (!currSlide || !prevSlide) return;
+
+    currSlide.style.transform = `translateX(-${
+      sliderWidth * (activeSlide - 1)
+    }px)`;
+    prevSlide.style.transform = `translateX(-${
+      sliderWidth * (activeSlide - 1)
+    }px)`;
+
+    activeSlide--;
+  });
+</script>
