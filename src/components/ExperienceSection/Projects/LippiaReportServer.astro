@@ -1,4 +1,5 @@
 ---
+import Carousel from "../../common/Carousel.astro";
 import Technologies from "../../common/Technologies.astro";
 ---
 
@@ -25,14 +26,13 @@ import Technologies from "../../common/Technologies.astro";
     class="relative container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]"
   >
     <div
-      id="slider-img-box-lrs"
       class={`
-      flex overflow-hidden rounded-2xl 
+      overflow-hidden rounded-2xl 
       [&>img]:transition-transform 
       [&>img]:duration-500 
       group
       after:content-[''] 
-      after:absolute 
+      after:absolute
       after:top-0 
       after:left-0 
       after:w-full 
@@ -42,10 +42,22 @@ import Technologies from "../../common/Technologies.astro";
       after:bg-[linear-gradient(90deg,_rgba(10,_27,_59,_0.45),_rgba(255,0,0,0)_10%),linear-gradient(-90deg,_rgba(10,_27,_59,_0.45),_rgba(255,0,0,0)_10%);] 
       after:duration-200`}
     >
-      <img data-index="1" loading="lazy" src="LRS/LRS_1.png" alt="academy" />
-      <img data-index="2" loading="lazy" src="LRS/LRS_2.png" alt="academy" />
-      <img data-index="3" loading="lazy" src="LRS/LRS_3.png" alt="academy" />
-      <img data-index="4" loading="lazy" src="LRS/LRS_4.png" alt="academy" />
+      <!-- snap-mandatory snap-x [&>img]:snap-center -->
+      <div
+        id="slider-img-box-lrs"
+        class="flex overflow-hidden [&>img]:duration-500"
+        style="overflow-x: inherit;"
+      >
+        <img
+          data-slide-actived
+          loading="lazy"
+          src="LRS/LRS_1.png"
+          alt="academy"
+        />
+        <img loading="lazy" src="LRS/LRS_2.png" alt="academy" />
+        <img loading="lazy" src="LRS/LRS_3.png" alt="academy" />
+        <img loading="lazy" src="LRS/LRS_4.png" alt="academy" />
+      </div>
       <button
         id="slider-btn-prev-lrs"
         class="left-0 hidden h-full absolute z-20 top-1/2 -translate-y-1/2 w-[70px] flex-center group-hover:flex hover:scale-125 duration-100"
@@ -96,49 +108,105 @@ import Technologies from "../../common/Technologies.astro";
       />
     </article>
   </footer>
+  <div>
+    <Carousel />
+  </div>
 </article>
 
 <script>
-  let activeSlide = 0;
   const slider = document.querySelector("#slider-img-box-lrs");
   const sliderWidth = slider?.clientWidth;
 
-  const btnNext = document.querySelector("#slider-btn-next-lrs");
-  const btnPrev = document.querySelector("#slider-btn-prev-lrs");
+  // slider?.scrollTo({
+  //   left: 0,
+  // });
 
-  btnNext?.addEventListener("click", () => {
-    if (!sliderWidth) return;
+  const btnNext = document.querySelector("#slider-btn-next-lrs") as HTMLElement;
+  const btnPrev = document.querySelector("#slider-btn-prev-lrs") as HTMLElement;
 
-    const currSlide = slider?.children.item(activeSlide) as HTMLElement;
-    const nextSlide = slider?.children.item(activeSlide + 1) as HTMLElement;
+  if (slider && sliderWidth) {
+    ([...slider.children] as HTMLElement[]).forEach((el, i) => {
+      el.style.transform = `translateX(0px)`;
+    });
+    // console.log(
+    //   [...slider.children].findIndex(
+    //     (el) => (el as HTMLElement).dataset.slideActived === ""
+    //   )
+    // );
+  }
 
-    if (!currSlide || !nextSlide) return;
+  const handleMoveSlides = ({
+    btn,
+    btnType,
+  }: {
+    btn: HTMLElement;
+    btnType: "next" | "prev";
+  }) => {
+    if (!btn) return;
 
-    currSlide.style.transform = `translateX(-${
-      sliderWidth * (activeSlide + 1)
-    }px)`;
-    nextSlide.style.transform = `translateX(-${
-      sliderWidth * (activeSlide + 1)
-    }px)`;
+    btn.addEventListener("click", () => {
+      if (!sliderWidth || !slider) return;
 
-    activeSlide++;
-  });
+      const activedSlideIndex = [...slider.children].findIndex(
+        (el) => (el as HTMLElement).dataset.slideActived === ""
+      );
 
-  btnPrev?.addEventListener("click", () => {
-    if (!sliderWidth) return;
+      const prevOrNextSlideIndex =
+        btnType === "next" ? activedSlideIndex + 1 : activedSlideIndex - 1;
+      const isNextBtn = btnType === "next";
+      const isPrevBtn = btnType === "prev";
 
-    const currSlide = slider?.children.item(activeSlide) as HTMLElement;
-    const prevSlide = slider?.children.item(activeSlide - 1) as HTMLElement;
+      const currSlide = slider.children.item(activedSlideIndex) as HTMLElement;
+      const prevOrNextSlide = slider.children.item(
+        prevOrNextSlideIndex
+      ) as HTMLElement;
 
-    if (!currSlide || !prevSlide) return;
+      const isSecondSlide = activedSlideIndex === 1;
 
-    currSlide.style.transform = `translateX(-${
-      sliderWidth * (activeSlide - 1)
-    }px)`;
-    prevSlide.style.transform = `translateX(-${
-      sliderWidth * (activeSlide - 1)
-    }px)`;
+      // console.log({ activedSlideMath, isLastSlide });
 
-    activeSlide--;
-  });
+      if (isNextBtn) {
+        const imgClone = slider.firstChild?.cloneNode(true) as HTMLElement;
+        const transformValue = Number(
+          imgClone.style.transform.split("(")[1].split("px")[0]
+        );
+
+        imgClone.style.transform = `translateX(${transformValue}px)`;
+        slider.firstChild?.remove();
+        if (!imgClone) return;
+        slider.append(imgClone);
+      }
+      // activedSlide = isLastSlide ? 0 : activedSlideMath;
+
+      console.log({ remove: activedSlideIndex, add: prevOrNextSlideIndex });
+      slider.children
+        .item(activedSlideIndex)
+        ?.removeAttribute("data-slide-actived");
+      slider.children
+        .item(prevOrNextSlideIndex)
+        ?.setAttribute("data-slide-actived", "");
+
+      ([...slider.children] as HTMLElement[]).forEach((el, i) => {
+        const transformValue =
+          //@ts-ignore
+          sliderWidth - Number(el.style.transform.split("(")[1].split("px")[0]);
+
+        el.style.transform = `translateX(${-transformValue}px)`;
+      });
+
+      // slider.scrollBy({
+      //   left: isNextBtn ? sliderWidth : -sliderWidth,
+      //   behavior: "smooth",
+      // });
+
+      return;
+    });
+
+    btn.addEventListener("dblclick", (e) => {
+      e.preventDefault();
+    });
+  };
+
+  handleMoveSlides({ btn: btnNext, btnType: "next" });
+  handleMoveSlides({ btn: btnPrev, btnType: "prev" });
 </script>

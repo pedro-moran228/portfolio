@@ -1,0 +1,223 @@
+<div id="carousel-container">
+  <div>
+    <ul id="carousel" class="animate">
+      <li class="slide animate">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/nature-1.jpg"
+        />
+        <!-- <img src="LRS/LRS_1.png" /> -->
+      </li>
+      <li class="slide animate">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/nature-2.jpg"
+        />
+        <!-- <img src="LRS/LRS_2.png" /> -->
+      </li>
+      <li class="slide animate">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/nature-3.jpg"
+        />
+        <!-- <img src="LRS/LRS_3.png" /> -->
+      </li>
+      <li class="slide animate">
+        <img
+          src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/nature-4.jpg"
+        />
+        <!-- <img src="LRS/LRS_4.png" /> -->
+      </li>
+    </ul>
+  </div>
+  <div id="controls">
+    <span id="prev"
+      ><img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/prev.png"
+      /></span
+    >
+    <span id="next"
+      ><img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1014830/next.png"
+      /></span
+    >
+  </div>
+</div>
+<style>
+  #carousel-container {
+    width: 500px;
+    height: 332px;
+    position: relative;
+    margin: 50px auto 0;
+    border: 10px solid #000;
+    border-radius: 10px;
+  }
+
+  #carousel-container > div:first-child {
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #carousel {
+    position: relative;
+    width: 5000px;
+    height: 332px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .animate {
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+  }
+
+  .slide {
+    list-style: none;
+    position: relative;
+    float: left;
+    transform: translateX(-500px);
+  }
+
+  #controls {
+    position: absolute;
+    width: 620px;
+    top: calc(50% - 25px);
+    margin: 0 -60px;
+  }
+
+  #controls span {
+    width: 50px;
+    cursor: pointer;
+    opacity: 0.4;
+  }
+
+  #controls span:hover {
+    opacity: 1;
+  }
+
+  #prev {
+    float: left;
+  }
+
+  #next {
+    float: right;
+  }
+</style>
+
+<script>
+  let index = 0,
+    amount = 0,
+    currTransl: number[] = [],
+    translationComplete = true,
+    moveOffset = 0;
+
+  const transitionCompleted = function () {
+    translationComplete = true;
+  };
+
+  const btnPrev = document.getElementById("prev") as HTMLButtonElement;
+  const btnNext = document.getElementById("next") as HTMLButtonElement;
+
+  document.addEventListener("DOMContentLoaded", function (event) {
+    amount = document.getElementsByClassName("slide").length;
+    moveOffset =
+      document.getElementById("carousel-container")?.offsetWidth ?? 0;
+
+    const carousel = document.getElementById("carousel") as HTMLElement;
+
+    // calcuate the width of the carousel
+    carousel.style.width = amount * moveOffset + "px";
+
+    // prevent multiple click when transition
+    for (var i = 0; i < amount; i++) {
+      currTransl[i] = -moveOffset;
+
+      const currSlide = document.getElementsByClassName("slide")[i];
+
+      currSlide.addEventListener("transitionend", transitionCompleted, true);
+      currSlide.addEventListener(
+        "webkitTransitionEnd",
+        transitionCompleted,
+        true
+      );
+      currSlide.addEventListener("oTransitionEnd", transitionCompleted, true);
+      currSlide.addEventListener("MSTransitionEnd", transitionCompleted, true);
+    }
+
+    // add the last item to the start so that translateX(-moveOffset) works (In case the first click is the previous button)
+
+    const firstElement = carousel.firstChild as ChildNode;
+    const lastElement = carousel.lastChild as ChildNode;
+
+    //@ts-ignore
+    console.log(`reverting ${firstElement} to ${lastElement}`);
+    carousel.insertBefore(lastElement, firstElement);
+
+    // add click events to control arrows
+    btnPrev.addEventListener("click", prev, true);
+    btnNext.addEventListener("click", next, true);
+  });
+
+  function prev() {
+    if (translationComplete === true) {
+      translationComplete = false;
+      index--;
+      if (index == -1) {
+        index = amount - 1;
+      }
+      var outerIndex = index % amount;
+      for (var i = 0; i < amount; i++) {
+        var slide = document.getElementsByClassName("slide")[i];
+        //@ts-ignore
+        slide.style.opacity = "1";
+        //@ts-ignore
+        slide.style.transform =
+          //@ts-ignore
+          "translateX(" + (currTransl[i] + moveOffset) + "px)";
+        //@ts-ignore
+        currTransl[i] = currTransl[i] + moveOffset;
+      }
+      var outerSlide = document.getElementsByClassName("slide")[outerIndex];
+      //@ts-ignore
+      outerSlide.style.transform =
+        //@ts-ignore
+        "translateX(" + (currTransl[outerIndex] - moveOffset * amount) + "px)";
+      //@ts-ignore
+      outerSlide.style.opacity = "0";
+      //@ts-ignore
+      currTransl[outerIndex] = currTransl[outerIndex] - moveOffset * amount;
+    }
+  }
+
+  function next() {
+    if (translationComplete === true) {
+      translationComplete = false;
+      var outerIndex = index % amount;
+      index++;
+      for (var i = 0; i < amount; i++) {
+        var slide = document.getElementsByClassName("slide")[i];
+        //@ts-ignore
+        slide.style.opacity = "1";
+        //@ts-ignore
+        slide.style.transform =
+          //@ts-ignore
+          "translateX(" + (currTransl[i] - moveOffset) + "px)";
+        //@ts-ignore
+        currTransl[i] = currTransl[i] - moveOffset;
+      }
+      var outerSlide = document.getElementsByClassName("slide")[outerIndex];
+      //@ts-ignore
+      outerSlide.style.transform =
+        //@ts-ignore
+        "translateX(" + (currTransl[outerIndex] + moveOffset * amount) + "px)";
+      //@ts-ignore
+      outerSlide.style.opacity = "0";
+      //@ts-ignore
+      currTransl[outerIndex] = currTransl[outerIndex] + moveOffset * amount;
+    }
+  }
+</script>
