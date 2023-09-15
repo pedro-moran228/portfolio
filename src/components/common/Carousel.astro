@@ -21,9 +21,9 @@
     `}
   >
     <ul id="carousel" class="flex overflow-hidden p-0 m-0 animate">
-      <img datat-slide="1" src="LRS/LRS_4.png" />
-      <img datat-slide="2" src="LRS/LRS_2.png" />
-      <img datat-slide="3" src="LRS/LRS_3.png" />
+      <img data-slide="1" src="LRS/LRS_4.png" />
+      <img data-slide="2" src="LRS/LRS_2.png" />
+      <img data-slide="3" src="LRS/LRS_3.png" />
     </ul>
     <button
       id="prev"
@@ -94,6 +94,7 @@
 
   window.addEventListener("resize", function () {
     moveOffset = carouselContainer.offsetWidth;
+    index = 0;
     slides.forEach((child) => {
       const slide = child as HTMLElement;
       slide.style.transform = `translateX(-${moveOffset}px)`;
@@ -180,12 +181,6 @@
         slide.style.transform.split("(")[1].split("px")[0]
       );
 
-      console.log({
-        moveOffset,
-        currTransl: currTransl,
-        newTransl: currTransl - moveOffset,
-        i,
-      });
       slide.style.opacity = "1";
       slide.style.transform = "translateX(" + (currTransl - moveOffset) + "px)";
     }
@@ -195,13 +190,6 @@
     const currTransl = Number(
       outerSlide.style.transform.split("(")[1].split("px")[0]
     );
-
-    console.log({
-      moveOffset,
-      currTransl: currTransl,
-      newTransl: currTransl + moveOffset * amount,
-      outerIndex,
-    });
 
     outerSlide.style.transform =
       "translateX(" + (currTransl + moveOffset * amount) + "px)";
