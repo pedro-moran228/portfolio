@@ -1,16 +1,15 @@
 ---
-import AstroIcon from "../Icons/Tech/AstroIcon.astro";
-import HtmlIcon from "../Icons/Tech/HtmlIcon.astro";
-import JavaScriptIcon from "../Icons/Tech/JavaScriptIcon.astro";
-import JestIcon from "../Icons/Tech/JestIcon.astro";
-import NestJsIcon from "../Icons/Tech/NestJsIcon.astro";
-import NextIcon from "../Icons/Tech/NextIcon.astro";
-import PostgreSqlIcon from "../Icons/Tech/PostgreSqlIcon.astro";
-import ReactIcon from "../Icons/Tech/ReactIcon.astro";
-import TailwindcssIcon from "../Icons/Tech/TailwindcssIcon.astro";
-import TypescriptIcon from "../Icons/Tech/TypescriptIcon.astro";
-import ViteIcon from "../Icons/Tech/ViteIcon.astro";
-
+import AstroIcon from "../common/Icons/Tech/AstroIcon.astro";
+import HtmlIcon from "../common/Icons/Tech/HtmlIcon.astro";
+import JavaScriptIcon from "../common/Icons/Tech/JavaScriptIcon.astro";
+import JestIcon from "../common/Icons/Tech/JestIcon.astro";
+import NestJsIcon from "../common/Icons/Tech/NestJsIcon.astro";
+import NextIcon from "../common/Icons/Tech/NextIcon.astro";
+import PostgreSqlIcon from "../common/Icons/Tech/PostgreSqlIcon.astro";
+import ReactIcon from "../common/Icons/Tech/ReactIcon.astro";
+import TailwindcssIcon from "../common/Icons/Tech/TailwindcssIcon.astro";
+import TypescriptIcon from "../common/Icons/Tech/TypescriptIcon.astro";
+import ViteIcon from "../common/Icons/Tech/ViteIcon.astro";
 
 interface Props {
   theme?: "dark" | "light";
@@ -248,7 +247,7 @@ const SASS_Only = technologies?.includes("SASS");
       </li>
     )
   }
-  
+
   {
     Vite_Only && (
       <li>
