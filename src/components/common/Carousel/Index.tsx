@@ -140,21 +140,7 @@ export default function Carousel() {
     >
       <div
         id="carousel-container"
-        class={`
-      w-full h-auto relative overflow-hidden rounded-2xl 
-      [&>img]:transition-transform 
-      [&>img]:duration-500 
-      group
-      after:content-[''] 
-      after:absolute
-      after:top-0 
-      after:left-0 
-      after:w-full 
-      after:h-full
-      after:opacity-0
-      hover:after:opacity-100
-      after:duration-200
-    `}
+        class="w-full h-auto relative overflow-hidden rounded-2xl group"
       >
         <ul id="carousel" class="flex overflow-hidden p-0 m-0 animate">
           <img data-slide="1" src="LRS/LRS_4.png" />
