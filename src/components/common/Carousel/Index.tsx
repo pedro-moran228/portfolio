@@ -1,3 +1,5 @@
+//*Only works with +3 images
+
 import ButtonPrevSlide from "./button-prev-slide/Index";
 import ButtonNextSlide from "./button-next-slide/Index";
 import { signal } from "@preact/signals";
@@ -12,7 +14,6 @@ interface props {
 
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
-
   const currIndex = signal(0);
   const slicesTransition = signal(
     images.map((img) => ({
@@ -20,8 +21,6 @@ export default function Carousel({ images }: props) {
       isTransitioning: false,
     }))
   );
-
-  const amount = images.length;
 
   return (
     <section class="relative mt-10 h-auto container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]">
@@ -49,7 +48,7 @@ export default function Carousel({ images }: props) {
         <ButtonPrevSlide
           handleOnClick={() =>
             handleOnClickPrevSlice({
-              amount,
+              amount: images.length,
               currIndex,
               slicesTransition,
               carouselRef,
@@ -59,7 +58,7 @@ export default function Carousel({ images }: props) {
         <ButtonNextSlide
           handleOnClick={() =>
             handleOnClickNextSlice({
-              amount,
+              amount: images.length,
               currIndex,
               slicesTransition,
               carouselRef,
