@@ -6,22 +6,29 @@ import { signal } from "@preact/signals";
 import { handleOnClickNextSlice } from "./helpers/handle-on-click-next-slice";
 import { handleOnTransitionEnd } from "./helpers/handle-on-transition-end";
 import { handleOnClickPrevSlice } from "./helpers/handle-on-click-prev-slice";
-import { useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import { DotIcon } from "./dot-icon";
+import ButtonPlayCarousel from "./button-play-carousel/Index";
+import { ProgressBar } from "./helpers/progress-bar";
 
 interface props {
   images: string[];
 }
 
+const currIndex = signal(0);
+const slicesTransition = signal([]);
+// const isPlaying = signal(false);
+
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
-  const currIndex = signal(0);
-  const slicesTransition = signal(
-    images.map((img) => ({
+  const outerIndex = currIndex.value % images.length;
+
+  useEffect(() => {
+    slicesTransition.value = images.map((img) => ({
       src: img,
       isTransitioning: false,
-    }))
-  );
+    }));
+  }, []);
 
   return (
     <section>
@@ -47,33 +54,47 @@ export default function Carousel({ images }: props) {
               />
             ))}
           </ul>
-          <ButtonPrevSlide
-            handleOnClick={() =>
-              handleOnClickPrevSlice({
-                amount: images.length,
-                currIndex,
-                slicesTransition,
-                carouselRef,
-              })
-            }
-          />
-          <ButtonNextSlide
-            handleOnClick={() =>
-              handleOnClickNextSlice({
-                amount: images.length,
-                currIndex,
-                slicesTransition,
-                carouselRef,
-              })
-            }
-          />
+          <section class="opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150">
+            <div class="absolute bottom-0 left-0 w-full h-[300%] bg-gradient-to-t from-gray-900/30 -z-10"></div>
+            <ProgressBar amount={images.length} outerIndex={outerIndex} />
+            <ButtonPrevSlide
+              handleOnClick={() =>
+                handleOnClickPrevSlice({
+                  amount: images.length,
+                  currIndex,
+                  slicesTransition,
+                  carouselRef,
+                })
+              }
+            />
+            <ButtonPlayCarousel
+              handleOnClick={() =>
+                handleOnClickPrevSlice({
+                  amount: images.length,
+                  currIndex,
+                  slicesTransition,
+                  carouselRef,
+                })
+              }
+            />
+            <ButtonNextSlide
+              handleOnClick={() =>
+                handleOnClickNextSlice({
+                  amount: images.length,
+                  currIndex,
+                  slicesTransition,
+                  carouselRef,
+                })
+              }
+            />
+          </section>
         </div>
       </section>
-      <footer class="w-fit mt-5 mx-auto space-x-2">
-        {images.map((img, i) => (
-          <DotIcon currIndex={currIndex} index={i} amount={images.length} />
+      {/* <footer class="w-fit m-auto mt-5 space-x-2">
+        {images.map((_, i) => (
+          <DotIcon isActived={i === outerIndex} />
         ))}
-      </footer>
+      </footer> */}
     </section>
   );
 }

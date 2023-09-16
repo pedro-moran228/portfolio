@@ -3,21 +3,19 @@ interface props {
 }
 export default function ButtonPrevSlide({ handleOnClick }: props) {
   return (
-    <button
-      id="prev"
-      onClick={handleOnClick}
-      class="left-0 opacity-0 h-full absolute z-20 top-1/2 -translate-y-1/2 w-[80px] flex-center group-hover:flex hover:scale-125 duration-150 bg-gradient-to-r from-gray-900/50 group-hover:opacity-100"
-    >
+    <button class="mr-3 text-currentColor" onClick={handleOnClick}>
       <svg
-        stroke="#FFF"
-        fill="#FFF"
-        class="rotate-180 transform group-hover:scale-125 transition-transform duration-100"
-        viewBox="0 0 1024 1024"
-        height="20px"
-        width="20px"
+        width="18"
+        height="18"
+        viewBox="0 0 100 100"
+        fill="currentcolor"
         xmlns="http://www.w3.org/2000/svg"
+        class="rotate-180"
       >
-        <path d="M271.653 1023.192c-8.685 0-17.573-3.432-24.238-10.097-13.33-13.33-13.33-35.144 0-48.474L703.67 508.163 254.08 58.573c-13.33-13.331-13.33-35.145 0-48.475 13.33-13.33 35.143-13.33 48.473 0L776.38 483.925c13.33 13.33 13.33 35.143 0 48.473l-480.492 480.694c-6.665 6.665-15.551 10.099-24.236 10.099z"></path>
+        <path
+          d="M16.4062 1.93231C13.4375 -0.124607 9.28125 -0.59327 5.75 0.786686C2.21875 2.16664 0 5.10881 0 8.33739V91.6555C0 94.8841 2.25 97.8262 5.75 99.2062C9.25 100.586 13.4062 100.144 16.4062 98.0606L76.4062 56.4015L80 53.902V91.6555C80 96.264 84.4687 99.9873 90 99.9873C95.5313 99.9873 100 96.264 100 91.6555V8.33739C100 3.72886 95.5313 0.00557909 90 0.00557909C84.4687 0.00557909 80 3.72886 80 8.33739V46.0909L76.4062 43.5914L16.4062 1.93231Z"
+          fill="currentcolor"
+        />
       </svg>
     </button>
   );

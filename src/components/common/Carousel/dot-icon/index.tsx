@@ -1,12 +1,9 @@
 import classNames from "classnames";
 
 interface props {
-  currIndex: { value: number };
-  amount: number;
-  index: number;
+  isActived: boolean;
 }
-export const DotIcon = ({ currIndex, index, amount }: props) => {
-  const isActived = currIndex.value % amount === index;
+export const DotIcon = ({ isActived }: props) => {
   return (
     <button
       class={classNames(
