@@ -1,10 +1,13 @@
 ---
+import Carousel from "../../common/Carousel/Index";
 import Technologies from "../../common/Technologies.astro";
 ---
 
-<article id="box-project-experience" class="relative space-y-12 z-0 pt-[200px]">
-  <!-- <TimeLapseLine label="2023" /> -->
-  <header class="container-sm">
+<article
+  id="box-project-experience"
+  class="container-sm relative space-y-12 z-0 pt-[200px]"
+>
+  <header>
     <h3 class="text-current">Crowdar Academy</h3>
     <p>
       Recreé por completo el nuevo sitio de <a
@@ -23,17 +26,16 @@ import Technologies from "../../common/Technologies.astro";
       responsive.
     </p>
   </header>
-  <div
-    class="container-sm rounded-2xl overflow-hidden aspect-video shadow-[0px_0px_40px_10px_#0000006e]"
-  >
-    <img
-      loading="lazy"
-      class="w-full h-full object-cover"
-      src="academy/desktop1.jpg"
-      alt="academy"
-    />
-  </div>
-  <footer class="container-sm mr-auto space-y-12">
+  <Carousel
+    images={[
+      "academy/CA_4.png",
+      "academy/CA_1.png",
+      "academy/CA_2.png",
+      "academy/CA_3.png",
+    ]}
+    client:visible
+  />
+  <footer class="mr-auto space-y-12">
     <section>
       <p>Entre algunas de las caracterisiticas se encuentran:</p>
       <ul class="space-y-1 mt-2 [&>li]:marker">

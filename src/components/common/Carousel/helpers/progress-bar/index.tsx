@@ -21,7 +21,7 @@ export const ProgressBar = ({
     const intervalID = setInterval(() => {
       if (!isPlaying.value) return;
       handleOnInterval();
-    }, 1000);
+    }, 4000);
     return () => clearInterval(intervalID);
   }, [isPlaying.value]);
 
