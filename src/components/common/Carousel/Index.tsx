@@ -7,23 +7,21 @@ import { handleOnClickNextSlice } from "./helpers/handle-on-click-next-slice";
 import { handleOnTransitionEnd } from "./helpers/handle-on-transition-end";
 import { handleOnClickPrevSlice } from "./helpers/handle-on-click-prev-slice";
 import { useEffect, useRef } from "preact/hooks";
-import { DotIcon } from "./dot-icon";
 import ButtonPlayCarousel from "./button-play-carousel/Index";
 import { ProgressBar } from "./helpers/progress-bar";
 import ButtonPauseCarousel from "./button-pause-carousel/Index";
 import classNames from "classnames";
+import { DotList } from "./dot-list";
 
 interface props {
   images: string[];
 }
 
-const currIndex = signal(0);
-const slicesTransition = signal([]);
-const isPlaying = signal(true);
-
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
-  const outerIndex = currIndex.value % images.length;
+  const slicesTransition = signal([]);
+  const currIndex = signal(0);
+  const isPlaying = signal(true);
 
   useEffect(() => {
     slicesTransition.value = images.map((img) => ({
@@ -32,20 +30,14 @@ export default function Carousel({ images }: props) {
     }));
   }, []);
 
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      if (!isPlaying.value) return;
-
-      handleOnClickNextSlice({
-        amount: images.length,
-        currIndex,
-        slicesTransition,
-        carouselRef,
-      });
-    }, 4000);
-
-    return () => clearInterval(intervalID);
-  }, [isPlaying]);
+  const handleOnInterval = () => {
+    handleOnClickNextSlice({
+      amount: images.length,
+      currIndex,
+      slicesTransition,
+      carouselRef,
+    });
+  };
 
   return (
     <section class="relative mt-10 mb-20 h-auto w-full rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]">
@@ -72,12 +64,17 @@ export default function Carousel({ images }: props) {
         </ul>
         <section
           class={classNames(
-            "opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150",
-            { "opacity-100": !isPlaying.value }
+            "opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150"
+            // { "opacity-100": !isPlaying.value }
           )}
         >
           <div class="absolute bottom-0 left-0 w-full h-[500%] bg-gradient-to-t from-gray-900/30 -z-10"></div>
-          <ProgressBar amount={images.length} outerIndex={outerIndex} />
+          <ProgressBar
+            amount={images.length}
+            currIndex={currIndex}
+            handleOnInterval={handleOnInterval}
+            isPlaying={isPlaying}
+          />
           <ButtonPrevSlide
             handleOnClick={() =>
               handleOnClickPrevSlice({
@@ -89,12 +86,12 @@ export default function Carousel({ images }: props) {
             }
           />
           <ButtonPlayCarousel
-            hidden={isPlaying.value}
             handleOnClick={() => (isPlaying.value = true)}
+            isPlaying={isPlaying}
           />
           <ButtonPauseCarousel
-            hidden={!isPlaying.value}
             handleOnClick={() => (isPlaying.value = false)}
+            isPlaying={isPlaying}
           />
           <ButtonNextSlide
             handleOnClick={() =>
@@ -108,11 +105,7 @@ export default function Carousel({ images }: props) {
           />
         </section>
       </div>
-      <footer class="absolute opacity-100 -bottom-14 left-1/2 -translate-x-1/2 w-fit space-x-2 transition-opacity duration-100">
-        {images.map((_, i) => (
-          <DotIcon isActived={i === outerIndex} />
-        ))}
-      </footer>
+      <DotList currIndex={currIndex} images={images} />
     </section>
   );
 }

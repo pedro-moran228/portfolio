@@ -2,14 +2,17 @@ import classNames from "classnames";
 
 interface props {
   handleOnClick: () => void;
-  hidden: boolean;
+  isPlaying: { value: boolean };
 }
-export default function ButtonPauseCarousel({ handleOnClick, hidden }: props) {
+export default function ButtonPauseCarousel({
+  handleOnClick,
+  isPlaying,
+}: props) {
   return (
     <button
       aria-label="Pause button"
       onClick={handleOnClick}
-      class={classNames("mr-4 text-currentColor", { hidden })}
+      class={classNames("mr-4 text-currentColor", { hidden: !isPlaying.value })}
     >
       <svg width="20" height="20" viewBox="0 0 100 100" fill="currentColor">
         <path

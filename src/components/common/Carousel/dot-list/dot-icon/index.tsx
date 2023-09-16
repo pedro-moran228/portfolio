@@ -5,12 +5,12 @@ interface props {
 }
 export const DotIcon = ({ isActived }: props) => {
   return (
-    <button
+    <i
       class={classNames(
         "inline-block w-[20px] h-[20px] rounded bg-secondary duration-100",
-        { "brightness-150": isActived },
-        { "hover:brightness-125": !isActived }
+        { "brightness-150": isActived }
+        // { "hover:brightness-125": !isActived }
       )}
-    ></button>
+    ></i>
   );
 };

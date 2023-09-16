@@ -1,15 +1,21 @@
 import classNames from "classnames";
+import { useEffect } from "preact/hooks";
 
 interface props {
   handleOnClick: () => void;
-  hidden: boolean;
+  isPlaying: { value: boolean };
 }
-export default function ButtonPlayCarousel({ handleOnClick, hidden }: props) {
+export default function ButtonPlayCarousel({
+  handleOnClick,
+  isPlaying,
+}: props) {
   return (
     <button
       aria-label="Play button"
       onClick={handleOnClick}
-      class={classNames("mr-4 text-currentColor pl-[2px]", { hidden })}
+      class={classNames("mr-4 text-currentColor pl-[2px]", {
+        hidden: isPlaying.value,
+      })}
     >
       <svg width="18" height="18" viewBox="0 0 100 100" fill="currentColor">
         <path

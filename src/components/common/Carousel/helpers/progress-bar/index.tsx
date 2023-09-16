@@ -1,11 +1,30 @@
 import classNames from "classnames";
+import { useEffect } from "preact/hooks";
 
 interface props {
-  outerIndex: number;
+  currIndex: { value: number };
   amount: number;
+  isPlaying: { value: boolean };
+  handleOnInterval: () => void;
 }
-export const ProgressBar = ({ amount, outerIndex }: props) => {
+export const ProgressBar = ({
+  amount,
+  currIndex,
+  isPlaying,
+  handleOnInterval,
+}: props) => {
   const sliceWidthPercentage = Math.ceil(100 / (amount - 1));
+  const outerIndex = currIndex.value % amount;
+  const progressWidth = `${sliceWidthPercentage * outerIndex}%`;
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      if (!isPlaying.value) return;
+      handleOnInterval();
+    }, 1000);
+    return () => clearInterval(intervalID);
+  }, [isPlaying.value]);
+
   return (
     <div
       aria-label="progress bar"
@@ -13,14 +32,14 @@ export const ProgressBar = ({ amount, outerIndex }: props) => {
         "absolute top-[-4px] left-0 w-full h-[3px] bg-white/80"
       )}
     >
-      <div
+      <i
+        aria-label="progress highlight"
         style={{
-          width: `${sliceWidthPercentage * outerIndex}%`,
+          width: progressWidth,
           transitionProperty: "width",
-          transitionDuration: "500ms",
         }}
-        class={classNames("h-full bg-secondary")}
-      ></div>
+        class={classNames("block h-full bg-secondary duration-500")}
+      ></i>
     </div>
   );
 };
