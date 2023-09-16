@@ -16,6 +16,8 @@ export const ProgressBar = ({ amount, outerIndex }: props) => {
       <div
         style={{
           width: `${sliceWidthPercentage * outerIndex}%`,
+          transitionProperty: "width",
+          transitionDuration: "500ms",
         }}
         class={classNames("h-full bg-secondary")}
       ></div>
