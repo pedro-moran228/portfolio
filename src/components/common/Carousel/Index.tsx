@@ -18,7 +18,7 @@ interface props {
 
 const currIndex = signal(0);
 const slicesTransition = signal([]);
-const isPlaying = signal(false);
+const isPlaying = signal(true);
 
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
@@ -30,6 +30,21 @@ export default function Carousel({ images }: props) {
       isTransitioning: false,
     }));
   }, []);
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      if (!isPlaying.value) return;
+
+      handleOnClickNextSlice({
+        amount: images.length,
+        currIndex,
+        slicesTransition,
+        carouselRef,
+      });
+    }, 4000);
+
+    return () => clearInterval(intervalID);
+  }, [isPlaying]);
 
   return (
     <section class="relative mt-10 mb-20 h-auto container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]">
