@@ -3,7 +3,7 @@ interface props {
 }
 export default function ButtonPrevSlide({ handleOnClick }: props) {
   return (
-    <button class="mr-3 text-currentColor" onClick={handleOnClick}>
+    <button class="mr-4 text-currentColor" onClick={handleOnClick}>
       <svg
         width="18"
         height="18"

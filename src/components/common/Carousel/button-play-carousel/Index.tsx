@@ -1,12 +1,15 @@
+import classNames from "classnames";
+
 interface props {
   handleOnClick: () => void;
+  hidden: boolean;
 }
-export default function ButtonPlayCarousel({ handleOnClick }: props) {
+export default function ButtonPlayCarousel({ handleOnClick, hidden }: props) {
   return (
     <button
       aria-label="Play button"
       onClick={handleOnClick}
-      class="mr-3 text-currentColor pl-[2px]"
+      class={classNames("mr-4 text-currentColor pl-[2px]", { hidden })}
     >
       <svg width="18" height="18" viewBox="0 0 100 100" fill="currentColor">
         <path

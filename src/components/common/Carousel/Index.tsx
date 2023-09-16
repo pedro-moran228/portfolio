@@ -10,6 +10,7 @@ import { useEffect, useRef } from "preact/hooks";
 import { DotIcon } from "./dot-icon";
 import ButtonPlayCarousel from "./button-play-carousel/Index";
 import { ProgressBar } from "./helpers/progress-bar";
+import ButtonPauseCarousel from "./button-pause-carousel/Index";
 
 interface props {
   images: string[];
@@ -17,7 +18,7 @@ interface props {
 
 const currIndex = signal(0);
 const slicesTransition = signal([]);
-// const isPlaying = signal(false);
+const isPlaying = signal(false);
 
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
@@ -67,14 +68,12 @@ export default function Carousel({ images }: props) {
             }
           />
           <ButtonPlayCarousel
-            handleOnClick={() =>
-              handleOnClickPrevSlice({
-                amount: images.length,
-                currIndex,
-                slicesTransition,
-                carouselRef,
-              })
-            }
+            hidden={isPlaying.value}
+            handleOnClick={() => (isPlaying.value = true)}
+          />
+          <ButtonPauseCarousel
+            hidden={!isPlaying.value}
+            handleOnClick={() => (isPlaying.value = false)}
           />
           <ButtonNextSlide
             handleOnClick={() =>
