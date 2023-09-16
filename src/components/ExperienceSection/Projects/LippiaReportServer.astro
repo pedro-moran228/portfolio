@@ -1,6 +1,5 @@
 ---
 import Carousel from "../../common/Carousel/Index";
-import CarouselAstro from "../../common/CarouselAstro.astro";
 import Technologies from "../../common/Technologies.astro";
 ---
 
@@ -21,8 +20,10 @@ import Technologies from "../../common/Technologies.astro";
       <li>Estados globales con <span class="font-bold">useContext</span>.</li>
     </ul>
   </header>
-  <!-- <CarouselAstro /> -->
-  <Carousel />
+  <Carousel
+    images={["LRS/LRS_4.png", "LRS/LRS_2.png", "LRS/LRS_3.png"]}
+    client:visible
+  />
   <footer class="container-sm space-y-12 mt-12">
     <p>
       Mi participación en el proyecto fue de <span class="font-bold"

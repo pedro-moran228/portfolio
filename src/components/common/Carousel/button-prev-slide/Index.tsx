@@ -1,7 +1,11 @@
-export default function ButtonPrevSlide() {
+interface props {
+  handleOnClick: () => void;
+}
+export default function ButtonPrevSlide({ handleOnClick }: props) {
   return (
     <button
       id="prev"
+      onClick={handleOnClick}
       class="left-0 opacity-0 h-full absolute z-20 top-1/2 -translate-y-1/2 w-[80px] flex-center group-hover:flex hover:scale-125 duration-150 bg-gradient-to-r from-gray-900/50 group-hover:opacity-100"
     >
       <svg

@@ -1,7 +1,11 @@
-export default function ButtonNextSlide() {
+interface props {
+  handleOnClick: () => void;
+}
+export default function ButtonNextSlide({ handleOnClick }: props) {
   return (
     <button
       id="next"
+      onClick={handleOnClick}
       class="right-0 opacity-0 h-full absolute z-20 top-1/2 -translate-y-1/2 w-[80px] flex-center group-hover:flex hover:scale-125 duration-150 bg-gradient-to-l from-gray-900/50 group-hover:opacity-100"
     >
       <svg
