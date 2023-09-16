@@ -11,6 +11,7 @@ import { DotIcon } from "./dot-icon";
 import ButtonPlayCarousel from "./button-play-carousel/Index";
 import { ProgressBar } from "./helpers/progress-bar";
 import ButtonPauseCarousel from "./button-pause-carousel/Index";
+import classNames from "classnames";
 
 interface props {
   images: string[];
@@ -18,7 +19,7 @@ interface props {
 
 const currIndex = signal(0);
 const slicesTransition = signal([]);
-const isPlaying = signal(true);
+const isPlaying = signal(false);
 
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
@@ -69,7 +70,10 @@ export default function Carousel({ images }: props) {
             />
           ))}
         </ul>
-        <section class="opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150">
+        <section class={classNames(
+          "opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150",
+          {"opacity-100": !isPlaying.value},
+        )}>
           <div class="absolute bottom-0 left-0 w-full h-[500%] bg-gradient-to-t from-gray-900/30 -z-10"></div>
           <ProgressBar amount={images.length} outerIndex={outerIndex} />
           <ButtonPrevSlide
