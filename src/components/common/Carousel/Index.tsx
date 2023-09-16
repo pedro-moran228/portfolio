@@ -58,6 +58,7 @@ export default function Carousel({ images }: props) {
               style="transform: translateX(-100%); margin: 0px;"
               class="transition-transform duration-500"
               data-slide={i}
+              loading="lazy"
               src={image}
             />
           ))}
