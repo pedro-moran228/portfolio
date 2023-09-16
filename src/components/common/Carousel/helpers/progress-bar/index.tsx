@@ -10,7 +10,7 @@ export const ProgressBar = ({ amount, outerIndex }: props) => {
     <div
       aria-label="progress bar"
       class={classNames(
-        "absolute top-[-4px] left-0 w-full h-[4px] bg-gray-50/50"
+        "absolute top-[-4px] left-0 w-full h-[3px] bg-white/80"
       )}
     >
       <div
