@@ -31,7 +31,7 @@ export default function Carousel({ images }: props) {
   }, []);
 
   return (
-    <section class="relative mt-10 mb-20 h-auto container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e] group">
+    <section class="relative mt-10 mb-20 h-auto container-sm rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]">
       <div class="w-full h-auto relative overflow-hidden rounded-2xl group">
         <ul
           ref={carouselRef}
