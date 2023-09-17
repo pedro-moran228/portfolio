@@ -12,57 +12,38 @@ import { ProgressBar } from "./helpers/progress-bar";
 import ButtonPauseCarousel from "./button-pause-carousel/Index";
 import classNames from "classnames";
 import { DotList } from "./dot-list";
+import { SlicesList } from "./slices-list";
 
 interface props {
   images: string[];
 }
 
+export type SliceTransition = {
+  src: string;
+  isTransitioning: boolean;
+};
+
 export default function Carousel({ images }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
-  const slicesTransition = signal([]);
   const currIndex = signal(0);
   const isPlaying = signal(true);
-
-  useEffect(() => {
-    slicesTransition.value = images.map((img) => ({
-      src: img,
-      isTransitioning: false,
-    }));
-  }, []);
 
   const handleOnInterval = () => {
     handleOnClickNextSlice({
       amount: images.length,
       currIndex,
-      slicesTransition,
       carouselRef,
     });
   };
 
   return (
-    <section class="relative mt-10 mb-20 h-auto w-full rounded-2xl shadow-[0px_0px_40px_10px_#0000006e]">
+    <section class="relative mt-10 mb-20 h-auto w-full rounded-2xl shadow-[0px_0px_40px_10px_#0000006e] aspect-[16/8.10]">
       <div class="w-full h-auto relative overflow-hidden rounded-2xl group">
-        <ul
-          ref={carouselRef}
-          class="flex overflow-hidden p-0 m-0"
-          onTransitionEnd={(event) =>
-            handleOnTransitionEnd({
-              event,
-              slicesTransition,
-            })
-          }
-        >
-          {images.map((image, i) => (
-            <img
-              key={image}
-              style="transform: translateX(-100%); margin: 0px;"
-              class="transition-transform duration-500"
-              data-slide={i}
-              loading="lazy"
-              src={image}
-            />
-          ))}
-        </ul>
+        <SlicesList
+          carouselRef={carouselRef}
+          images={images}
+          currIndex={currIndex}
+        />
         <section
           class={classNames(
             "opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150"
@@ -81,7 +62,6 @@ export default function Carousel({ images }: props) {
               handleOnClickPrevSlice({
                 amount: images.length,
                 currIndex,
-                slicesTransition,
                 carouselRef,
               })
             }
@@ -99,7 +79,6 @@ export default function Carousel({ images }: props) {
               handleOnClickNextSlice({
                 amount: images.length,
                 currIndex,
-                slicesTransition,
                 carouselRef,
               })
             }

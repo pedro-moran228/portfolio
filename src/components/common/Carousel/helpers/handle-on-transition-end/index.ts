@@ -1,19 +1,13 @@
+import type { MutableRef } from "preact/hooks";
+import { TRANSITION_FLAG } from "../transition-flag";
+
 interface props {
-  slicesTransition: { value: { src: string; isTransitioning: boolean }[] };
   event: TransitionEvent;
+  carouselRef: MutableRef<HTMLUListElement>;
 }
-export const handleOnTransitionEnd = ({ event, slicesTransition }: props) => {
+export const handleOnTransitionEnd = ({ event, carouselRef }: props) => {
   if (event.propertyName !== "transform") return;
 
-  const targetImgSrc = (event.target as HTMLImageElement).getAttribute("src");
-  const newSlicesTransition = slicesTransition.value.map((slice) => {
-    if (slice.src !== targetImgSrc) return slice;
-
-    return {
-      ...slice,
-      isTransitioning: false,
-    };
-  });
-
-  slicesTransition.value = newSlicesTransition;
+  const targetIndex = (event.target as HTMLImageElement).dataset.index;
+  carouselRef.current?.children[targetIndex].classList.remove(TRANSITION_FLAG);
 };

@@ -1,11 +1,12 @@
-interface props {
-  slicesTransition: { value: { src: string; isTransitioning: boolean }[] };
-}
-export const handleActivateTransition = ({ slicesTransition }: props) => {
-  const newSlicesTransition = slicesTransition.value.map((slice) => ({
-    ...slice,
-    isTransitioning: true,
-  }));
+import type { MutableRef } from "preact/hooks";
+import { TRANSITION_FLAG } from "../transition-flag";
 
-  slicesTransition.value = newSlicesTransition;
+interface props {
+  carouselRef: MutableRef<HTMLUListElement>;
+}
+
+export const handleActivateTransition = ({ carouselRef }: props) => {
+  [...carouselRef.current?.children].forEach((child) =>
+    child.classList.add(TRANSITION_FLAG)
+  );
 };

@@ -22,7 +22,7 @@ export const handleOnClickPlaySlice = ({
 
   if (isTransitioning) return;
 
-  handleActivateTransition({ slicesTransition });
+  handleActivateTransition({ carouselRef });
 
   const carousel = carouselRef.current;
   const slices = [...carousel.children] as HTMLElement[];

@@ -2,27 +2,26 @@ import type { MutableRef } from "preact/hooks";
 import { handleActivateTransition } from "../handle-activate-transition";
 import { handleTranslateSliceOnTheLeftSide } from "../handle-translate-slice-on-the-left-side";
 import { handleTranslateSlices } from "../handle-translate-slices";
+import { TRANSITION_FLAG } from "../transition-flag";
 
 interface props {
   amount: number;
   currIndex: { value: number };
-  slicesTransition: { value: { src: string; isTransitioning: boolean }[] };
   carouselRef: MutableRef<HTMLUListElement>;
 }
 
 export const handleOnClickNextSlice = ({
   amount,
   currIndex,
-  slicesTransition,
   carouselRef,
 }: props) => {
-  const isTransitioning = slicesTransition.value.some(
-    (slice) => slice.isTransitioning
+  const isTransitioning = [...carouselRef.current?.children]?.some((child) =>
+    child.classList.contains(TRANSITION_FLAG)
   );
 
   if (isTransitioning) return;
 
-  handleActivateTransition({ slicesTransition });
+  handleActivateTransition({ carouselRef });
 
   const carousel = carouselRef.current;
   const slices = [...carousel.children] as HTMLElement[];

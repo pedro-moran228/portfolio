@@ -1,3 +1,5 @@
+import { TRANSITION_FLAG } from "../transition-flag";
+
 export const handleTranslateSlices = ({
   amount,
   slices,
@@ -17,6 +19,7 @@ export const handleTranslateSlices = ({
     );
     const newTranslPer = isNext ? currTranslPer - 100 : currTranslPer + 100;
 
+    slice.classList.add(TRANSITION_FLAG);
     slice.style.opacity = "1";
     slice.style.transform = `translateX(${newTranslPer}%)`;
   }
