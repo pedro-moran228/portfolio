@@ -14,11 +14,6 @@ import GmailButton from "./GmailButton.astro";
         style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
       >
         <img
-          class="absolute opacity-5 -z-10 w-full h-full"
-          src="noise.gif"
-          alt="noise"
-        />
-        <img
           src="profile_bg_high.png"
           fetchpriority="high"
           loading="eager"
@@ -74,33 +69,3 @@ import GmailButton from "./GmailButton.astro";
     <GmailButton />
   </footer>
 </main>
-
-<script>
-  const profileFooter = document.getElementById("profile-footer");
-
-  profileFooter?.addEventListener("mouseover", (e) => {
-    const target = e.target as HTMLElement;
-    const isAchor = target.closest("a");
-    if (!isAchor) return;
-
-    [...profileFooter.children].forEach((a) => {
-      if (isAchor.getAttribute("aria-label") === a.getAttribute("aria-label"))
-        return;
-
-      a.classList.add("opacity-50");
-    });
-  });
-
-  profileFooter?.addEventListener("mouseout", (e) => {
-    const target = e.target as HTMLElement;
-    const isAchor = target.closest("a");
-    if (!isAchor) return;
-
-    [...profileFooter.children].forEach((a) => {
-      if (isAchor.getAttribute("aria-label") === a.getAttribute("aria-label"))
-        return;
-
-      a.classList.remove("opacity-50");
-    });
-  });
-</script>

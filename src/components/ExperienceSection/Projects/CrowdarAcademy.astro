@@ -26,12 +26,16 @@ import Technologies from "../../common/Technologies.astro";
       responsive.
     </p>
   </header>
+  <!-- "academy/CA_4.jpg",
+  "academy/CA_1.jpg",
+  "academy/CA_2.jpg",
+  "academy/CA_3.jpg", -->
   <Carousel
-    images={[
-      "academy/CA_4.jpg",
-      "academy/CA_1.jpg",
-      "academy/CA_2.jpg",
-      "academy/CA_3.jpg",
+    slices={[
+      { imgSrc: "academy/png/4.png", maskSrc: "academy/mask/4.avif" },
+      { imgSrc: "academy/png/1.png", maskSrc: "academy/mask/1.avif" },
+      { imgSrc: "academy/png/2.png", maskSrc: "academy/mask/2.avif" },
+      { imgSrc: "academy/png/3.png", maskSrc: "academy/mask/3.avif" },
     ]}
     client:visible
   />

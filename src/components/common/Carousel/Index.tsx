@@ -15,22 +15,26 @@ import { DotList } from "./dot-list";
 import { SlicesList } from "./slices-list";
 
 interface props {
-  images: string[];
+  slices: {
+    imgSrc: string;
+    maskSrc: string;
+  }[];
 }
 
-export type SliceTransition = {
-  src: string;
-  isTransitioning: boolean;
+export type SliceT = {
+  imgSrc: string;
+  maskSrc: string;
 };
 
-export default function Carousel({ images }: props) {
+export default function Carousel({ slices }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
   const currIndex = signal(0);
-  const isPlaying = signal(true);
+  const isPlaying = signal(false);
+  const amount = slices.length;
 
   const handleOnInterval = () => {
     handleOnClickNextSlice({
-      amount: images.length,
+      amount,
       currIndex,
       carouselRef,
     });
@@ -41,7 +45,7 @@ export default function Carousel({ images }: props) {
       <div class="w-full h-auto relative overflow-hidden rounded-2xl group">
         <SlicesList
           carouselRef={carouselRef}
-          images={images}
+          slices={slices}
           currIndex={currIndex}
         />
         <section
@@ -52,7 +56,7 @@ export default function Carousel({ images }: props) {
         >
           <div class="absolute bottom-0 left-0 w-full h-[500%] bg-gradient-to-t from-gray-900/30 -z-10"></div>
           <ProgressBar
-            amount={images.length}
+            amount={amount}
             currIndex={currIndex}
             handleOnInterval={handleOnInterval}
             isPlaying={isPlaying}
@@ -60,7 +64,7 @@ export default function Carousel({ images }: props) {
           <ButtonPrevSlide
             handleOnClick={() =>
               handleOnClickPrevSlice({
-                amount: images.length,
+                amount,
                 currIndex,
                 carouselRef,
               })
@@ -77,7 +81,7 @@ export default function Carousel({ images }: props) {
           <ButtonNextSlide
             handleOnClick={() =>
               handleOnClickNextSlice({
-                amount: images.length,
+                amount,
                 currIndex,
                 carouselRef,
               })
@@ -85,7 +89,7 @@ export default function Carousel({ images }: props) {
           />
         </section>
       </div>
-      <DotList currIndex={currIndex} images={images} />
+      <DotList currIndex={currIndex} amount={amount} />
     </section>
   );
 }
