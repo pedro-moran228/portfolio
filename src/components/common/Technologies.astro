@@ -1,15 +1,18 @@
 ---
-import AstroIcon from "../common/Icons/Tech/AstroIcon.astro";
-import HtmlIcon from "../common/Icons/Tech/HtmlIcon.astro";
-import JavaScriptIcon from "../common/Icons/Tech/JavaScriptIcon.astro";
-import JestIcon from "../common/Icons/Tech/JestIcon.astro";
-import NestJsIcon from "../common/Icons/Tech/NestJsIcon.astro";
-import NextIcon from "../common/Icons/Tech/NextIcon.astro";
-import PostgreSqlIcon from "../common/Icons/Tech/PostgreSqlIcon.astro";
-import ReactIcon from "../common/Icons/Tech/ReactIcon.astro";
-import TailwindcssIcon from "../common/Icons/Tech/TailwindcssIcon.astro";
-import TypescriptIcon from "../common/Icons/Tech/TypescriptIcon.astro";
-import ViteIcon from "../common/Icons/Tech/ViteIcon.astro";
+import AstroIcon from "./Icons/Tech/AstroItem.astro";
+import TestingLibraryIcon from "./Icons/Tech/TestingLibraryItem.astro";
+import HtmlIcon from "./Icons/Tech/HtmlItem.astro";
+import JavaScriptIcon from "./Icons/Tech/JavaScriptItem.astro";
+import JestIcon from "./Icons/Tech/JestItem.astro";
+import NestJsIcon from "./Icons/Tech/NestJsItem.astro";
+import NextJsItem from "../common/Icons/Tech/NextJsItem.astro";
+import PostgreSqlIcon from "./Icons/Tech/PostgreSqltem.astro";
+import ReactIcon from "./Icons/Tech/ReactItem.astro";
+import TailwindcssIcon from "./Icons/Tech/TailwindcssItem.astro";
+import TypescriptIcon from "./Icons/Tech/TypescriptItem.astro";
+import ViteItem from "./Icons/Tech/ViteItem.astro";
+import SassItem from "./Icons/Tech/SassItem.astro";
+import CssItem from "./Icons/Tech/CssItem.astro";
 
 interface Props {
   theme?: "dark" | "light";
@@ -34,21 +37,24 @@ interface Props {
 
 const { theme = "light", grid3Col = false, technologies } = Astro.props;
 
-const HTML_Only = !technologies || technologies.includes("HTML");
-const CSS_Only = !technologies || technologies.includes("CSS");
-const JavaCcript_Only = !technologies || technologies.includes("JavaCcript");
-const TypeScript_Only = !technologies || technologies.includes("TypeScript");
-const Astro_Only = !technologies || technologies.includes("Astro");
-const React_Only = !technologies || technologies.includes("React");
-const Tailwind_Only = !technologies || technologies.includes("Tailwind");
-const Testing_Library_Only =
-  !technologies || technologies.includes("Testing_Library");
-const Jest_Only = !technologies || technologies.includes("Jest");
-const NestJS_Only = technologies?.includes("NestJS");
-const PostgreSQL_Only = technologies?.includes("PostgreSQL");
-const Vite_Only = !technologies || technologies?.includes("Vite");
-const NextJS_Only = !technologies || technologies?.includes("NextJS");
-const SASS_Only = technologies?.includes("SASS");
+const techComponets = {
+  HTML: HtmlIcon,
+  CSS: CssItem,
+  JavaCcript: JavaScriptIcon,
+  TypeScript: TypescriptIcon,
+  React: ReactIcon,
+  Astro: AstroIcon,
+  NextJS: NextJsItem,
+  Tailwind: TailwindcssIcon,
+  SASS: SassItem,
+  Testing_Library: TestingLibraryIcon,
+  Jest: JestIcon,
+  Vite: ViteItem,
+  NestJS: NestJsIcon,
+  PostgreSQL: PostgreSqlIcon,
+};
+
+const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
 ---
 
 <ol
@@ -85,177 +91,5 @@ const SASS_Only = technologies?.includes("SASS");
     [&>li>div]:relative
   `}
 >
-  {
-    HTML_Only && (
-      <li>
-        <div>
-          <HtmlIcon width="32px" />
-        </div>
-        <p>HTML</p>
-      </li>
-    )
-  }
-
-  {
-    CSS_Only && (
-      <li>
-        <div>
-          <img style="width: 32px;" src="skills/css.svg" alt="css" />
-        </div>
-        <p>CSS</p>
-      </li>
-    )
-  }
-
-  {
-    JavaCcript_Only && (
-      <li>
-        <div>
-          <div class="rounded bg-[#ffd600] p-[3px]">
-            <img
-              class=""
-              style="width: 25px;"
-              src="skills/javascript.svg"
-              alt="javascript"
-            />
-          </div>
-        </div>
-        <p>JavaScript</p>
-      </li>
-    )
-  }
-
-  {
-    TypeScript_Only && (
-      <li>
-        <div>
-          <div class="rounded bg-[#1976D2] p-[3px]">
-            <img
-              class=""
-              style="width: 25px;"
-              src="skills/typescript.svg"
-              alt="typescript"
-            />
-          </div>
-        </div>
-        <p>TypeScript</p>
-      </li>
-    )
-  }
-
-  {
-    React_Only && (
-      <li>
-        <div>
-          <img src="skills/react.svg" alt="react" />
-        </div>
-        <p>React</p>
-      </li>
-    )
-  }
-
-  {
-    Astro_Only && (
-      <li>
-        <div>
-          <AstroIcon width={25} />
-        </div>
-        <p>Astro</p>
-      </li>
-    )
-  }
-
-  {
-    Tailwind_Only && (
-      <li>
-        <div>
-          <img class="w-full" src="skills/tailwind.svg" alt="tailwind" />
-        </div>
-        <p>Tailwindcss</p>
-      </li>
-    )
-  }
-
-  {
-    Testing_Library_Only && (
-      <li>
-        <div>
-          <img src="skills/testing-library.png" alt="testing-library" />
-        </div>
-        <p>Testing Library</p>
-      </li>
-    )
-  }
-
-  {
-    Jest_Only && (
-      <li>
-        <div>
-          <div class="w-[30px]">
-            <JestIcon />
-          </div>
-        </div>
-        <p>Jest</p>
-      </li>
-    )
-  }
-
-  {
-    NestJS_Only && (
-      <li>
-        <div>
-          <NestJsIcon height={30} />
-        </div>
-        <p>NestJS</p>
-      </li>
-    )
-  }
-
-  {
-    PostgreSQL_Only && (
-      <li>
-        <div>
-          <PostgreSqlIcon height={30} />
-        </div>
-        <p>PostgreSQL</p>
-      </li>
-    )
-  }
-
-  {
-    NextJS_Only && (
-      <li>
-        <div>
-          <img
-            class={`${theme === "light" && "invert-[.85]"}`}
-            src="skills/nextjs.png"
-            alt="nextjs"
-          />
-        </div>
-        <p>NextJS</p>
-      </li>
-    )
-  }
-
-  {
-    SASS_Only && (
-      <li>
-        <div>
-          <img src="skills/sass.png" alt="sass" />
-        </div>
-        <p>SASS</p>
-      </li>
-    )
-  }
-
-  {
-    Vite_Only && (
-      <li>
-        <div>
-          <ViteIcon size={28} />
-        </div>
-        <p>Vite</p>
-      </li>
-    )
-  }
+  {techComponetsFiltered.map((C) => <C />)}
 </ol>

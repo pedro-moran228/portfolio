@@ -14,7 +14,7 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
       style="transform: translateX(-100%); margin: 0px;"
       class="w-full h-full transition-transform duration-500"
       data-index={index}
-      loading="eager"
+      loading="lazy"
       src={imgSrc}
     />
   );
