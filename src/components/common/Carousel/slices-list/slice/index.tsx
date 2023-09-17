@@ -21,10 +21,10 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
       style={{
         transform: "translateX(-100%)",
         margin: "0px",
+        filter: `blur(${loaded ? 0 : 4}px)`,
       }}
       class={classNames(
-        { blur: !loaded },
-        // { "animate-pulse": !loaded },
+        { "animate-pulse": !loaded },
         "w-full h-full transition-[transform,filter] duration-500"
       )}
       data-index={index}
