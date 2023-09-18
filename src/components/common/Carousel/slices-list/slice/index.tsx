@@ -24,7 +24,6 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
         filter: `blur(${loaded ? 0 : 4}px)`,
       }}
       class={classNames(
-        { "animate-pulse": !loaded },
         "w-full h-full transition-[transform,filter] duration-500"
       )}
       data-index={index}
