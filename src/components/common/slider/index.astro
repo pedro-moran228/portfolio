@@ -48,7 +48,6 @@ const { slices, className } = Astro.props;
       entries.forEach((entry) => {
         if (entry.isIntersecting && !slider.classList.contains("snap-x")) {
           slider.classList.add("snap-x");
-          console.log("add snap-x");
         }
       });
     }, options);
