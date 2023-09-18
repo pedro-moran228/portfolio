@@ -1,7 +1,6 @@
 import { useRef, type MutableRef } from "preact/hooks";
 import { handleOnTransitionEnd } from "../helpers/handle-on-transition-end";
-import { signal } from "@preact/signals";
-import type { SliceT } from "../Index";
+import type { SliceT } from "../index";
 import { Slice } from "./slice";
 
 interface props {
@@ -12,6 +11,7 @@ interface props {
 
 export const SlicesList = ({ carouselRef, slices, currIndex }: props) => {
   const outerIndex = currIndex.value % slices.length;
+  const slicesSorted = [slices.at(-1), ...slices.slice(0, -1)];
 
   return (
     <ul
@@ -24,7 +24,7 @@ export const SlicesList = ({ carouselRef, slices, currIndex }: props) => {
         })
       }
     >
-      {slices.map(({ imgSrc, maskSrc }, i) => {
+      {slicesSorted.map(({ imgSrc, maskSrc }, i) => {
         const sliceActived = useRef(false);
 
         if (

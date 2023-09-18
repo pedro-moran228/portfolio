@@ -26,7 +26,7 @@ export type SliceT = {
 export function Carousel({ slices, className = "" }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
   const currIndex = signal(0);
-  const isPlaying = signal(true);
+  const isPlaying = signal(false);
   const amount = slices.length;
 
   const handleOnInterval = () => {
