@@ -1,13 +1,18 @@
 ---
-import Carousel from "../../common/Carousel/Index";
 import Technologies from "../../common/Technologies.astro";
+import { Carousel } from "../../common/carousel";
+import { Slider } from "../../common/slider";
+
+const images = [
+  { imgSrc: "LRS/png/4.png", maskSrc: "LRS/mask/4.avif" },
+  { imgSrc: "LRS/png/1.png", maskSrc: "LRS/mask/1.avif" },
+  { imgSrc: "LRS/png/2.png", maskSrc: "LRS/mask/2.avif" },
+  { imgSrc: "LRS/png/3.png", maskSrc: "LRS/mask/3.avif" },
+];
 ---
 
-<article
-  id="box-project-experience"
-  class="container-sm relative pt-[200px] z-0 space-y-12"
->
-  <header>
+<article id="box-project-experience" class="relative pt-[200px] z-0 space-y-12">
+  <header class="container-sm">
     <h3 class="text-current">Lippia Report Server</h3>
     <p>
       Participé en la escalabilidad del proyecto, mejorando la experiencia de
@@ -24,15 +29,12 @@ import Technologies from "../../common/Technologies.astro";
     </ul>
   </header>
   <Carousel
-    slices={[
-      { imgSrc: "LRS/png/4.png", maskSrc: "LRS/mask/4.avif" },
-      { imgSrc: "LRS/png/1.png", maskSrc: "LRS/mask/1.avif" },
-      { imgSrc: "LRS/png/2.png", maskSrc: "LRS/mask/2.avif" },
-      { imgSrc: "LRS/png/3.png", maskSrc: "LRS/mask/3.avif" },
-    ]}
+    className="container-sm hidden md:block"
+    slices={images}
     client:visible
   />
-  <footer class="space-y-12 mt-12">
+  <Slider className="block md:hidden" slices={images} />
+  <footer class="container-sm space-y-12 mt-12">
     <p>
       Mi participación en el proyecto fue de <span class="font-bold"
         >4 meses</span

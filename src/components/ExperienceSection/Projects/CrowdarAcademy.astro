@@ -1,13 +1,18 @@
 ---
-import Carousel from "../../common/Carousel/Index";
 import Technologies from "../../common/Technologies.astro";
+import { Carousel } from "../../common/carousel";
+import { Slider } from "../../common/slider";
+
+const images = [
+  { imgSrc: "academy/png/4.png", maskSrc: "academy/mask/4.avif" },
+  { imgSrc: "academy/png/1.png", maskSrc: "academy/mask/1.avif" },
+  { imgSrc: "academy/png/2.png", maskSrc: "academy/mask/2.avif" },
+  { imgSrc: "academy/png/3.png", maskSrc: "academy/mask/3.avif" },
+];
 ---
 
-<article
-  id="box-project-experience"
-  class="container-sm relative space-y-12 z-0 pt-[200px]"
->
-  <header>
+<article id="box-project-experience" class="relative space-y-12 z-0 pt-[200px]">
+  <header class="container-sm">
     <h3 class="text-current">Crowdar Academy</h3>
     <p>
       Recreé por completo el nuevo sitio de <a
@@ -31,15 +36,12 @@ import Technologies from "../../common/Technologies.astro";
   "academy/CA_2.jpg",
   "academy/CA_3.jpg", -->
   <Carousel
-    slices={[
-      { imgSrc: "academy/png/4.png", maskSrc: "academy/mask/4.avif" },
-      { imgSrc: "academy/png/1.png", maskSrc: "academy/mask/1.avif" },
-      { imgSrc: "academy/png/2.png", maskSrc: "academy/mask/2.avif" },
-      { imgSrc: "academy/png/3.png", maskSrc: "academy/mask/3.avif" },
-    ]}
+    className="container-sm hidden md:block"
+    slices={images}
     client:visible
   />
-  <footer class="mr-auto space-y-12">
+  <Slider className="block md:hidden" slices={images} />
+  <footer class="container-sm mr-auto space-y-12">
     <section>
       <p>Entre algunas de las caracterisiticas se encuentran:</p>
       <ul class="space-y-1 mt-2 [&>li]:marker">

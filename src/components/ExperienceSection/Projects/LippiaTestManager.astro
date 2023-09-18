@@ -1,76 +1,81 @@
 ---
-import Carousel from "../../common/Carousel/Index";
+import { Carousel } from "../../common/carousel";
+import { Slider } from "../../common/slider/index";
 import Technologies from "../../common/Technologies.astro";
+
+const images = [
+  { imgSrc: "LTM/png/4.png", maskSrc: "LTM/mask/4.avif" },
+  { imgSrc: "LTM/png/1.png", maskSrc: "LTM/mask/1.avif" },
+  { imgSrc: "LTM/png/2.png", maskSrc: "LTM/mask/2.avif" },
+  { imgSrc: "LTM/png/3.png", maskSrc: "LTM/mask/3.avif" },
+];
 ---
 
-<article id="box-project-experience" class="container-sm relative z-0">
-  <header>
+<article id="box-project-experience" class="relative z-0">
+  <header class="container-sm">
     <h3 class="text-current">Lippia Test Manager</h3>
   </header>
   <section class="mt-8">
-    <p>
-      Participé como desarrollador frontend en una primera y segunda versión de
-      Lippia Test Manager.
-    </p>
-    <p>
-      En la primera versión me encargué de planificación, diseño funcional y
-      desarrollo implementando características como:
-    </p>
-    <ul class="space-y-1 mt-2 [&>li]:marker">
-      <li>Rutas dinámicas con Single Page Application.</li>
-      <li>
-        Estados globales con <span class="font-bold">useContext</span> y <span
-          class="font-bold">useReducer</span
+    <div class="container-sm">
+      <p>
+        Participé como desarrollador frontend en una primera y segunda versión
+        de Lippia Test Manager.
+      </p>
+      <p>
+        En la primera versión me encargué de planificación, diseño funcional y
+        desarrollo implementando características como:
+      </p>
+      <ul class="space-y-1 mt-2 [&>li]:marker">
+        <li>Rutas dinámicas con Single Page Application.</li>
+        <li>
+          Estados globales con <span class="font-bold">useContext</span> y <span
+            class="font-bold">useReducer</span
+          >.
+        </li>
+        <li>React Custom hooks.</li>
+        <li>Formularios.</li>
+        <li>Internacionalización.</li>
+        <li>
+          Autenticación con Herramienta de Gestión (<span class="font-bold"
+            >Keycloak</span
+          >).
+        </li>
+        <li>Fetching de datos.</li>
+        <li>Tablas multifuncionales.</li>
+      </ul>
+      <p>
+        Esta primera versión fue descartada y se decidió iniciar una segunda
+        versión planteada como un MVP.
+      </p>
+      <Carousel className="hidden md:block" slices={images} client:visible />
+    </div>
+    <Slider className="block md:hidden" slices={images} />
+    <div class="container-sm">
+      <p>
+        Entre los grandes desafíos que logré completar están la migración de la
+        herramienta <span class="font-bold">Create React App</span> a <span
+          class="font-bold">Vite</span
+        > y la actualización de <span class="font-bold">React v17</span> a <span
+          class="font-bold">React v18</span
         >.
-      </li>
-      <li>React Custom hooks.</li>
-      <li>Formularios.</li>
-      <li>Internacionalización.</li>
-      <li>
-        Autenticación con Herramienta de Gestión (<span class="font-bold"
-          >Keycloak</span
-        >).
-      </li>
-      <li>Fetching de datos.</li>
-      <li>Tablas multifuncionales.</li>
-    </ul>
-    <p>
-      Esta primera versión fue descartada y se decidió iniciar una segunda
-      versión planteada como un MVP.
-    </p>
-    <Carousel
-      slices={[
-        { imgSrc: "LTM/png/4.png", maskSrc: "LTM/mask/4.avif" },
-        { imgSrc: "LTM/png/1.png", maskSrc: "LTM/mask/1.avif" },
-        { imgSrc: "LTM/png/2.png", maskSrc: "LTM/mask/2.avif" },
-        { imgSrc: "LTM/png/3.png", maskSrc: "LTM/mask/3.avif" },
-      ]}
-      client:visible
-    />
-    <p>
-      Entre los grandes desafíos que logré completar están la migración de la
-      herramienta <span class="font-bold">Create React App</span> a <span
-        class="font-bold">Vite</span
-      > y la actualización de <span class="font-bold">React v17</span> a <span
-        class="font-bold">React v18</span
-      >.
-    </p>
-    <p>
-      Mejoré la calidad del software tanto en eficiencia como en escalabilidad
-      estandarizando buenas prácticas y técnicas como <span class="font-bold"
-        >lazy loading</span
-      > para mejorar la experiencia del usuario.
-    </p>
-    <p>
-      Aparte de mi rol en el frontend también he ayudado con el desarrollo del
-      backend al estar hecho en <span class="font-bold">NestJs</span>
-       (Javascript). Con mis aportes pude mejorar hasta en un <span
-        class="font-bold">300%</span
-      > la eficiencia del backend en operaciones como obteción y recopilación de
-      datos.
-    </p>
+      </p>
+      <p>
+        Mejoré la calidad del software tanto en eficiencia como en escalabilidad
+        estandarizando buenas prácticas y técnicas como <span class="font-bold"
+          >lazy loading</span
+        > para mejorar la experiencia del usuario.
+      </p>
+      <p>
+        Aparte de mi rol en el frontend también he ayudado con el desarrollo del
+        backend al estar hecho en <span class="font-bold">NestJs</span>
+         (Javascript). Con mis aportes pude mejorar hasta en un <span
+          class="font-bold">300%</span
+        > la eficiencia del backend en operaciones como obteción y recopilación
+        de datos.
+      </p>
+    </div>
   </section>
-  <footer class="mt-8 space-y-12">
+  <footer class="container-sm mt-8 space-y-12">
     <article>
       <h4 class="text-current">Tecnologías</h4>
       <Technologies
