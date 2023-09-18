@@ -1,0 +1,95 @@
+---
+import AstroIcon from "./Icons/Tech/AstroItem.astro";
+import TestingLibraryIcon from "./Icons/Tech/TestingLibraryItem.astro";
+import HtmlIcon from "./Icons/Tech/HtmlItem.astro";
+import JavaScriptIcon from "./Icons/Tech/JavaScriptItem.astro";
+import JestIcon from "./Icons/Tech/JestItem.astro";
+import NestJsIcon from "./Icons/Tech/NestJsItem.astro";
+import NextJsItem from "../common/Icons/Tech/NextJsItem.astro";
+import PostgreSqlIcon from "./Icons/Tech/PostgreSqltem.astro";
+import ReactIcon from "./Icons/Tech/ReactItem.astro";
+import TailwindcssIcon from "./Icons/Tech/TailwindcssItem.astro";
+import TypescriptIcon from "./Icons/Tech/TypescriptItem.astro";
+import ViteItem from "./Icons/Tech/ViteItem.astro";
+import SassItem from "./Icons/Tech/SassItem.astro";
+import CssItem from "./Icons/Tech/CssItem.astro";
+
+interface Props {
+  theme?: "dark" | "light";
+  technologies?: (
+    | "HTML"
+    | "CSS"
+    | "JavaCcript"
+    | "TypeScript"
+    | "Astro"
+    | "React"
+    | "Tailwind"
+    | "Testing_Library"
+    | "Jest"
+    | "NestJS"
+    | "SASS"
+    | "NextJS"
+    | "PostgreSQL"
+    | "Vite"
+  )[];
+  grid3Col?: boolean;
+}
+
+const { theme = "light", grid3Col = false, technologies } = Astro.props;
+
+const techComponets = {
+  HTML: HtmlIcon,
+  CSS: CssItem,
+  JavaCcript: JavaScriptIcon,
+  TypeScript: TypescriptIcon,
+  React: ReactIcon,
+  Astro: AstroIcon,
+  NextJS: NextJsItem,
+  Tailwind: TailwindcssIcon,
+  SASS: SassItem,
+  Testing_Library: TestingLibraryIcon,
+  Jest: JestIcon,
+  Vite: ViteItem,
+  NestJS: NestJsIcon,
+  PostgreSQL: PostgreSqlIcon,
+};
+
+const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
+---
+
+<ol
+  class={`
+    sm:min-w-[414px]
+    flex flex-col space-y-2 sm:space-y-0
+    sm:grid
+    sm:grid-cols-[repeat(2,_1fr)]
+    ${grid3Col ? "md:grid-cols-3" : "md:grid-cols-2"}
+    sm:gap-3
+    w-full 
+    place-content-center
+
+    [&>li]:pl-[30px]
+    sm:[&>li]:pl-0
+    
+    ${theme === "dark" ? "[&>li]:bg-[#292b2f] text-white" : "[&>li]:bg-white"}
+
+    [&>li]:overflow-hidden
+    [&>li]:w-full
+    [&>li]:h-[60px]
+    [&>li]:flex
+    [&>li]:items-center
+    [&>li]:space-x-2
+    [&>li]:rounded-md
+    [&>li]:shadow-md
+    [&>li>p]:font-medium
+    [&>li>p]:mt-0
+
+    [&>li>div]:flex-center
+    [&>li>div]:w-[50px]
+    [&>li>div>img]:w-[30px]
+    [&>li>div]:h-full
+    [&>li>div]:relative
+  `}
+>
+  {techComponetsFiltered.map((C) => <C />)}
+</ol>

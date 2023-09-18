@@ -1,0 +1,50 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<aside
+  class="hidden xl-small:block absolute -z-10 mx-auto w-[97%] max-w-[1335px] left-1/2 -translate-x-1/2 h-[calc(100%+40px)] top-[-40px]"
+>
+  <section class="relative h-full inline-block w-[150px] pt-[50px]">
+    <div class="absolute top-0 w-max right-0 h-full">
+      <div class="relative flex justify-center w-[20px] h-full">
+        <section
+          data-label="line"
+          class="absolute z-10 w-[10px] h-full rounded bg-secondary"
+        >
+        </section>
+        <section
+          data-label="circle-icon"
+          class="sticky z-30 top-[30px] mb-[67px] h-[20px] w-[20px] rounded-full bg-secondary"
+        >
+        </section>
+        <div class="absolute top-[-35px] h-[calc(100%+80px)] w-full">
+          <section
+            data-label="box-mask-top"
+            class="sticky z-20 h-[50px] mb-[125px] top-[-10px] w-full bg-primary"
+          >
+          </section>
+        </div>
+      </div>
+    </div>
+    <div
+      data-label="label"
+      class={`
+        m-0 ml-auto mr-[10px] px-[6px] py-[4px] w-max font-bold text-[22px]
+       sticky top-[80px] z-30
+
+      before:block 
+      before:absolute 
+      before:inset-0 
+      before:-skew-y-3 
+      before:bg-secondary
+        `}
+    >
+      <span class="relative text-primary brightness-[.25]">{label ?? "LABEL"}</span>
+    </div>
+  </section>
+</aside>
