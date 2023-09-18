@@ -39,8 +39,7 @@ module.exports = {
         h4: { "@apply text-[22px] sm:text-[26px] font-bold text-primary/95 leading-[2.3]": {} },
         p: { "@apply mt-5": {} },
         ul: { "@apply ml-7 space-y-2": {} },
-        ".container": { "@apply w-full px-[40px] md:px-[60px] mx-auto max-w-[1080px]": {} },
-        ".container-sm": { "@apply w-full px-[30px] sm:px-[60px] lg:px-0 mx-auto max-w-[800px]": {} },
+        ".container": { "@apply w-full px-[30px] sm:px-[60px] lg:px-0 mx-auto max-w-[800px]": {} },
 
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:z-0": {} },
 

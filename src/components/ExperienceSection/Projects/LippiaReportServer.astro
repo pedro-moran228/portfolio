@@ -1,7 +1,7 @@
 ---
-import Technologies from "../../common/Technologies.astro";
+import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
-import { Slider } from "../../common/slider";
+import Slider from "../../common/slider/index.astro";
 
 const images = [
   { imgSrc: "LRS/png/4.png", maskSrc: "LRS/mask/4.avif" },
@@ -12,7 +12,7 @@ const images = [
 ---
 
 <article id="box-project-experience" class="relative pt-[200px] z-0 space-y-12">
-  <header class="container-sm">
+  <header class="container">
     <h3 class="text-current">Lippia Report Server</h3>
     <p>
       Participé en la escalabilidad del proyecto, mejorando la experiencia de
@@ -28,13 +28,11 @@ const images = [
       <li>Estados globales con <span class="font-bold">useContext</span>.</li>
     </ul>
   </header>
-  <Carousel
-    className="container-sm hidden md:block"
-    slices={images}
-    client:visible
-  />
+  <div class="container">
+    <Carousel className="hidden md:block" slices={images} client:visible />
+  </div>
   <Slider className="block md:hidden" slices={images} />
-  <footer class="container-sm space-y-12 mt-12">
+  <footer class="container space-y-12 mt-12">
     <p>
       Mi participación en el proyecto fue de <span class="font-bold"
         >4 meses</span

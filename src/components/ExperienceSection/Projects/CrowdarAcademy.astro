@@ -1,7 +1,7 @@
 ---
-import Technologies from "../../common/Technologies.astro";
+import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
-import { Slider } from "../../common/slider";
+import Slider from "../../common/slider/index.astro";
 
 const images = [
   { imgSrc: "academy/png/4.png", maskSrc: "academy/mask/4.avif" },
@@ -12,7 +12,7 @@ const images = [
 ---
 
 <article id="box-project-experience" class="relative space-y-12 z-0 pt-[200px]">
-  <header class="container-sm">
+  <header class="container">
     <h3 class="text-current">Crowdar Academy</h3>
     <p>
       Recreé por completo el nuevo sitio de <a
@@ -31,17 +31,11 @@ const images = [
       responsive.
     </p>
   </header>
-  <!-- "academy/CA_4.jpg",
-  "academy/CA_1.jpg",
-  "academy/CA_2.jpg",
-  "academy/CA_3.jpg", -->
-  <Carousel
-    className="container-sm hidden md:block"
-    slices={images}
-    client:visible
-  />
+  <div class="container">
+    <Carousel className="hidden md:block" slices={images} client:visible />
+  </div>
   <Slider className="block md:hidden" slices={images} />
-  <footer class="container-sm mr-auto space-y-12">
+  <footer class="container mr-auto space-y-12">
     <section>
       <p>Entre algunas de las caracterisiticas se encuentran:</p>
       <ul class="space-y-1 mt-2 [&>li]:marker">

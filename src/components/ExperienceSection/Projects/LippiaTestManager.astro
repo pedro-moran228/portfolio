@@ -1,7 +1,7 @@
 ---
 import { Carousel } from "../../common/carousel";
-import { Slider } from "../../common/slider/index";
-import Technologies from "../../common/Technologies.astro";
+import Slider from "../../common/slider/index.astro";
+import Technologies from "../../common/technologies/index.astro";
 
 const images = [
   { imgSrc: "LTM/png/4.png", maskSrc: "LTM/mask/4.avif" },
@@ -12,11 +12,11 @@ const images = [
 ---
 
 <article id="box-project-experience" class="relative z-0">
-  <header class="container-sm">
+  <header class="container">
     <h3 class="text-current">Lippia Test Manager</h3>
   </header>
   <section class="mt-8">
-    <div class="container-sm">
+    <div class="container">
       <p>
         Participé como desarrollador frontend en una primera y segunda versión
         de Lippia Test Manager.
@@ -50,7 +50,7 @@ const images = [
       <Carousel className="hidden md:block" slices={images} client:visible />
     </div>
     <Slider className="block md:hidden" slices={images} />
-    <div class="container-sm">
+    <div class="container">
       <p>
         Entre los grandes desafíos que logré completar están la migración de la
         herramienta <span class="font-bold">Create React App</span> a <span
@@ -75,7 +75,7 @@ const images = [
       </p>
     </div>
   </section>
-  <footer class="container-sm mt-8 space-y-12">
+  <footer class="container mt-8 space-y-12">
     <article>
       <h4 class="text-current">Tecnologías</h4>
       <Technologies
