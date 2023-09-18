@@ -7,7 +7,7 @@ interface props {
   isPlaying: { value: boolean };
   handleOnInterval: () => void;
 }
-export const ProgressBar = ({
+export const ProgressLine = ({
   amount,
   currIndex,
   isPlaying,

@@ -7,11 +7,12 @@ import { handleOnClickNextSlice } from "./helpers/handle-on-click-next-slice";
 import { handleOnClickPrevSlice } from "./helpers/handle-on-click-prev-slice";
 import { useRef } from "preact/hooks";
 import ButtonPlayCarousel from "./button-play-carousel/Index";
-import { ProgressBar } from "./helpers/progress-bar";
+import { ProgressLine } from "./helpers/progress-line";
 import ButtonPauseCarousel from "./button-pause-carousel/Index";
 import classNames from "classnames";
 import { DotList } from "./dot-list";
 import { SlicesList } from "./slices-list";
+import { BarOptions } from "./bar-options";
 
 interface props {
   slices: SliceT[];
@@ -26,7 +27,7 @@ export type SliceT = {
 export function Carousel({ slices, className = "" }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
   const currIndex = signal(0);
-  const isPlaying = signal(false);
+  const isPlaying = signal(true);
   const amount = slices.length;
 
   const handleOnInterval = () => {
@@ -50,14 +51,8 @@ export function Carousel({ slices, className = "" }: props) {
           slices={slices}
           currIndex={currIndex}
         />
-        <section
-          class={classNames(
-            "opacity-0 group-hover:opacity-100 w-full h-[50px] pl-[20px] text-white absolute bottom-0 left-0 flex items-center z-10 duration-150"
-            // { "opacity-100": !isPlaying.value }
-          )}
-        >
-          <div class="absolute bottom-0 left-0 w-full h-[500%] bg-gradient-to-t from-gray-900/30 -z-10"></div>
-          <ProgressBar
+        <BarOptions isPlaying={isPlaying}>
+          <ProgressLine
             amount={amount}
             currIndex={currIndex}
             handleOnInterval={handleOnInterval}
@@ -89,7 +84,7 @@ export function Carousel({ slices, className = "" }: props) {
               })
             }
           />
-        </section>
+        </BarOptions>
       </div>
       <DotList currIndex={currIndex} amount={amount} />
     </section>
