@@ -1,19 +1,11 @@
----
-export interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
----
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Pedro Moran - Portafolio</title>
+    <link rel="icon" type="image/svg+xml" href="/wallet-opened.svg" />
+    <title>Pedro Moran</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -45,3 +37,8 @@ const { title } = Astro.props;
     }
   </style>
 </html>
+<script>
+  const favicon = document.querySelector("link[rel=icon]") as HTMLLinkElement;
+  window.addEventListener("blur", () => (favicon.href = "/wallet-closed.svg"));
+  window.addEventListener("focus", () => (favicon.href = "/wallet-opened.svg"));
+</script>
