@@ -36,6 +36,10 @@ const { title } = Astro.props;
       height: 100vh;
     }
 
+    *::selection {
+      background-color: #6c426e;
+    }
+
     .mask-triangle--before::before {
       clip-path: polygon(0 100%, 100% 100%, 100% 0);
     }
