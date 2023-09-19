@@ -1,0 +1,13 @@
+---
+import { GmailDropSection } from "./gmail-drop-section";
+import GmailIcon from "./gmail-icon/index.astro";
+---
+
+<div
+  aria-label="Gmail Button"
+  class="relative w-full btn p-0 grid grid-cols-[60px,1fr] text-center flex-1 bg-[#1f3759] hover:bg-[#2c4b77] hover:rounded-none hover:rounded-t text-white group"
+>
+  <GmailIcon />
+  <p class="flex-1 m-0 self-center">Gmail</p>
+  <GmailDropSection client:load />
+</div>
