@@ -1,11 +1,11 @@
 import classNames from "classnames";
 
 interface Props extends React.HTMLAttributes<HTMLButtonElement> {
-  isCopied: { value: boolean };
+  isCopied: boolean;
 }
 
 export const CopyButton = (props: Props) => {
-  const isCopied = props.isCopied.value;
+  const isCopied = props.isCopied;
 
   return (
     <button
