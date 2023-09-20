@@ -1,0 +1,24 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<header
+  class="relative before:border-t-2 w-full h-[125px] bg-primary mark-triangle--before"
+>
+  <div class="relative container">
+    <h2
+      class="absolute right-0 top-[-120px] text-white z-[6] bg-primary -rotate-3 before:rounded-xl before:z-[-1] before:block before:absolute before:inset-[-8px_-28px] before:bg-primary"
+    >
+      {name}
+    </h2>
+    <i
+      class="text-[40px] sm:text-[43px] font-bold absolute right-0 top-[-120px] text-white z-[4] -rotate-3 before:rounded-xl before:border-2 before:z-[0] before:block before:absolute before:inset-[-10px_-30px] before:bg-primary"
+    >
+      {name}
+    </i>
+  </div>
+</header>
