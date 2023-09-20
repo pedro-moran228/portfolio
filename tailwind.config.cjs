@@ -41,7 +41,7 @@ module.exports = {
         ul: { "@apply ml-7 space-y-2": {} },
         ".container": { "@apply w-full px-[30px] sm:px-[60px] lg:px-0 mx-auto max-w-[800px]": {} },
 
-        ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-80px] before:w-[125%] before:h-[300px] before:-rotate-3 before:bg-primary before:z-0": {} },
+        ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-70px] before:w-[125%] before:h-[150px] before:-rotate-3 before:bg-primary before:z-[5]": {} },
 
         ".mark-triangle--after": { "@apply after:absolute after:left-[-15%] after:bottom-[-80px] after:w-[125%] after:h-[300px] after:rotate-3 after:bg-primary after:z-0": {} },
 
