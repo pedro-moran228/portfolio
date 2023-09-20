@@ -16,42 +16,22 @@ const { slices, className } = Astro.props;
 
 <section
   class={classNames(
-    "flex snap-mandatory overflow-x-auto w-full py-10 px-[30px] sm:px-[60px] space-x-[15px]",
+    "flex snap-mandatory snap-x overflow-x-auto w-full py-10 px-[30px] sm:px-[60px] space-x-[15px]",
     className
   )}
 >
   {
     slices.map((slice) => {
       return (
-        <img
-          class="w-full h-full snap-center rounded-lg shadow-[0px_0px_40px_10px_#0000006e]"
-          src={slice.imgSrc}
-          alt="slider slice"
-          loading="lazy"
-        />
+        <li class="min-w-full snap-center list-none ">
+          <img
+            class="w-full rounded-lg shadow-[0px_0px_40px_10px_#0000006e]"
+            src={slice.imgSrc}
+            alt="slider slice"
+            loading="lazy"
+          />
+        </li>
       );
     })
   }
 </section>
-
-<script>
-  const sliders = document.querySelectorAll(".snap-mandatory");
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0,
-  };
-
-  sliders.forEach((slider) => {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !slider.classList.contains("snap-x")) {
-          slider.classList.add("snap-x");
-        }
-      });
-    }, options);
-
-    observer.observe(slider);
-  });
-</script>
