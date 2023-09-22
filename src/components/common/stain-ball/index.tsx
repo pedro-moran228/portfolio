@@ -2,19 +2,18 @@ import { useSignal, useComputed } from "@preact/signals";
 import { useEffect, useRef } from "preact/hooks";
 
 const INITIAL_VELOCITY = 0.0025;
-const randomNumberBetween = (min, max) => Math.random() * (max - min) + min;
 const initDirection = {
   VERTICAL: {
     x: 0.3,
     y: 0.7,
   },
   HORIZONTAL: {
-    x: 0.7,
-    y: 0.3,
+    x: -0.7,
+    y: -0.3,
   },
   CENTER: {
-    x: 0.5,
-    y: 0.5,
+    x: -0.5,
+    y: -0.5,
   },
 };
 
