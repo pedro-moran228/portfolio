@@ -2,76 +2,96 @@
 import LinkedinButton from "./LinkedinButton.astro";
 import GithubButton from "./GithubButton.astro";
 import GmailSection from "./gmail-section/index.astro";
+import { StainBallReact } from "../common/stain-ball";
 ---
 
-<!-- box-shadow: 0px 5px 34px #1d294461;
-    border: 1px solid #002475; -->
-<main
-  class="relative z-[3] xs:container xs:w-[100%] pt-0 xs:pt-[3rem] sm:pt-[6rem]"
->
-  <article
-    class="w-full rounded-none text-white p-10 border border-[#ffffff21] space-y-6 bg-primary xs:rounded-2xl"
+<!-- border-[#ffffff21] -->
+<main id="profile-section" class="relative z-[2] pb-[250px]">
+  <div
+    class="relative z-[3] xs:container xs:w-[100%] pt-0 xs:pt-[3rem] sm:pt-[6rem]"
   >
-    <header class="space-y-2 md:space-y-0">
-      <div class="flex flex-col-reverse sm:block">
-        <div
-          class="mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl"
-          style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
-        >
-          <img
-            src="profile_bg_high.png"
-            fetchpriority="high"
-            loading="eager"
-            alt="profile"
-          />
-        </div>
-        <section>
-          <header>
-            <h1 class="text-white">Pedro Moran</h1>
-            <h2 class="text-[26px]">
-              <span
-                class="before:rounded before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary before:brightness-95 relative inline-block"
-                ><span class="relative text-white">+2 años</span></span
-              >
-              <span class="text-white px-[6px]">Siendo</span>
-              <span
-                class="before:rounded before:block before:absolute before:-inset-1 before:bg-secondary before:brightness-95 relative inline-block"
-                ><span class="relative text-white">
-                  Frontend Developer</span
-                ></span
-              >
-            </h2>
-          </header>
-          <p class="mt-10">
-            Actualmente trabajando en <a
-              class="font-medium text-secondary brightness-150 hover:underline"
-              href="https://crowdar.com.ar/"
-              target="blank">Crowdar</a
-            > con un equipo de desarrollo a tiempo completo construyendo un
-            producto dedicado al sector B2B.
-          </p>
-        </section>
-      </div>
-    </header>
-    <section class="space-y-4">
-      <article>
-        <h3 class="text-white text-[24px]">A cargo de:</h3>
-        <ul class="mt-2 [&>li]:marker">
-          <li>Análisis e implementación de nuevas funcionalidades.</li>
-          <li>Documentación.</li>
-          <li>Despliegues a producción.</li>
-          <li>Capacitaciones.</li>
-        </ul>
-      </article>
-    </section>
-    <footer
-      id="profile-footer"
-      aria-label="Social media links"
-      class="pt-2 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 gap-4"
+    <article
+      class="w-full rounded-none text-white p-10 border border-white/50 space-y-6 bg-primary xs:rounded-2xl"
     >
-      <LinkedinButton />
-      <GithubButton />
-      <GmailSection />
-    </footer>
-  </article>
+      <header class="space-y-2 md:space-y-0">
+        <div class="flex flex-col-reverse sm:block">
+          <div
+            class="mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl"
+            style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
+          >
+            <img
+              src="profile_bg_high.png"
+              fetchpriority="high"
+              loading="eager"
+              alt="profile"
+            />
+          </div>
+          <section>
+            <header>
+              <h1 class="text-white">Pedro Moran</h1>
+              <h2 class="text-[26px]">
+                <span
+                  class="before:rounded before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary before:brightness-95 relative inline-block"
+                  ><span class="relative text-white">+2 años</span></span
+                >
+                <span class="text-white px-[6px]">Siendo</span>
+                <span
+                  class="before:rounded before:block before:absolute before:-inset-1 before:bg-secondary before:brightness-95 relative inline-block"
+                  ><span class="relative text-white">
+                    Frontend Developer</span
+                  ></span
+                >
+              </h2>
+            </header>
+            <p class="mt-10">
+              Actualmente trabajando en <a
+                class="font-medium text-secondary brightness-150 hover:underline"
+                href="https://crowdar.com.ar/"
+                target="blank">Crowdar</a
+              > con un equipo de desarrollo a tiempo completo construyendo un
+              producto dedicado al sector B2B.
+            </p>
+          </section>
+        </div>
+      </header>
+      <section class="space-y-4">
+        <article>
+          <h3 class="text-white text-[24px]">A cargo de:</h3>
+          <ul class="mt-2 [&>li]:marker">
+            <li>Análisis e implementación de nuevas funcionalidades.</li>
+            <li>Documentación.</li>
+            <li>Despliegues a producción.</li>
+            <li>Capacitaciones.</li>
+          </ul>
+        </article>
+      </section>
+      <footer
+        id="profile-footer"
+        aria-label="Social media links"
+        class="pt-2 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-3 gap-4"
+      >
+        <LinkedinButton />
+        <GithubButton />
+        <GmailSection />
+      </footer>
+    </article>
+  </div>
+  <StainBallReact
+    client:load
+    directionType="HORIZONTAL"
+    defaultPosition={{ x: 25, y: 25 }}
+    boxId="profile-section"
+  />
+  <StainBallReact
+    client:load
+    directionType="VERTICAL"
+    defaultPosition={{ x: 50, y: 75 }}
+    boxId="profile-section"
+  />
+  <StainBallReact
+    client:load
+    directionType="CENTER"
+    defaultPosition={{ x: 75, y: 25 }}
+    boxId="profile-section"
+  />
 </main>

@@ -7,7 +7,7 @@ const { name } = Astro.props;
 ---
 
 <header
-  class="relative before:border-t-2 w-full h-[125px] bg-primary mark-triangle--before"
+  class="relative before:border-t-2 before:border-white/50 w-full h-[125px] bg-primary mark-triangle--before"
 >
   <div class="container">
     <div class="relative">
@@ -17,7 +17,7 @@ const { name } = Astro.props;
         {name}
       </h2>
       <i
-        class="text-[40px] sm:text-[43px] font-bold absolute right-[30px] top-[-120px] text-white z-[4] -rotate-3 before:rounded-xl before:border-2 before:z-[0] before:block before:absolute before:inset-[-10px_-30px] before:bg-primary"
+        class="text-[40px] sm:text-[43px] font-bold absolute right-[30px] top-[-120px] text-white z-[4] -rotate-3 before:rounded-xl before:border-2 before:border-white/50 before:z-[0] before:block before:absolute before:inset-[-10px_-30px] before:bg-primary"
       >
         {name}
       </i>
