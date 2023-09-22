@@ -12,10 +12,10 @@ module.exports = {
         // xl	1280px
         // 2xl	1536px
       },
-      animation: {
-        'spin': 'spin 100s linear infinite',
-        'spin-reverse': 'spin 100s linear reverse infinite',
-      },
+      // animation: {
+      //   'spin': 'spin 100s linear infinite',
+      //   'spin-reverse': 'spin 100s linear reverse infinite',
+      // },
       fontSize: {
         xs: "10px",
         sm: "12px",
