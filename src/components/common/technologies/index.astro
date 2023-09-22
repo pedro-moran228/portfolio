@@ -71,7 +71,11 @@ const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
     [&>li]:pl-[30px]
     sm:[&>li]:pl-0
     
-    ${theme === "dark" ? "[&>li]:bg-[#292b2f] text-white" : "[&>li]:bg-white"}
+    ${
+      theme === "dark"
+        ? "[&>li]:border [&>li]:border-[#ffffff21] [&>li]:bg-[#191e29] text-white"
+        : "[&>li]:bg-white"
+    }
 
     [&>li]:overflow-hidden
     [&>li]:w-full
@@ -80,7 +84,7 @@ const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
     [&>li]:items-center
     [&>li]:space-x-2
     [&>li]:rounded-md
-    [&>li]:shadow-md
+    [&>li]:shadow
     [&>li>p]:font-medium
     [&>li>p]:mt-0
 

@@ -25,7 +25,7 @@ module.exports = {
         xl: "21px",
       },
       colors: {
-        primary: '#1E1F22',
+        primary: '#1b1a20',
         secondary: '#6c426e',
       },
     },
