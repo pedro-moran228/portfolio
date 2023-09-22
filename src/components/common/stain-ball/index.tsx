@@ -101,10 +101,10 @@ export const StainBallReact = ({
   return (
     <section
       ref={BallRef}
-      class="absolute z-[1] w-[25%] blur-2xl -translate-x-1/2 -translate-y-1/2 aspect-square flex-center [&>div>i]:absolute [&>div>i]:w-full [&>div>i]:h-full"
+      class="absolute z-[1] min-w-[300px] min-h-[300px] w-[25%] blur-2xl -translate-x-1/2 -translate-y-1/2 aspect-square flex-center [&>div>i]:absolute [&>div>i]:w-full [&>div>i]:h-full"
       style={{
-        left: `calc(${position.value.x} * 1vw)`,
-        top: `calc(${position.value.y} * 1vh)`,
+        left: `calc(${position.value.x}%)`,
+        top: `calc(${position.value.y}%)`,
         animation: "move 5s infinite",
         transform: "translate(-50%, -50%)",
         width: "25vw",

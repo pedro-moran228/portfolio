@@ -5,13 +5,12 @@ import GmailSection from "./gmail-section/index.astro";
 import { StainBallReact } from "../common/stain-ball";
 ---
 
-<!-- border-[#ffffff21] -->
 <main id="profile-section" class="relative z-[2] pb-[250px]">
   <div
     class="relative z-[3] xs:container xs:w-[100%] pt-0 xs:pt-[3rem] sm:pt-[6rem]"
   >
     <article
-      class="w-full rounded-none text-white p-10 border border-white/50 space-y-6 bg-primary xs:rounded-2xl"
+      class="w-full rounded-none text-white p-10 border-b xs:border border-white/50 space-y-6 bg-primary xs:rounded-2xl"
     >
       <header class="space-y-2 md:space-y-0">
         <div class="flex flex-col-reverse sm:block">
@@ -77,19 +76,19 @@ import { StainBallReact } from "../common/stain-ball";
     </article>
   </div>
   <StainBallReact
-    client:load
+    client:media="(min-width: 670px)"
     directionType="HORIZONTAL"
     defaultPosition={{ x: 25, y: 25 }}
     boxId="profile-section"
   />
   <StainBallReact
-    client:load
+    client:media="(min-width: 670px)"
     directionType="VERTICAL"
     defaultPosition={{ x: 50, y: 75 }}
     boxId="profile-section"
   />
   <StainBallReact
-    client:load
+    client:media="(min-width: 670px)"
     directionType="CENTER"
     defaultPosition={{ x: 75, y: 25 }}
     boxId="profile-section"
