@@ -40,10 +40,6 @@ export function Carousel({ slices, className = "" }: props) {
   };
 
   useEffect(() => {
-    const options = {
-      root: null,
-      threshold: 0.25,
-    };
     const handler = ([observe]: IntersectionObserverEntry[]) => {
       const { isIntersecting } = observe;
       if (isIntersecting) {
@@ -52,7 +48,11 @@ export function Carousel({ slices, className = "" }: props) {
       }
       isPlaying.value = false;
     };
-    const observer = new IntersectionObserver(handler, options);
+
+    const observer = new IntersectionObserver(handler, {
+      root: null,
+      threshold: 0.25,
+    });
     observer.observe(carouselRef.current);
   }, []);
 

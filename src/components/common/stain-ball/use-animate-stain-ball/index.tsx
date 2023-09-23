@@ -29,17 +29,18 @@ export const useAnimateStainBall = ({
   defaultPosition = { x: 50, y: 50 },
   boxId,
 }: props) => {
-  const StainBallElementRef = useRef<HTMLElement>(null);
+  const stainBallElementRef = useRef<HTMLElement>(null);
   const directionRef = useRef(DIRECTIONS[directionType]);
+  const windowTabFocused = useRef(true);
   const position = useSignal(defaultPosition);
 
-  const getRect = () => StainBallElementRef.current?.getBoundingClientRect();
+  const getRect = () => stainBallElementRef.current?.getBoundingClientRect();
 
   function update(delta: number) {
     const rect = getRect();
     const box = document.getElementById(boxId);
 
-    if (!rect || !box) return;
+    if (!rect || !box || !windowTabFocused.current) return;
 
     const boxRect = box.getBoundingClientRect();
 
@@ -84,7 +85,10 @@ export const useAnimateStainBall = ({
   }
 
   useEffect(() => {
+    const box = document.getElementById(boxId);
+
     let lastTime;
+    let requestID;
 
     function trigger(time) {
       if (lastTime) {
@@ -92,11 +96,46 @@ export const useAnimateStainBall = ({
         update(delta);
       }
       lastTime = time;
-      window.requestAnimationFrame(trigger);
+
+      const id = window.requestAnimationFrame(trigger);
+      requestID = id;
+
+      return () => {
+        window.cancelAnimationFrame(requestID);
+        requestID = undefined;
+        lastTime = undefined;
+      };
     }
 
-    window.requestAnimationFrame(trigger);
+    const handler = ([observe]: IntersectionObserverEntry[]) => {
+      const { isIntersecting } = observe;
+
+      if (isIntersecting && !requestID) {
+        const id = window.requestAnimationFrame(trigger);
+        requestID = id;
+        console.log("active with id: ", id);
+      }
+      if (!isIntersecting && requestID) {
+        window.cancelAnimationFrame(requestID);
+        requestID = undefined;
+        lastTime = undefined;
+      }
+    };
+
+    window.addEventListener("blur", () => {
+      windowTabFocused.current = false;
+    });
+
+    window.addEventListener("focus", () => {
+      windowTabFocused.current = true;
+    });
+
+    const observer = new IntersectionObserver(handler, {
+      root: null,
+      threshold: 0,
+    });
+    observer.observe(box);
   }, []);
 
-  return { position, StainBallElementRef };
+  return { position, stainBallElementRef };
 };
