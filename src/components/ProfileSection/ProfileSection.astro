@@ -2,7 +2,7 @@
 import LinkedinButton from "./LinkedinButton.astro";
 import GithubButton from "./GithubButton.astro";
 import GmailSection from "./gmail-section/index.astro";
-import { StainBallReact } from "../common/stain-ball";
+import { StainBall } from "../common/stain-ball";
 ---
 
 <main id="profile-section" class="relative z-[2] pb-[250px]">
@@ -75,4 +75,22 @@ import { StainBallReact } from "../common/stain-ball";
       </footer>
     </article>
   </div>
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="HORIZONTAL"
+    defaultPosition={{ x: 25, y: 25 }}
+    boxId="profile-section"
+  />
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="VERTICAL"
+    defaultPosition={{ x: 75, y: 75 }}
+    boxId="profile-section"
+  />
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="CENTER"
+    defaultPosition={{ x: 50, y: 75 }}
+    boxId="profile-section"
+  />
 </main>

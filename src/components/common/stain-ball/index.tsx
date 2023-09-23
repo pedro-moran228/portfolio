@@ -1,6 +1,6 @@
 import { useAnimateStainBall } from "./use-animate-stain-ball";
 
-export const StainBallReact = ({
+export const StainBall = ({
   directionType,
   defaultPosition = { x: 50, y: 50 },
   boxId,
@@ -29,9 +29,9 @@ export const StainBallReact = ({
       }}
     >
       <div class="w-full h-full relative">
-        <i class="opacity-10 animate-[spin_30s_linear_infinite] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[49%_51%_52%_48%_/_75%_30%_70%_25%]"></i>
-        <i class="opacity-10 animate-[spin_40s_linear_reverse_infinite] bg-gradient-to-r from-purple-500 to-pink-900 rounded-[39%_61%_13%_87%_/_5%_30%_70%_95%]"></i>
-        <i class="opacity-10 animate-[spin_50s_linear_infinite] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-[86%_14%_13%_87%_/_77%_25%_75%_23%]"></i>
+        <i class="opacity-10 xs:animate-[spin_30s_linear_infinite] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-[49%_51%_52%_48%_/_75%_30%_70%_25%]"></i>
+        <i class="opacity-10 xs:animate-[spin_40s_linear_reverse_infinite] bg-gradient-to-r from-purple-500 to-pink-900 rounded-[39%_61%_13%_87%_/_5%_30%_70%_95%]"></i>
+        <i class="opacity-10 xs:animate-[spin_50s_linear_infinite] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-[86%_14%_13%_87%_/_77%_25%_75%_23%]"></i>
       </div>
     </section>
   );
