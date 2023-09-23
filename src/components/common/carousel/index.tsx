@@ -2,10 +2,10 @@
 
 import ButtonPrevSlide from "./button-prev-slide/Index";
 import ButtonNextSlide from "./button-next-slide/Index";
-import { signal } from "@preact/signals";
+import { signal, useSignal } from "@preact/signals";
 import { handleOnClickNextSlice } from "./helpers/handle-on-click-next-slice";
 import { handleOnClickPrevSlice } from "./helpers/handle-on-click-prev-slice";
-import { useRef } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import ButtonPlayCarousel from "./button-play-carousel/Index";
 import { ProgressLine } from "./helpers/progress-line";
 import ButtonPauseCarousel from "./button-pause-carousel/Index";
@@ -26,8 +26,8 @@ export type SliceT = {
 
 export function Carousel({ slices, className = "" }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
-  const currIndex = signal(0);
-  const isPlaying = signal(true);
+  const currIndex = useSignal(0);
+  const isPlaying = useSignal(true);
   const amount = slices.length;
 
   const handleOnInterval = () => {
@@ -37,6 +37,14 @@ export function Carousel({ slices, className = "" }: props) {
       carouselRef,
     });
   };
+
+  useEffect(() => {
+    const intervalID = setInterval(() => {
+      if (!isPlaying.value) return;
+      handleOnInterval();
+    }, 4000);
+    return () => clearInterval(intervalID);
+  }, [isPlaying.value]);
 
   return (
     <section

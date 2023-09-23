@@ -19,7 +19,13 @@ export const handleOnClickNextSlice = ({
     child.classList.contains(TRANSITION_FLAG)
   );
 
-  if (isTransitioning) return;
+  const isUnLoaded = [...carouselRef.current?.children]?.some(
+    (child) =>
+      (child as HTMLElement).dataset.actived === "true" &&
+      (child as HTMLElement).dataset.loaded === "false"
+  );
+
+  if (isTransitioning || isUnLoaded) return;
 
   handleActivateTransition({ carouselRef });
 

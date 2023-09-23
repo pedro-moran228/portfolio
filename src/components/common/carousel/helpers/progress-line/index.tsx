@@ -17,14 +17,6 @@ export const ProgressLine = ({
   const outerIndex = currIndex.value % amount;
   const progressWidth = `${sliceWidthPercentage * outerIndex}%`;
 
-  useEffect(() => {
-    const intervalID = setInterval(() => {
-      if (!isPlaying.value) return;
-      handleOnInterval();
-    }, 4000);
-    return () => clearInterval(intervalID);
-  }, [isPlaying.value]);
-
   return (
     <div
       aria-label="progress bar"

@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { useEffect, type MutableRef, useRef, useState } from "preact/hooks";
+import { useEffect, type MutableRef, useState } from "preact/hooks";
 
 interface props {
   image: string;
   mask: string;
-  sliceActived: MutableRef<boolean>;
+  sliceActived: boolean;
   index: number;
 }
 
@@ -13,8 +13,8 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (sliceActived.current) setSrc(image);
-  }, [sliceActived.current]);
+    if (sliceActived) setSrc(image);
+  }, [sliceActived]);
 
   return (
     <img
@@ -24,10 +24,18 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
         filter: `blur(${loaded ? 0 : 4}px)`,
       }}
       class={classNames(
-        "w-full h-full transition-[transform,filter] duration-500"
+        "min-w-full transition-[transform,filter] duration-500 aspect-[16/8.20]"
       )}
       data-index={index}
-      onLoad={() => setLoaded(true)}
+      data-actived={sliceActived}
+      data-loaded={loaded}
+      onLoad={(e) => {
+        const target = e.target as HTMLElement;
+        const isMask = mask === target.getAttribute("src");
+        if (isMask) return;
+
+        setLoaded(true);
+      }}
       loading="lazy"
       src={src}
     />

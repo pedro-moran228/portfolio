@@ -25,18 +25,12 @@ export const SlicesList = ({ carouselRef, slices, currIndex }: props) => {
       }
     >
       {slicesSorted.map(({ imgSrc, maskSrc }, i) => {
-        const sliceActived = useRef(false);
-
-        if (
-          i === outerIndex + 1 ||
-          (i === 0 && outerIndex === slices.length - 1)
-        ) {
-          sliceActived.current = true;
-        }
-
         return (
           <Slice
-            sliceActived={sliceActived}
+            sliceActived={
+              i === outerIndex + 1 ||
+              (i === 0 && outerIndex === slices.length - 1)
+            }
             key={imgSrc}
             image={imgSrc}
             index={i}
