@@ -107,8 +107,8 @@ export const useAnimateStainBall = ({
       };
     }
 
-    const handler = ([observe]: IntersectionObserverEntry[]) => {
-      const { isIntersecting } = observe;
+    const handler = ([entry]: IntersectionObserverEntry[]) => {
+      const { isIntersecting } = entry;
 
       if (isIntersecting && !requestID) {
         const id = window.requestAnimationFrame(trigger);

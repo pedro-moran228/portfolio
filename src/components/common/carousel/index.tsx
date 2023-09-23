@@ -40,8 +40,8 @@ export function Carousel({ slices, className = "" }: props) {
   };
 
   useEffect(() => {
-    const handler = ([observe]: IntersectionObserverEntry[]) => {
-      const { isIntersecting } = observe;
+    const handler = ([entry]: IntersectionObserverEntry[]) => {
+      const { isIntersecting } = entry;
       if (isIntersecting) {
         isPlaying.value = true;
         return;
