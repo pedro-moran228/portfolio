@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { useEffect } from "preact/hooks";
 import { useTranlateSlices } from "../use-tranlate-slices";
 
 interface props {
@@ -22,14 +21,6 @@ export const ProgressLine = ({
     actived: isPlaying,
     handleOnInterval,
   });
-
-  // useEffect(() => {
-  //   const intervalID = setInterval(() => {
-  //     if (!isPlaying.value) return;
-  //     handleOnInterval();
-  //   }, 4000);
-  //   return () => clearInterval(intervalID);
-  // }, [isPlaying.value]);
 
   return (
     <div

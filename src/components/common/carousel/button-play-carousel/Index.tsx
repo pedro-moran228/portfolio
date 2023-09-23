@@ -1,6 +1,4 @@
 import classNames from "classnames";
-import { useEffect } from "preact/hooks";
-
 interface props {
   handleOnClick: () => void;
   isPlaying: { value: boolean };
