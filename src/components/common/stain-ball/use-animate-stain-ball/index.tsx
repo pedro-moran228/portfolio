@@ -113,7 +113,6 @@ export const useAnimateStainBall = ({
       if (isIntersecting && !requestID) {
         const id = window.requestAnimationFrame(trigger);
         requestID = id;
-        console.log("active with id: ", id);
       }
       if (!isIntersecting && requestID) {
         window.cancelAnimationFrame(requestID);
