@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { useEffect } from "preact/hooks";
+import { useTranlateSlices } from "../use-tranlate-slices";
 
 interface props {
   currIndex: { value: number };
@@ -16,6 +17,19 @@ export const ProgressLine = ({
   const sliceWidthPercentage = Math.ceil(100 / (amount - 1));
   const outerIndex = currIndex.value % amount;
   const progressWidth = `${sliceWidthPercentage * outerIndex}%`;
+
+  useTranlateSlices({
+    actived: isPlaying,
+    handleOnInterval,
+  });
+
+  // useEffect(() => {
+  //   const intervalID = setInterval(() => {
+  //     if (!isPlaying.value) return;
+  //     handleOnInterval();
+  //   }, 4000);
+  //   return () => clearInterval(intervalID);
+  // }, [isPlaying.value]);
 
   return (
     <div

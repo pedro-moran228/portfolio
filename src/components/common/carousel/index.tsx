@@ -13,6 +13,7 @@ import classNames from "classnames";
 import { DotList } from "./dot-list";
 import { SlicesList } from "./slices-list";
 import { BarOptions } from "./bar-options";
+import { useTranlateSlices } from "./helpers/use-tranlate-slices";
 
 interface props {
   slices: SliceT[];
@@ -27,7 +28,7 @@ export type SliceT = {
 export function Carousel({ slices, className = "" }: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
   const currIndex = useSignal(0);
-  const isPlaying = useSignal(true);
+  const isPlaying = useSignal(false);
   const amount = slices.length;
 
   const handleOnInterval = () => {
@@ -39,15 +40,25 @@ export function Carousel({ slices, className = "" }: props) {
   };
 
   useEffect(() => {
-    const intervalID = setInterval(() => {
-      if (!isPlaying.value) return;
-      handleOnInterval();
-    }, 4000);
-    return () => clearInterval(intervalID);
-  }, [isPlaying.value]);
+    const options = {
+      root: null,
+      threshold: 0.25,
+    };
+    const handler = ([observe]: IntersectionObserverEntry[]) => {
+      const { isIntersecting } = observe;
+      if (isIntersecting) {
+        isPlaying.value = true;
+        return;
+      }
+      isPlaying.value = false;
+    };
+    const observer = new IntersectionObserver(handler, options);
+    observer.observe(carouselRef.current);
+  }, []);
 
   return (
     <section
+      id="carousel"
       class={classNames(
         "relative mt-10 mb-20 h-auto w-full rounded-2xl shadow-[0px_0px_40px_10px_#0000006e] aspect-[16/8.10]",
         className
