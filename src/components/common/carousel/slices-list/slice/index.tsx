@@ -36,7 +36,7 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
 
         setLoaded(true);
       }}
-      loading="lazy"
+      loading={sliceActived ? "eager" : "lazy"}
       src={src}
     />
   );
