@@ -5,9 +5,14 @@ import GmailIcon from "./gmail-icon/index.astro";
 
 <div
   aria-label="Gmail Button"
-  class="relative w-full btn p-0 grid grid-cols-[60px,1fr] text-center flex-1 bg-[#1f3759] hover:bg-[#2c4b77] hover:rounded-none hover:rounded-t text-white group"
+  class="relative w-full btn p-0 text-center flex-1 text-white group"
 >
-  <GmailIcon />
-  <p class="flex-1 m-0 self-center">Gmail</p>
+  <a
+    class="rounded hover:rounded-none hover:rounded-t bg-[#1f3759] hover:bg-[#2c4b77] grid grid-cols-[60px,1fr] duration-100"
+    href="mailto:pedromoran228@gmail.com"
+  >
+    <GmailIcon />
+    <p class="flex-1 m-0 self-center">Gmail</p>
+  </a>
   <GmailDropSection client:load />
 </div>
