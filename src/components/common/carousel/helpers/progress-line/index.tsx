@@ -19,6 +19,7 @@ export const ProgressLine = ({
 
   useTranlateSlices({
     actived: isPlaying,
+    currentIndex: currIndex.value,
     handleOnInterval,
   });
 

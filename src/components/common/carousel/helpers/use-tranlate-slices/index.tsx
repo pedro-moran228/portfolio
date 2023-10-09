@@ -3,9 +3,14 @@ import { useEffect } from "preact/hooks";
 interface props {
   handleOnInterval: () => void;
   actived: { value: boolean };
+  currentIndex: number;
 }
 
-export const useTranlateSlices = ({ actived, handleOnInterval }: props) => {
+export const useTranlateSlices = ({
+  actived,
+  currentIndex,
+  handleOnInterval,
+}: props) => {
   useEffect(() => {
     const intervalID = setInterval(() => {
       handleOnInterval();
@@ -16,7 +21,5 @@ export const useTranlateSlices = ({ actived, handleOnInterval }: props) => {
     }
 
     return () => clearInterval(intervalID);
-  }, [actived.value]);
-
-  return;
+  }, [actived.value, currentIndex]);
 };
