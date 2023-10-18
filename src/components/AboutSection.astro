@@ -1,0 +1,122 @@
+---
+import classNames from "classnames";
+import Chef from "./Chef.astro";
+const missingSpace = 100;
+---
+
+<section class="relative z-[3] pb-[380px] text-white">
+  <!-- <HeaderDivider name="Sobre mi" /> -->
+  <section class="mx-auto w-[1000px] max-w-[1000px] mt-[10rem] relative">
+    <article
+      class="absolute z-10 left-[80px] top-[50px] w-[40%] flex flex-col items-center"
+    >
+      <Chef />
+      <h4 class="text-white">Cocina</h4>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam
+        reiciendis.
+      </p>
+      <!-- <img width={300} src="chef.png" alt="" /> -->
+      <!-- <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+        minima quisquam, iure commodi quas assumenda quae nemo. Ipsum,
+        temporibus at iste saepe amet labore nulla. Omnis odio hic dolore nihil.
+      </p> -->
+    </article>
+    <div class={classNames("polygon1", "w-full")}></div>
+    <div
+      class={classNames("polygon2", "w-full")}
+      style={{ marginTop: "-400px" }}
+    >
+    </div>
+    <section
+      class={classNames(
+        "absolute z-[-1] min-w-[300px] min-h-[300px] w-[25%] blur-[150px] -translate-x-1/2 -translate-y-1/2 aspect-square flex-center [&>div>i]:absolute [&>div>i]:w-full [&>div>i]:h-full"
+      )}
+      style={{
+        transform: "translate(-50%, -50%)",
+        left: "50%",
+        top: "50%",
+        width: "80vw",
+        height: "80vw",
+      }}
+    >
+      <div class="w-full h-full relative">
+        <i
+          class={`opacity-10 xs:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-cyan-500 to-blue-900 rounded-[49%_51%_52%_48%_/_75%_30%_70%_25%]`}
+        ></i>
+        <i
+          class={`opacity-10 xs:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-purple-500 to-pink-900 rounded-[39%_61%_13%_87%_/_5%_30%_70%_95%]`}
+        ></i>
+        <i
+          class={`opacity-10 xs:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-[86%_14%_13%_87%_/_77%_25%_75%_23%]`}
+        ></i>
+        <i
+          class={`opacity-10 xs:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-teal-500/50 to-pink-900 rounded-[35%_65%_1%_99%_/_0%_90%_10%_100%]`}
+        ></i>
+      </div>
+    </section>
+  </section>
+  <svg
+    style="visibility: hidden; position: absolute;"
+    width="0"
+    height="0"
+    xmlns="http://www.w3.org/2000/svg"
+    version="1.1"
+  >
+    <defs>
+      <filter id="round">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"
+        ></feGaussianBlur>
+        <feColorMatrix
+          in="blur"
+          mode="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+          result="goo"></feColorMatrix>
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+      </filter>
+    </defs>
+  </svg>
+</section>
+<style>
+  .polygon1 {
+    display: inline-block;
+    margin: 20px;
+    filter: url(#round);
+  }
+  .polygon1::before {
+    content: "";
+    display: block;
+    padding-top: 80%;
+    background: rgb(27 26 32 / 0.6);
+    clip-path: polygon(
+      100% 0,
+      0 0,
+      0 100%,
+      47.5% 100%,
+      47.5% 47.5%,
+      100% 47.5%
+    );
+  }
+
+  .polygon2 {
+    display: inline-block;
+    margin: 20px;
+    filter: url(#round);
+  }
+  .polygon2::before {
+    content: "";
+    display: block;
+    padding-top: 80%;
+    background: rgb(27 26 32 / 0.6);
+    clip-path: polygon(
+      52.5% 0,
+      52.5% 52.5%,
+      0 52.5%,
+      0 100%,
+      100% 100%,
+      100% 0
+    );
+  }
+</style>
+<!-- scaleX(-1) -->
