@@ -3,14 +3,15 @@ import LinkedinButton from "./LinkedinButton.astro";
 import GithubButton from "./GithubButton.astro";
 import GmailSection from "./gmail-section/index.astro";
 import { StainBall } from "../common/stain-ball";
+import MyService from "../MyService.astro";
 ---
 
-<main id="profile-section" class="relative z-[2] pb-[250px]">
-  <div
-    class="relative z-[3] xs:container xs:w-[100%] pt-0 xs:pt-[3rem] sm:pt-[6rem]"
+<main id="profile-section" class="flex relative z-[2] pb-[250px]">
+  <section
+    class="relative z-[3] xs:w-[100%] pt-0 xs:pt-[3rem] sm:pt-[6rem] grid grid-cols-[800px,500px] gap-10 place-content-center items-center"
   >
     <article
-      class="w-full rounded-none text-white p-10 border border-[#04142a26] space-y-6 bg-primary/40 md:bg-primary/60 backdrop-blur-[100px] xs:rounded-2xl"
+      class="w-full max-w-[800px] rounded-none text-white p-10 border border-[#04142a26] space-y-6 z-10 bg-primary/40 md:bg-primary/60 backdrop-blur-[100px] xs:rounded-2xl"
     >
       <header class="space-y-2 md:space-y-0">
         <div class="flex flex-col-reverse sm:block">
@@ -74,7 +75,8 @@ import { StainBall } from "../common/stain-ball";
         <GmailSection />
       </footer>
     </article>
-  </div>
+    <MyService />
+  </section>
   <StainBall
     client:media="(min-width: 670px)"
     directionType="HORIZONTAL"
