@@ -18,14 +18,13 @@ export const GmailDropSection = () => {
   return (
     <section
       class={classNames(
-        "absolute w-full z-10 top-full flex-center p-2 pt-[12px] rounded-b-md shadow-md bg-[#1f3759]  duration-100 flex",
+        "absolute w-[225px] z-10 top-full mt-[3px] flex-center p-2 pt-[12px] rounded-b-md rounded-tr-md shadow-md bg-[#1f3759]  duration-100 flex",
         {
           "invisible opacity-0 group-hover:visible group-hover:opacity-100":
             !isCopied,
         }
       )}
     >
-      <i class="absolute top-0 w-full bg-primary h-[4px] -mx-6"></i>
       <input
         disabled
         value={gmail}
