@@ -1,15 +1,34 @@
 ---
-import CrowdarAcademy from "./Projects/CrowdarAcademy.astro";
-import LippiaTestManager from "./Projects/LippiaTestManager.astro";
-import LippiaReportServer from "./Projects/LippiaReportServer.astro";
-import HeaderDivider from "../common/HeaderDivider.astro";
+import ExperienceCard from "./ExperienceCard.astro";
 ---
 
-<section class="relative z-[3] pb-[380px] bg-primary text-white">
-  <HeaderDivider name="Experiencia" />
-  <section class="relative">
-    <LippiaTestManager />
-    <CrowdarAcademy />
-    <LippiaReportServer />
-  </section>
+<section
+  class={`
+    relative z-[3] pb-[380px] pt-[75px] bg-primary text-white
+    before:absolute before:z-10 before:bg-gradient-to-t before:from-primary before:to-transparent before:bottom-full before:h-[200px] before:w-full
+`}
+>
+  <h2 class="text-current text-center text-[50px]">Experience</h2>
+  <ul class="mt-[100px] container grid auto-cols-fr gap-10">
+    <ExperienceCard
+      title="Crowdar S.A."
+      subtitle="Full Stack Developer"
+      date="2021 - Actualidad"
+      hoverColor="bg-[#1b356d]"
+      href="/crowdar"
+    >
+      <img src="/crowdar.png" alt="crowdar" class="ml-[-5px]" />
+    </ExperienceCard>
+    <ExperienceCard
+      title="Freelance"
+      subtitle="Frontend Developer"
+      date="2023"
+      hoverColor="bg-green-500/40"
+      href="#"
+    >
+      <img src="/network.png" alt="network" width="70" />
+    </ExperienceCard>
+  </ul>
+  <span class="hover:bg-[#1b356d]"></span>
+  <span class="hover:bg-green-500/40"></span>
 </section>

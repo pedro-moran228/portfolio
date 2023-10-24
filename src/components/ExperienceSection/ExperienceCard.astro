@@ -1,0 +1,36 @@
+---
+import classNames from "classnames";
+interface Props {
+  title: string;
+  subtitle: string;
+  date: string;
+  hoverColor?: string;
+  href: string;
+}
+
+const {
+  date,
+  subtitle,
+  title,
+  hoverColor = "bg-[#3e486b99]",
+  href,
+} = Astro.props;
+---
+
+<a href={href}>
+  <article
+    class={classNames(
+      "flex space-x-5 items-center bg-[#3e486b40] p-10 rounded-xl shadow-md border border-[#1f2937] border-opacity-50 transition-colors duration-100",
+      `hover:${hoverColor}`
+    )}
+  >
+    <picture class="inline-block min-w-[80px] max-w-[80px]">
+      <slot />
+    </picture>
+    <div class="flex-1 space-y-[1px]">
+      <h4 class="text-current m-0 leading-10">{title}</h4>
+      <p class="text-[22px] mt-[-10px]">{subtitle}</p>
+    </div>
+    <p class="self-end">{date}</p>
+  </article>
+</a>
