@@ -2,19 +2,23 @@
 import ProfileSection from "../components/ProfileSection/ProfileSection.astro";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection.astro";
 import Layout from "../components/Layouts/Layout.astro";
-import AboutSection from "../components/AboutSection.astro";
-import Service from "../components/MyService.astro";
+import AboutMe from "../components/ExperienceSection/AboutMe.astro";
+import Technologies from "../components/common/technologies/index.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <ProfileSection />
-  <ExperienceSection />
-  <!-- <section
+  <section
     class={`
-    relative z-[3] grid grid-cols-2 gap-[50px] pb-[380px] pt-[75px] bg-primary text-white
-    before:absolute before:z-10 before:bg-gradient-to-t before:from-primary before:to-transparent before:bottom-full before:h-[200px] before:w-full
+    relative z-[3] mt-[10px] grid grid-cols-[700px,500px] gap-[100px] place-content-center bg-primary/50 text-white
+    before:absolute before:z-10 before:bg-gradient-to-t before:from-primary/50 before:to-transparent before:bottom-full before:h-[200px] before:w-full
 `}
   >
-  </section> -->
-  <!-- <AboutSection /> -->
+    <ExperienceSection />
+    <AboutMe />
+  </section>
+  <section class="container space-y-12 mt-[100px] pb-[200px]">
+    <h2 class="ml-[4px]">Technologies</h2>
+    <Technologies />
+  </section>
 </Layout>

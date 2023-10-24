@@ -19,7 +19,7 @@ interface Props {
   technologies?: (
     | "HTML"
     | "CSS"
-    | "JavaCcript"
+    | "JavaScript"
     | "TypeScript"
     | "Astro"
     | "React"
@@ -35,23 +35,35 @@ interface Props {
   grid3Col?: boolean;
 }
 
-const { theme = "light", grid3Col = false, technologies } = Astro.props;
+const { theme = "dark", grid3Col = false, technologies } = Astro.props;
 
 const techComponets = {
-  HTML: HtmlIcon,
-  CSS: CssItem,
-  JavaCcript: JavaScriptIcon,
-  TypeScript: TypescriptIcon,
-  React: ReactIcon,
-  Astro: AstroIcon,
-  NextJS: NextJsItem,
-  Tailwind: TailwindcssIcon,
-  SASS: SassItem,
-  Testing_Library: TestingLibraryIcon,
-  Jest: JestIcon,
-  Vite: ViteItem,
-  NestJS: NestJsIcon,
-  PostgreSQL: PostgreSqlIcon,
+  HTML: {
+    Component: HtmlIcon,
+    name: "HTML",
+  },
+  CSS: {
+    Component: CssItem,
+    name: "CSS",
+  },
+  // JavaScript: JavaScriptIcon,
+  // TypeScript: TypescriptIcon,
+  React: {
+    Component: ReactIcon,
+    name: "React",
+  },
+  Astro: {
+    Component: AstroIcon,
+    name: "Astro",
+  },
+  // NextJS: NextJsItem,
+  // Tailwind: TailwindcssIcon,
+  // SASS: SassItem,
+  // Testing_Library: TestingLibraryIcon,
+  // Jest: JestIcon,
+  // Vite: ViteItem,
+  // NestJS: NestJsIcon,
+  // PostgreSQL: PostgreSqlIcon,
 };
 
 const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
@@ -67,33 +79,29 @@ const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
     sm:gap-3
     w-full 
     place-content-center
-
-    [&>li]:pl-[30px]
-    sm:[&>li]:pl-0
-    
-    ${
-      theme === "dark"
-        ? "[&>li]:border [&>li]:border-[#ffffff21] [&>li]:bg-[#191e29] text-white"
-        : "[&>li]:bg-white"
-    }
-
-    [&>li]:overflow-hidden
-    [&>li]:w-full
-    [&>li]:h-[60px]
-    [&>li]:flex
-    [&>li]:items-center
-    [&>li]:space-x-2
-    [&>li]:rounded-md
-    [&>li]:shadow
-    [&>li>p]:font-medium
-    [&>li>p]:mt-0
-
-    [&>li>div]:flex-center
-    [&>li>div]:w-[50px]
-    [&>li>div>img]:w-[30px]
-    [&>li>div]:h-full
-    [&>li>div]:relative
   `}
 >
-  {techComponetsFiltered.map((C) => <C />)}
+  {
+    techComponetsFiltered
+      ? techComponetsFiltered?.map((C) => <li class={`w-[150px] h-[125px]`} />)
+      : Object.values(techComponets).map(({ Component, name }) => (
+          <li class="text-white w-[150px]">
+            <div
+              class={`
+              w-[150px] 
+              h-[150px]
+              rounded-full
+              shadow-xl
+              border
+              border-[#141519]
+              bg-[#673f6836]
+              flex-center
+            `}
+            >
+              <Component />
+            </div>
+            <p class="text-center font-semibold text-[22px] mt-[2px]">{name}</p>
+          </li>
+        ))
+  }
 </ol>

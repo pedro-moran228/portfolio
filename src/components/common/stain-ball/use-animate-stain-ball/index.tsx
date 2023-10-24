@@ -68,7 +68,7 @@ export const useAnimateStainBall = ({
     }
 
     //*LEFT WALL: "X" changes to negative when it hits the right wall so it goes right
-    if (rect.right >= boxRect.right && directionRef.current.x > 0) {
+    if (rect.right + 100 >= boxRect.right && directionRef.current.x > 0) {
       directionRef.current = {
         x: -directionRef.current.x,
         y: directionRef.current.y,

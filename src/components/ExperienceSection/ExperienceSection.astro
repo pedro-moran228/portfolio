@@ -2,33 +2,26 @@
 import ExperienceCard from "./ExperienceCard.astro";
 ---
 
-<section
-  class={`
-    relative z-[3] mt-[10px] grid grid-cols-[800px,500px] place-content-center bg-primary/50 pb-[200px] text-white
-    before:absolute before:z-10 before:bg-gradient-to-t before:from-primary/50 before:to-transparent before:bottom-full before:h-[200px] before:w-full
-`}
->
-  <div class="flex flex-col col-span-1 space-y-[30px]">
-    <h2 class="text-current text-center text-[50px] pb-[20px]">Experience</h2>
-    <ExperienceCard
-      title="Crowdar S.A."
-      subtitle="Full Stack Developer"
-      date="2021 - Actualidad"
-      hoverColor="bg-[#1b356d]"
-      href="/crowdar"
-    >
-      <img src="/crowdar.png" alt="crowdar" class="ml-[-5px]" />
-    </ExperienceCard>
-    <ExperienceCard
-      title="Freelance"
-      subtitle="Frontend Developer"
-      date="2023"
-      hoverColor="bg-green-500/40"
-      href="#"
-    >
-      <img src="/network.png" alt="network" width="70" />
-    </ExperienceCard>
-  </div>
-  <span class="hidden hover:bg-[#1b356d]"></span>
-  <span class="hidden hover:bg-green-500/40"></span>
-</section>
+<div class="flex flex-col col-span-1 space-y-[30px]">
+  <h2 class="ml-[4px]">Experience</h2>
+  <ExperienceCard
+    title="Crowdar S.A."
+    subtitle="Full Stack Developer"
+    date="2021 - Actualidad"
+    hoverColor="bg-[#1b356d]"
+    href="/crowdar"
+  >
+    <img src="/crowdar.png" alt="crowdar" class="ml-[-5px]" />
+  </ExperienceCard>
+  <ExperienceCard
+    title="Freelance"
+    subtitle="Frontend Developer"
+    date="2023"
+    hoverColor="bg-green-500/40"
+    href="#"
+  >
+    <img src="/network.png" alt="network" width="70" />
+  </ExperienceCard>
+</div>
+<span class="hidden hover:bg-[#1b356d]"></span>
+<span class="hidden hover:bg-green-500/40"></span>
