@@ -3,10 +3,19 @@ import ProfileSection from "../components/ProfileSection/ProfileSection.astro";
 import ExperienceSection from "../components/ExperienceSection/ExperienceSection.astro";
 import Layout from "../components/Layouts/Layout.astro";
 import AboutSection from "../components/AboutSection.astro";
+import Service from "../components/Service.astro";
 ---
 
 <Layout title="Welcome to Astro.">
   <ProfileSection />
+  <Service />
   <ExperienceSection />
+  <!-- <section
+    class={`
+    relative z-[3] grid grid-cols-2 gap-[50px] pb-[380px] pt-[75px] bg-primary text-white
+    before:absolute before:z-10 before:bg-gradient-to-t before:from-primary before:to-transparent before:bottom-full before:h-[200px] before:w-full
+`}
+  >
+  </section> -->
   <!-- <AboutSection /> -->
 </Layout>
