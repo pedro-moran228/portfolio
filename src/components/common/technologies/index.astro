@@ -46,8 +46,14 @@ const techComponets = {
     Component: CssItem,
     name: "CSS",
   },
-  // JavaScript: JavaScriptIcon,
-  // TypeScript: TypescriptIcon,
+  JavaScript: {
+    Component: JavaScriptIcon,
+    name: "JavaScript",
+  },
+  TypeScript: {
+    Component: TypescriptIcon,
+    name: "TypeScript",
+  },
   React: {
     Component: ReactIcon,
     name: "React",
@@ -56,31 +62,44 @@ const techComponets = {
     Component: AstroIcon,
     name: "Astro",
   },
-  // NextJS: NextJsItem,
-  // Tailwind: TailwindcssIcon,
-  // SASS: SassItem,
-  // Testing_Library: TestingLibraryIcon,
-  // Jest: JestIcon,
-  // Vite: ViteItem,
-  // NestJS: NestJsIcon,
-  // PostgreSQL: PostgreSqlIcon,
+  NextJS: {
+    Component: NextJsItem,
+    name: "NextJS",
+  },
+  Tailwind: {
+    Component: TailwindcssIcon,
+    name: "Tailwind",
+  },
+  SASS: {
+    Component: SassItem,
+    name: "SASS",
+  },
+  Testing_Library: {
+    Component: TestingLibraryIcon,
+    name: "Testing Library",
+  },
+  Jest: {
+    Component: JestIcon,
+    name: "Jest",
+  },
+  Vite: {
+    Component: ViteItem,
+    name: "Vite",
+  },
+  NestJS: {
+    Component: NestJsIcon,
+    name: "NestJS",
+  },
+  PostgreSQL: {
+    Component: PostgreSqlIcon,
+    name: "PostgreSQL",
+  },
 };
 
 const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
 ---
 
-<ol
-  class={`
-    sm:min-w-[414px]
-    flex flex-col space-y-2 sm:space-y-0
-    sm:grid
-    sm:grid-cols-[repeat(2,_1fr)]
-    ${grid3Col ? "md:grid-cols-3" : "md:grid-cols-2"}
-    sm:gap-3
-    w-full 
-    place-content-center
-  `}
->
+<ol class="w-full flex flex-wrap gap-10">
   {
     techComponetsFiltered
       ? techComponetsFiltered?.map((C) => <li class={`w-[150px] h-[125px]`} />)
