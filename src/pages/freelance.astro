@@ -1,0 +1,50 @@
+---
+import CrowdarAcademy from "../components/ExperienceSection/Projects/CrowdarAcademy.astro";
+import Envero from "../components/ExperienceSection/Projects/Envero.astro";
+import LippiaReportServer from "../components/ExperienceSection/Projects/LippiaReportServer.astro";
+import LippiaTestManager from "../components/ExperienceSection/Projects/LippiaTestManager.astro";
+import Layout from "../components/Layouts/Layout.astro";
+---
+
+<Layout title="Experience - Crowdar">
+  <main class="pb-[300px] pt-[100px] bg-primary text-white">
+    <a
+      href="/"
+      class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[200px] group hover:underline"
+    >
+      <i class="inline-block relative"
+        ><svg
+          width="21"
+          height="14"
+          viewBox="0 0 21 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-0 top-1/2 -translate-y-1/2 group-hover:left-[-5px] transition-all duration-300"
+        >
+          <path
+            d="M8 13L1 7L8 1"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M20 7L2 7"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </i>
+      <div class="w-[100px] text-right">Go back</div>
+    </a>
+    <header
+      class="container flex-center py-5 shadow-sm mb-[50px] flex items-center space-x-5 bg-green-500/40 rounded-2xl"
+    >
+      <picture class="w-[115px] ml-[-8px]">
+        <img src="/network.png" alt="network" />
+      </picture>
+      <h1 class="text-[60px] text-current">Freelance</h1>
+    </header>
+    <Envero />
+  </main>
+</Layout>

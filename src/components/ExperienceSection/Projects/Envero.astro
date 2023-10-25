@@ -1,0 +1,41 @@
+---
+import Technologies from "../../common/technologies/index.astro";
+import { Carousel } from "../../common/carousel";
+import Slider from "../../common/slider/index.astro";
+
+const images = [
+  { imgSrc: "envero/png/1.png", maskSrc: "envero/mask/1.avif" },
+  { imgSrc: "envero/png/2.png", maskSrc: "envero/mask/2.avif" },
+  { imgSrc: "envero/png/3.png", maskSrc: "envero/mask/3.avif" },
+];
+---
+
+<article id="box-project-experience" class="space-y-12">
+  <header class="container">
+    <h3 class="text-current">Envero</h3>
+    <p>
+      Trabaje en arreglos de bugs y nuevas funcionalidades para el frontend de
+      envero.
+    </p>
+    <p>Agregué nuevas caracteristicas como:</p>
+    <ul class="space-y-1 mt-2 [&>li]:marker">
+      <li>Fix de bugs.</li>
+      <li>Fetching de datos.</li>
+      <li>Rutas de navegación.</li>
+      <li>Manejo de estados con Redux.</li>
+      <li>Componentes como tablas, paginacion y graficos.</li>
+    </ul>
+  </header>
+  <div class="container">
+    <Carousel className="hidden md:block" slices={images} client:visible />
+  </div>
+  <Slider className="block md:hidden" slices={images} />
+  <footer class="container space-y-12 mt-12">
+    <h4 class="text-current">Tecnologías</h4>
+    <Technologies
+      theme="dark"
+      grid3Col
+      technologies={["React", "TypeScript", "Tailwind"]}
+    />
+  </footer>
+</article>
