@@ -2,7 +2,7 @@
 
 import ButtonPrevSlide from "./button-prev-slide/Index";
 import ButtonNextSlide from "./button-next-slide/Index";
-import { signal, useSignal } from "@preact/signals";
+import { useSignal } from "@preact/signals";
 import { handleOnClickNextSlice } from "./helpers/handle-on-click-next-slice";
 import { handleOnClickPrevSlice } from "./helpers/handle-on-click-prev-slice";
 import { useEffect, useRef } from "preact/hooks";
@@ -13,11 +13,11 @@ import classNames from "classnames";
 import { DotList } from "./dot-list";
 import { SlicesList } from "./slices-list";
 import { BarOptions } from "./bar-options";
-import { useTranlateSlices } from "./helpers/use-tranlate-slices";
 
 interface props {
   slices: SliceT[];
   className?: string;
+  color?: `bg-${string}`;
 }
 
 export type SliceT = {
@@ -25,7 +25,11 @@ export type SliceT = {
   maskSrc: string;
 };
 
-export function Carousel({ slices, className = "" }: props) {
+export function Carousel({
+  slices,
+  className = "",
+  color = "bg-secondary",
+}: props) {
   const carouselRef = useRef<HTMLUListElement>(null);
   const currIndex = useSignal(0);
   const isPlaying = useSignal(false);
@@ -72,6 +76,7 @@ export function Carousel({ slices, className = "" }: props) {
         />
         <BarOptions isPlaying={isPlaying}>
           <ProgressLine
+            color={color}
             amount={amount}
             currIndex={currIndex}
             handleOnInterval={handleOnInterval}
@@ -105,7 +110,7 @@ export function Carousel({ slices, className = "" }: props) {
           />
         </BarOptions>
       </div>
-      <DotList currIndex={currIndex} amount={amount} />
+      <DotList color={color} currIndex={currIndex} amount={amount} />
     </section>
   );
 }

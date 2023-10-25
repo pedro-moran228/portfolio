@@ -1,15 +1,19 @@
 ---
+import classNames from "classnames";
 import CrowdarAcademy from "../components/ExperienceSection/Projects/CrowdarAcademy.astro";
 import LippiaReportServer from "../components/ExperienceSection/Projects/LippiaReportServer.astro";
 import LippiaTestManager from "../components/ExperienceSection/Projects/LippiaTestManager.astro";
 import Layout from "../components/Layouts/Layout.astro";
+import CrowdarSVG from "../components/common/Icons/CrowdarSVG.astro";
+
+const PAGE_BG_COLOR = "bg-[#385B97]";
 ---
 
 <Layout title="Experience - Crowdar">
   <main class="pb-[300px] pt-[100px] bg-primary text-white">
     <a
       href="/"
-      class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[200px] group hover:underline"
+      class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[50px] group hover:underline"
     >
       <i class="inline-block relative"
         ><svg
@@ -37,15 +41,19 @@ import Layout from "../components/Layouts/Layout.astro";
       <div class="w-[100px] text-right">Go back</div>
     </a>
     <header
-      class="container flex-center py-5 shadow-sm mb-[50px] flex items-center space-x-3 bg-[#1b356d] rounded-2xl"
+      class={classNames(
+        "h-[160px] container flex-center py-5 shadow-sm mb-[50px] flex items-center space-x-5 rounded-2xl",
+        PAGE_BG_COLOR
+      )}
     >
-      <picture class="w-[125px] ml-[-8px]">
-        <img src="/crowdar.png" alt="crowdar" />
+      <picture class="flex w-[110px] ml-[-8px]">
+        <CrowdarSVG />
       </picture>
       <h1 class="text-[60px] text-current">Crowdar A.S.</h1>
     </header>
-    <LippiaTestManager />
-    <CrowdarAcademy />
-    <LippiaReportServer />
+    <LippiaTestManager color={PAGE_BG_COLOR} />
+    <CrowdarAcademy color={PAGE_BG_COLOR} />
+    <LippiaReportServer color={PAGE_BG_COLOR} />
+    <span class="hidden [&>li]:before:bg-[#385B97]"></span>
   </main>
 </Layout>

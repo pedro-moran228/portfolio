@@ -1,7 +1,14 @@
 ---
+import classNames from "classnames";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import Technologies from "../../common/technologies/index.astro";
+
+interface Props {
+  color: `bg-${string}`;
+}
+
+const { color } = Astro.props;
 
 const images = [
   { imgSrc: "LTM/png/1.png", maskSrc: "LTM/mask/1.avif" },
@@ -25,7 +32,12 @@ const images = [
         En la primera versión me encargué de planificación, diseño funcional y
         desarrollo implementando características como:
       </p>
-      <ul class="space-y-1 mt-2 [&>li]:marker">
+      <ul
+        class={classNames(
+          "space-y-1 mt-2 [&>li]:marker",
+          `[&>li]:before:${color}`
+        )}
+      >
         <li>Rutas dinámicas con Single Page Application.</li>
         <li>
           Estados globales con <span class="font-bold">useContext</span> y <span
@@ -47,7 +59,12 @@ const images = [
         Esta primera versión fue descartada y se decidió iniciar una segunda
         versión planteada como un MVP.
       </p>
-      <Carousel className="hidden md:block" slices={images} client:visible />
+      <Carousel
+        color={color}
+        className="hidden md:block"
+        slices={images}
+        client:visible
+      />
     </div>
     <Slider className="block md:hidden" slices={images} />
     <div class="container">

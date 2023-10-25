@@ -1,4 +1,5 @@
 ---
+import CrowdarSVG from "../common/Icons/CrowdarSVG.astro";
 import ExperienceCard from "./ExperienceCard.astro";
 ---
 
@@ -8,20 +9,23 @@ import ExperienceCard from "./ExperienceCard.astro";
     title="Crowdar S.A."
     subtitle="Full Stack Developer"
     date="2021 - Actualidad"
-    hoverColor="bg-[#1b356d]"
+    hoverColor="bg-[#385B97]"
     href="/crowdar"
   >
-    <img src="/crowdar.png" alt="crowdar" class="ml-[-5px]" />
+    <!-- <img src="/crowdar2.png" alt="crowdar" class="rounded-full ml-[-5px]" /> -->
+    <div class="ml-[-4px] w-[72px]">
+      <CrowdarSVG />
+    </div>
   </ExperienceCard>
   <ExperienceCard
     title="Freelance"
     subtitle="Frontend Developer"
     date="2023"
-    hoverColor="bg-green-500/40"
+    hoverColor="bg-green-500/90"
     href="/freelance"
   >
-    <img src="/network.png" alt="network" width="70" />
+    <img src="/network.png" class="mt-1" alt="network" width="70" />
   </ExperienceCard>
 </div>
-<span class="hidden hover:bg-[#1b356d]"></span>
-<span class="hidden hover:bg-green-500/40"></span>
+<span class="hidden hover:bg-[#385B97]"></span>
+<span class="hidden hover:bg-green-500/90"></span>

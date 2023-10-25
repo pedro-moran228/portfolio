@@ -2,6 +2,13 @@
 import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
+import classNames from "classnames";
+
+interface Props {
+  color: `bg-${string}`;
+}
+
+const { color } = Astro.props;
 
 const images = [
   { imgSrc: "envero/png/1.png", maskSrc: "envero/mask/1.avif" },
@@ -18,7 +25,12 @@ const images = [
       envero.
     </p>
     <p>Agregué nuevas caracteristicas como:</p>
-    <ul class="space-y-1 mt-2 [&>li]:marker">
+    <ul
+      class={classNames(
+        "space-y-1 mt-2 [&>li]:marker",
+        `[&>li]:before:${color}`
+      )}
+    >
       <li>Fix de bugs.</li>
       <li>Fetching de datos.</li>
       <li>Rutas de navegación.</li>
@@ -27,7 +39,12 @@ const images = [
     </ul>
   </header>
   <div class="container">
-    <Carousel className="hidden md:block" slices={images} client:visible />
+    <Carousel
+      color={color}
+      className="hidden md:block"
+      slices={images}
+      client:visible
+    />
   </div>
   <Slider className="block md:hidden" slices={images} />
   <footer class="container space-y-12 mt-12">
@@ -39,3 +56,4 @@ const images = [
     />
   </footer>
 </article>
+<!-- <span class="hidden [&>li]:before:bg-green-500/90"></span> -->

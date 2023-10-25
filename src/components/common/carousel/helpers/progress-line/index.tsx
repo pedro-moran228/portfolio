@@ -6,12 +6,15 @@ interface props {
   amount: number;
   isPlaying: { value: boolean };
   handleOnInterval: () => void;
+  color: `bg-${string}`;
 }
+
 export const ProgressLine = ({
   amount,
   currIndex,
   isPlaying,
   handleOnInterval,
+  color,
 }: props) => {
   const sliceWidthPercentage = Math.ceil(100 / (amount - 1));
   const outerIndex = currIndex.value % amount;
@@ -36,7 +39,7 @@ export const ProgressLine = ({
           width: progressWidth,
           transitionProperty: "width",
         }}
-        class={classNames("block h-full bg-secondary duration-500")}
+        class={classNames("block h-full duration-500", color)}
       ></i>
     </div>
   );

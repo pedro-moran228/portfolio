@@ -1,4 +1,4 @@
-import { useRef, type MutableRef } from "preact/hooks";
+import { type MutableRef } from "preact/hooks";
 import { handleOnTransitionEnd } from "../helpers/handle-on-transition-end";
 import type { SliceT } from "../index";
 import { Slice } from "./slice";

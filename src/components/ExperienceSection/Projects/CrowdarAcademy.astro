@@ -2,6 +2,13 @@
 import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
+import classNames from "classnames";
+
+interface Props {
+  color: `bg-${string}`;
+}
+
+const { color } = Astro.props;
 
 const images = [
   { imgSrc: "academy/png/1.png", maskSrc: "academy/mask/1.avif" },
@@ -32,13 +39,23 @@ const images = [
     </p>
   </header>
   <div class="container">
-    <Carousel className="hidden md:block" slices={images} client:visible />
+    <Carousel
+      color={color}
+      className="hidden md:block"
+      slices={images}
+      client:visible
+    />
   </div>
   <Slider className="block md:hidden" slices={images} />
   <footer class="container mr-auto space-y-12">
     <section>
       <p>Entre algunas de las caracterisiticas se encuentran:</p>
-      <ul class="space-y-1 mt-2 [&>li]:marker">
+      <ul
+        class={classNames(
+          "space-y-1 mt-2 [&>li]:marker",
+          `[&>li]:before:${color}`
+        )}
+      >
         <li>Manejo de rutas.</li>
         <li>Responsive web design (mobile first).</li>
         <li>Static Site Generation.</li>
