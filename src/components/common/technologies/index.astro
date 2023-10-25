@@ -99,10 +99,28 @@ const techComponets = {
 const techComponetsFiltered = technologies?.map((tech) => techComponets[tech]);
 ---
 
-<ol class="w-full flex flex-wrap gap-10">
+<ol class="w-full flex flex-wrap gap-10 place-content-center">
   {
     techComponetsFiltered
-      ? techComponetsFiltered?.map((C) => <li class={`w-[150px] h-[125px]`} />)
+      ? techComponetsFiltered?.map(({ Component, name }) => (
+          <li class="text-white w-[150px]">
+            <div
+              class={`
+              w-[150px] 
+              h-[150px]
+              rounded-full
+              shadow-md
+              border
+              border-[#141519]
+              bg-[#673f6836]
+              flex-center
+            `}
+            >
+              <Component />
+            </div>
+            <p class="text-center font-semibold text-[22px] mt-[2px]">{name}</p>
+          </li>
+        ))
       : Object.values(techComponets).map(({ Component, name }) => (
           <li class="text-white w-[150px]">
             <div

@@ -25,12 +25,12 @@ const images = [
   <section class="mt-8">
     <div class="container">
       <p>
-        Participé como desarrollador frontend en una primera y segunda versión
-        de Lippia Test Manager.
+        I participated as frontend developer in a first and second version of
+        Lippia Test Manager.
       </p>
       <p>
-        En la primera versión me encargué de planificación, diseño funcional y
-        desarrollo implementando características como:
+        In the first version, I was in charge of planning, functional design and
+        development implementing features such as:
       </p>
       <ul
         class={classNames(
@@ -38,26 +38,25 @@ const images = [
           `[&>li]:before:${color}`
         )}
       >
-        <li>Rutas dinámicas con Single Page Application.</li>
+        <li>Dynamic routes with Single Page Application.</li>
         <li>
-          Estados globales con <span class="font-bold">useContext</span> y <span
-            class="font-bold">useReducer</span
+          Estados globales con <strong>useContext</strong> y <strong
+            >useReducer</strong
           >.
         </li>
+        <li>Global states with useContext and useReducer.</li>
         <li>React Custom hooks.</li>
-        <li>Formularios.</li>
-        <li>Internacionalización.</li>
+        <li>Forms.</li>
+        <li>Internationalization.</li>
         <li>
-          Autenticación con Herramienta de Gestión (<span class="font-bold"
-            >Keycloak</span
-          >).
+          Authentication and user management with <strong>Keycloak</strong>.
         </li>
-        <li>Fetching de datos.</li>
-        <li>Tablas multifuncionales.</li>
+        <li>Data fetching.</li>
+        <li>Multifunctional tables.</li>
       </ul>
       <p>
-        Esta primera versión fue descartada y se decidió iniciar una segunda
-        versión planteada como un MVP.
+        This first version was discarded and it was decided to start a second
+        version as an MVP.
       </p>
       <Carousel
         color={color}
@@ -69,47 +68,39 @@ const images = [
     <Slider className="block md:hidden" slices={images} />
     <div class="container">
       <p>
-        Entre los grandes desafíos que logré completar están la migración de la
-        herramienta <span class="font-bold">Create React App</span> a <span
-          class="font-bold">Vite</span
-        > y la actualización de <span class="font-bold">React v17</span> a <span
-          class="font-bold">React v18</span
-        >.
+        Among the big challenges I managed to complete are the migration of the <strong
+          >Create React App</strong
+        > tool to <strong>Vite</strong> and the upgrade from <strong
+          >React v17</strong
+        > to <strong>React v18</strong>.
       </p>
       <p>
-        Mejoré la calidad del software tanto en eficiencia como en escalabilidad
-        estandarizando principios <span class="font-bold">S.O.L.I.D</span>,
-        <span class="font-bold">buenas practicas</span> y técnicas como <span
-          class="font-bold">lazy loading</span
-        > para mejorar la experiencia del usuario.
+        Improved software quality in both efficiency and scalability by
+        standardizing <strong>S.O.L.I.D</strong> principles, best practices and
+        techniques such as <strong>lazy loading</strong> to improve user
+        experience.
       </p>
       <p>
-        Aparte de mi rol en el frontend también he ayudado con el desarrollo del
-        backend al estar hecho en <span class="font-bold">NestJs</span>
-         (Javascript). Con mis aportes pude mejorar hasta en un <span
-          class="font-bold">300%</span
-        > la eficiencia del backend en operaciones como obteción y recopilación
-        de datos.
+        Apart from my role in the frontend I also helped with the backend
+        development as it was done in <strong>NestJs</strong> (Javascript). With
+        my contributions I was able to improve up to <strong>300%</strong> the
+        efficiency of the backend in operations such as data collection and
+        retrieval.
       </p>
     </div>
   </section>
-  <footer class="container mt-8 space-y-12">
-    <article>
-      <h4 class="text-current">Tecnologías</h4>
-      <Technologies
-        theme="dark"
-        grid3Col
-        technologies={[
-          "React",
-          "TypeScript",
-          "Tailwind",
-          "Jest",
-          "Testing_Library",
-          "Vite",
-          "NestJS",
-          "PostgreSQL",
-        ]}
-      />
-    </article>
+  <footer class="container mt-10 space-y-12">
+    <Technologies
+      technologies={[
+        "React",
+        "TypeScript",
+        "Tailwind",
+        "Jest",
+        "Testing_Library",
+        "Vite",
+        "NestJS",
+        "PostgreSQL",
+      ]}
+    />
   </footer>
 </article>

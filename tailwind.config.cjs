@@ -48,7 +48,7 @@ module.exports = {
 
         ".divide-line--before": { "@apply before:absolute before:top-[-100px] before:w-full before:h-[5px] before:bg-secondary": {} },
 
-        ".marker": { "@apply relative before:absolute before:-left-3.5 before:top-[13px] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-secondary before:brightness-110 before:rounded": {} },
+        ".marker": { "@apply relative before:absolute before:-left-5 before:top-[13px] before:-translate-y-1/2 before:h-2 before:w-2 before:bg-secondary before:brightness-110 before:rounded": {} },
 
         ".flex-center": { "@apply flex items-center justify-center": {} },
 
