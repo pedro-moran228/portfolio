@@ -21,35 +21,32 @@ import { ViewTransitions } from "astro:transitions";
   </head>
   <body class="relative z-[2]">
     <slot />
-  </body><style is:global>
-    html,
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #191e29;
-      color: white;
-      height: 100vh;
-      widows: 100vw;
-      /* overflow-x: hidden; */
-    }
+    <style is:global>
+      html,
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #191e29;
+        color: white;
+        height: 100vh;
+        widows: 100vw;
+        /* overflow-x: hidden; */
+      }
 
-    *::-webkit-scrollbar {
-      background-color: #262626;
-    }
+      *::-webkit-scrollbar {
+        background-color: #262626;
+      }
 
-    *::-webkit-scrollbar-thumb {
-      background-color: #454444;
-    }
+      *::-webkit-scrollbar-thumb {
+        background-color: #454444;
+      }
 
-    *::-webkit-scrollbar-button {
-      background-color: #454444;
-    }
+      *::-webkit-scrollbar-button {
+        background-color: #454444;
+      }
 
-    *::selection {
-      background-color: #6c426e;
-    }
-
-    .mask-triangle--before::before {
-      clip-path: polygon(0 100%, 100% 100%, 100% 0);
-    }
-  </style>
+      .mask-triangle--before::before {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0);
+      }
+    </style>
+  </body>
 </html>
