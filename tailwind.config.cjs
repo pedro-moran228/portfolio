@@ -4,13 +4,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xl-small': "1230px",
         xs: "500px",
-        sm: "670px"
+        sm: "670px",
         // md	768px
         // lg	1024px
+        'xl-small': "1230px",
         // xl	1280px
-        // 2xl	1536px
+        'xl-big': "1340px",
+        '2xl': '1420px'
       },
       // animation: {
       //   'spin': 'spin 100s linear infinite',

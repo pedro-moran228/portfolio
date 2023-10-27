@@ -1,0 +1,34 @@
+---
+import { StainBall } from "../common/stain-ball";
+import MyService from "../MyService.astro";
+import ProfileCard from "./ProfileCard.astro";
+---
+
+<main id="profile-section" class="flex relative z-[2] pb-[250px]">
+  <section
+    class:list={[
+      "w-full relative flex flex-col items-center space-y-10 z-[3] 2xl:grid grid-cols-[800px,500px] 2xl:gap-10 2xl:place-content-center 2xl:items-center",
+    ]}
+  >
+    <ProfileCard />
+    <MyService />
+  </section>
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="HORIZONTAL"
+    defaultPosition={{ x: 25, y: 25 }}
+    boxId="profile-section"
+  />
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="VERTICAL"
+    defaultPosition={{ x: 75, y: 38 }}
+    boxId="profile-section"
+  />
+  <StainBall
+    client:media="(min-width: 670px)"
+    directionType="CENTER"
+    defaultPosition={{ x: 50, y: 75 }}
+    boxId="profile-section"
+  />
+</main>
