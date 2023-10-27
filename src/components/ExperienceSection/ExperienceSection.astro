@@ -1,6 +1,8 @@
 ---
 import CrowdarSVG from "../common/Icons/CrowdarSVG.astro";
 import ExperienceCard from "./ExperienceCard.astro";
+import { Image } from "astro:assets";
+import networkIcon from "../../assets/icon/network.png";
 ---
 
 <div class="flex flex-col col-span-1 space-y-[30px]">
@@ -12,7 +14,6 @@ import ExperienceCard from "./ExperienceCard.astro";
     hoverColor="bg-[#385B97]"
     href="/crowdar"
   >
-    <!-- <img src="/crowdar2.png" alt="crowdar" class="rounded-full ml-[-5px]" /> -->
     <div class="ml-[-4px] w-[72px]">
       <CrowdarSVG />
     </div>
@@ -24,7 +25,7 @@ import ExperienceCard from "./ExperienceCard.astro";
     hoverColor="bg-green-500/90"
     href="/freelance"
   >
-    <img src="/network.png" class="mt-1" alt="network" width="70" />
+    <Image src={networkIcon} alt="network" class="mt-1" width="70" />
   </ExperienceCard>
 </div>
 <span class="hidden hover:bg-[#385B97]"></span>

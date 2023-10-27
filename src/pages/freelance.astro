@@ -3,6 +3,9 @@ import classNames from "classnames";
 import Envero from "../components/ExperienceSection/Projects/Envero.astro";
 import Layout from "../components/Layouts/Layout.astro";
 
+import { Image } from "astro:assets";
+import networkIcon from "../assets/icon/network.png";
+
 const PAGE_BG_COLOR = "bg-green-500/90";
 ---
 
@@ -43,9 +46,7 @@ const PAGE_BG_COLOR = "bg-green-500/90";
         PAGE_BG_COLOR
       )}
     >
-      <picture class="w-[115px] ml-[-8px]">
-        <img src="/network.png" alt="network" />
-      </picture>
+      <Image src={networkIcon} alt="network" class="ml-[-8px]" width="115" />
       <h1 class="text-[60px] text-current">Freelance</h1>
     </header>
     <Envero color={PAGE_BG_COLOR} />

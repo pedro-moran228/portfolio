@@ -4,6 +4,8 @@ import GithubButton from "./GithubButton.astro";
 import GmailSection from "./gmail-section/index.astro";
 import { StainBall } from "../common/stain-ball";
 import MyService from "../MyService.astro";
+import { Image } from "astro:assets";
+import profileImg from "../../assets/profile_bg_high.png";
 ---
 
 <main id="profile-section" class="flex relative z-[2] pb-[250px]">
@@ -19,12 +21,7 @@ import MyService from "../MyService.astro";
             class="mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl"
             style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
           >
-            <img
-              src="profile_bg_high.png"
-              fetchpriority="high"
-              loading="eager"
-              alt="profile"
-            />
+            <Image src={profileImg} alt="profile_bg_high" />
           </div>
           <section>
             <header>

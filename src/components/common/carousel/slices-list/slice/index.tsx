@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import { useEffect, type MutableRef, useState } from "preact/hooks";
+import { Image } from "astro:assets";
 
 interface props {
-  image: string;
-  mask: string;
+  image: ImageMetadata;
+  mask: ImageMetadata;
   sliceActived: boolean;
   index: number;
 }
@@ -17,7 +18,7 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
   }, [sliceActived]);
 
   return (
-    <img
+    <Image
       style={{
         transform: "translateX(-100%)",
         margin: "0px",
@@ -29,15 +30,17 @@ export const Slice = ({ image, mask, sliceActived, index }: props) => {
       data-index={index}
       data-actived={sliceActived}
       data-loaded={loaded}
-      onLoad={(e) => {
-        const target = e.target as HTMLElement;
-        const isMask = mask === target.getAttribute("src");
-        if (isMask) return;
+      // onload="this.dataset.loaded = true"
+      // onLoad={(e) => {
+      //   const target = e.target as HTMLElement;
+      //   const isMask = mask === target.getAttribute("src");
+      //   if (isMask) return;
 
-        setLoaded(true);
-      }}
+      //   setLoaded(true);
+      // }}
       loading={sliceActived ? "eager" : "lazy"}
-      src={src}
+      src={image}
+      alt={`image-${index}`}
     />
   );
 };

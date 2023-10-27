@@ -21,8 +21,8 @@ interface props {
 }
 
 export type SliceT = {
-  imgSrc: string;
-  maskSrc: string;
+  imgSrc: ImageMetadata;
+  maskSrc: ImageMetadata;
 };
 
 export function Carousel({

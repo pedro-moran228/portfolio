@@ -10,11 +10,21 @@ interface Props {
 
 const { color } = Astro.props;
 
+import en1 from "../../../assets/envero/png/1.png";
+import en2 from "../../../assets/envero/png/2.png";
+import en3 from "../../../assets/envero/png/3.png";
+import en4 from "../../../assets/envero/png/4.png";
+
+import en1M from "../../../assets/envero/mask/1.avif";
+import en2M from "../../../assets/envero/mask/2.avif";
+import en3M from "../../../assets/envero/mask/3.avif";
+import en4M from "../../../assets/envero/mask/4.avif";
+
 const images = [
-  { imgSrc: "envero/png/1.png", maskSrc: "envero/mask/1.avif" },
-  { imgSrc: "envero/png/2.png", maskSrc: "envero/mask/2.avif" },
-  { imgSrc: "envero/png/3.png", maskSrc: "envero/mask/3.avif" },
-  { imgSrc: "envero/png/4.png", maskSrc: "envero/mask/4.avif" },
+  { imgSrc: en1, maskSrc: en1M },
+  { imgSrc: en2, maskSrc: en2M },
+  { imgSrc: en3, maskSrc: en3M },
+  { imgSrc: en4, maskSrc: en4M },
 ];
 ---
 
