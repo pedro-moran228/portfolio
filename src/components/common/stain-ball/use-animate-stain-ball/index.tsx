@@ -53,6 +53,11 @@ export const useAnimateStainBall = ({
 
     //*BOTTOM WALL: "Y" changes to negative when it hits the bottom wall so it goes up
     if (rect.bottom >= boxRect.bottom && directionRef.current.y > 0) {
+      //* the ball is half outside the box, reset the position
+      if (rect.bottom - boxRect.bottom > rect.height / 2) {
+        position.value = defaultPosition;
+        return;
+      }
       directionRef.current = {
         x: directionRef.current.x,
         y: -directionRef.current.y,
@@ -61,22 +66,36 @@ export const useAnimateStainBall = ({
 
     //*TOP WALL: "Y" changes to positive when it hits the top wall so it goes down
     if (rect.top <= boxRect.top && directionRef.current.y < 0) {
+      if (Math.abs(rect.top) > rect.width / 2) {
+        position.value = defaultPosition;
+        return;
+      }
       directionRef.current = {
         x: directionRef.current.x,
         y: -directionRef.current.y,
       };
     }
 
-    //*LEFT WALL: "X" changes to negative when it hits the right wall so it goes right
-    if (rect.right + 100 >= boxRect.right && directionRef.current.x > 0) {
+    //*RIGHT WALL: "X" changes to negative when it hits the right wall so it goes left
+
+    // console.log({ w: window.innerWidth, r: rect.right });
+    if (rect.right + 150 >= window.innerWidth && directionRef.current.x > 0) {
+      if (rect.right - window.innerWidth > rect.width / 2) {
+        position.value = defaultPosition;
+        return;
+      }
       directionRef.current = {
         x: -directionRef.current.x,
         y: directionRef.current.y,
       };
     }
 
-    //*RIGHT WALL: "X" changes to positive when it hits the left wall so it goes left
+    //*LEFT WALL: "X" changes to positive when it hits the left wall so it goes right
     if (rect.left <= boxRect.left && directionRef.current.x < 0) {
+      if (Math.abs(rect.left) > rect.width / 2) {
+        position.value = defaultPosition;
+        return;
+      }
       directionRef.current = {
         x: -directionRef.current.x,
         y: directionRef.current.y,
@@ -124,6 +143,16 @@ export const useAnimateStainBall = ({
     window.addEventListener("blur", () => {
       windowTabFocused.current = false;
     });
+
+    // document.addEventListener("visibilitychange", (event) => {
+    //   if (document.visibilityState == "visible") {
+    //     windowTabFocused.current = true;
+    //     console.log("tab is active, change windowTabFocused to true");
+    //   } else {
+    //     windowTabFocused.current = false;
+    //     console.log("change to false");
+    //   }
+    // });
 
     window.addEventListener("focus", () => {
       windowTabFocused.current = true;
