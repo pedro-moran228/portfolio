@@ -12,9 +12,7 @@ import GmailSection from "./gmail-section/index.astro";
 >
   <header class="flex flex-col-reverse sm:block space-y-2 md:space-y-0">
     <picture
-      class:list={[
-        "block mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl",
-      ]}
+      class="block mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl",
       style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
     >
       <Image
@@ -63,7 +61,7 @@ import GmailSection from "./gmail-section/index.astro";
   <footer
     id="profile-footer"
     aria-label="Social media links"
-    class="flex justify-end pt-2 gap-4"
+    class="flex justify-center 2xl:justify-end pt-2 gap-4"
   >
     <LinkedinButton />
     <GithubButton />
