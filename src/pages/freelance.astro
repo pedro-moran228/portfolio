@@ -4,41 +4,13 @@ import Envero from "../components/ExperienceSection/Projects/Envero.astro";
 import Layout from "../components/Layouts/Layout.astro";
 import { Image } from "astro:assets";
 import NetworkIcon from "../assets/icons/network.png";
+import LayoutNavbar from "../components/Layouts/LayoutNavbar.astro";
 
 const PAGE_BG_COLOR = "bg-green-500/90";
 ---
 
 <Layout title="Experience - Crowdar">
-  <main class="pb-[300px] pt-[100px] bg-primary text-white">
-    <!-- <a
-      href="/"
-      class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[50px] text-white group hover:underline"
-    >
-      <i class="inline-block relative"
-        ><svg
-          width="21"
-          height="14"
-          viewBox="0 0 21 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="absolute left-0 top-1/2 -translate-y-1/2 group-hover:left-[-5px] transition-all duration-300"
-        >
-          <path
-            d="M8 13L1 7L8 1"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-          <path
-            d="M20 7L2 7"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </svg>
-      </i>
-      <p class="m-0 w-[100px] text-right">Go back</p>
-    </a> -->
+  <LayoutNavbar>
     <header
       class={classNames(
         "container flex-center h-[100px] xs:h-[125px] sm:h-[150px] py-5 shadow-sm mb-[50px] space-x-5 rounded-2xl",
@@ -57,5 +29,5 @@ const PAGE_BG_COLOR = "bg-green-500/90";
       </h1>
     </header>
     <Envero color={PAGE_BG_COLOR} />
-  </main>
+  </LayoutNavbar>
 </Layout>

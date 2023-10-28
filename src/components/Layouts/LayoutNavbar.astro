@@ -1,0 +1,42 @@
+---
+import GithubButton from "../HeroSection/GithubButton.astro";
+import LinkedinButton from "../HeroSection/LinkedinButton.astro";
+import GmailButton from "../HeroSection/gmail-button/GmailButton.astro";
+---
+
+<div class="lg-small:flex">
+  <div class="flex-1"></div>
+  <!-- bg-[#242533] -->
+  <aside
+    class="hidden lg-small:block sticky mr-[100px] bg-[#242533] left-10 top-[100px] h-full w-fit z-10 rounded-xl shadow-lg"
+  >
+    <nav
+      class="top-[2px] w-[120px] h-[350px] m-0 flex flex-col justify-between items-center py-5"
+    >
+      <a id="linkedin-link" href="/" aria-label="back home link" class="btn">
+        <svg
+          stroke="#e2e2e2"
+          fill="#e2e2e2"
+          stroke-width="40"
+          viewBox="0 0 1024 1024"
+          width="25px"
+          xmlns="http://www.w3.org/2000/svg"
+          ><path
+            d="M793 242H366v-74c0-6.7-7.7-10.4-12.9-6.3l-142 112a8 8 0 0 0 0 12.6l142 112c5.2 4.1 12.9.4 12.9-6.3v-74h415v470H175c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h618c35.3 0 64-28.7 64-64V306c0-35.3-28.7-64-64-64z"
+          ></path></svg
+        >
+      </a>
+
+      <section aria-label="Social media links" class="flex flex-col space-y-5">
+        <LinkedinButton />
+        <GithubButton />
+        <GmailButton />
+      </section>
+    </nav>
+  </aside>
+  <main class="lg-small:w-[900px] pb-[300px] pt-[100px] bg-primary text-white">
+    <slot />
+  </main>
+  <div class="flex-1 w-[120px] hidden xl-small:block"></div>
+  <div class="flex-1 w-[120px] hidden lg:block"></div>
+</div>
