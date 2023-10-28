@@ -3,32 +3,41 @@ import classNames from "classnames";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import Technologies from "../../common/technologies/index.astro";
-import { isDevEnv } from "../../../utils/isDevEnv";
+
+import ltm1 from "../../../assets/crowdar/LTM/png/1.png";
+import ltm2 from "../../../assets/crowdar/LTM/png/2.png";
+import ltm3 from "../../../assets/crowdar/LTM/png/3.png";
+import ltm4 from "../../../assets/crowdar/LTM/png/4.png";
+
+import ltm1m from "../../../assets/crowdar/LTM/mask/1.avif";
+import ltm2m from "../../../assets/crowdar/LTM/mask/2.avif";
+import ltm3m from "../../../assets/crowdar/LTM/mask/3.avif";
+import ltm4m from "../../../assets/crowdar/LTM/mask/4.avif";
+
+const images = [
+  {
+    imgSrc: ltm1.src,
+    maskSrc: ltm1m.src,
+  },
+  {
+    imgSrc: ltm2.src,
+    maskSrc: ltm2m.src,
+  },
+  {
+    imgSrc: ltm3.src,
+    maskSrc: ltm3m.src,
+  },
+  {
+    imgSrc: ltm4.src,
+    maskSrc: ltm4m.src,
+  },
+];
 
 interface Props {
   color: `bg-${string}`;
 }
 
 const { color } = Astro.props;
-
-const images = [
-  {
-    imgSrc: isDevEnv("crowdar/") + "LTM/png/1.png",
-    maskSrc: isDevEnv("crowdar/") + "LTM/mask/1.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LTM/png/2.png",
-    maskSrc: isDevEnv("crowdar/") + "LTM/mask/2.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LTM/png/3.png",
-    maskSrc: isDevEnv("crowdar/") + "LTM/mask/3.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LTM/png/4.png",
-    maskSrc: isDevEnv("crowdar/") + "LTM/mask/4.avif",
-  },
-];
 ---
 
 <article id="box-project-experience" class="relative z-0">
@@ -78,7 +87,7 @@ const images = [
         client:visible
       />
     </div>
-    <Slider className="block md:hidden" slices={images} />
+    <Slider className="block md:hidden" images={[ltm1, ltm2, ltm3, ltm4]} />
     <div class="container">
       <p>
         Among the big challenges I managed to complete are the migration of the <strong

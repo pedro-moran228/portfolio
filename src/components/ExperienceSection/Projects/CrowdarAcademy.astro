@@ -3,32 +3,41 @@ import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import classNames from "classnames";
-import { isDevEnv } from "../../../utils/isDevEnv";
+
+import acdm1 from "../../../assets/crowdar/academy/png/1.png";
+import acdm2 from "../../../assets/crowdar/academy/png/2.png";
+import acdm3 from "../../../assets/crowdar/academy/png/3.png";
+import acdm4 from "../../../assets/crowdar/academy/png/4.png";
+
+import acdm1m from "../../../assets/crowdar/academy/mask/1.avif";
+import acdm2m from "../../../assets/crowdar/academy/mask/2.avif";
+import acdm3m from "../../../assets/crowdar/academy/mask/3.avif";
+import acdm4m from "../../../assets/crowdar/academy/mask/4.avif";
+
+const images = [
+  {
+    imgSrc: acdm1.src,
+    maskSrc: acdm1m.src,
+  },
+  {
+    imgSrc: acdm2.src,
+    maskSrc: acdm2m.src,
+  },
+  {
+    imgSrc: acdm3.src,
+    maskSrc: acdm3m.src,
+  },
+  {
+    imgSrc: acdm4.src,
+    maskSrc: acdm4m.src,
+  },
+];
 
 interface Props {
   color: `bg-${string}`;
 }
 
 const { color } = Astro.props;
-
-const images = [
-  {
-    imgSrc: isDevEnv("crowdar/") + "academy/png/1.png",
-    maskSrc: isDevEnv("crowdar/") + "academy/mask/1.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "academy/png/4.png",
-    maskSrc: isDevEnv("crowdar/") + "academy/mask/4.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "academy/png/2.png",
-    maskSrc: isDevEnv("crowdar/") + "academy/mask/2.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "academy/png/3.png",
-    maskSrc: isDevEnv("crowdar/") + "academy/mask/3.avif",
-  },
-];
 ---
 
 <article id="box-project-experience" class="relative space-y-12 z-0 pt-[200px]">
@@ -59,7 +68,7 @@ const images = [
       client:visible
     />
   </div>
-  <Slider className="block md:hidden" slices={images} />
+  <Slider className="block md:hidden" images={[acdm1, acdm2, acdm3, acdm4]} />
   <footer class="container mr-auto space-y-12">
     <section>
       <p>Entre algunas de las caracterisiticas se encuentran:</p>

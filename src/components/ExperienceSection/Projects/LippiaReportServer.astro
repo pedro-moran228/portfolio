@@ -3,32 +3,41 @@ import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import classNames from "classnames";
-import { isDevEnv } from "../../../utils/isDevEnv";
+
+import lrs1 from "../../../assets/crowdar/LRS/png/1.png";
+import lrs2 from "../../../assets/crowdar/LRS/png/2.png";
+import lrs3 from "../../../assets/crowdar/LRS/png/3.png";
+import lrs4 from "../../../assets/crowdar/LRS/png/4.png";
+
+import lrs1m from "../../../assets/crowdar/LRS/mask/1.avif";
+import lrs2m from "../../../assets/crowdar/LRS/mask/2.avif";
+import lrs3m from "../../../assets/crowdar/LRS/mask/3.avif";
+import lrs4m from "../../../assets/crowdar/LRS/mask/4.avif";
+
+const images = [
+  {
+    imgSrc: lrs1.src,
+    maskSrc: lrs1m.src,
+  },
+  {
+    imgSrc: lrs2.src,
+    maskSrc: lrs2m.src,
+  },
+  {
+    imgSrc: lrs3.src,
+    maskSrc: lrs3m.src,
+  },
+  {
+    imgSrc: lrs4.src,
+    maskSrc: lrs4m.src,
+  },
+];
 
 interface Props {
   color: `bg-${string}`;
 }
 
 const { color } = Astro.props;
-
-const images = [
-  {
-    imgSrc: isDevEnv("crowdar/") + "LRS/png/1.png",
-    maskSrc: isDevEnv("crowdar/") + "LRS/mask/1.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LRS/png/2.png",
-    maskSrc: isDevEnv("crowdar/") + "LRS/mask/2.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LRS/png/3.png",
-    maskSrc: isDevEnv("crowdar/") + "LRS/mask/3.avif",
-  },
-  {
-    imgSrc: isDevEnv("crowdar/") + "LRS/png/4.png",
-    maskSrc: isDevEnv("crowdar/") + "LRS/mask/4.avif",
-  },
-];
 ---
 
 <article id="box-project-experience" class="relative pt-[200px] z-0 space-y-12">
@@ -61,7 +70,7 @@ const images = [
       client:visible
     />
   </div>
-  <Slider className="block md:hidden" slices={images} />
+  <Slider className="block md:hidden" images={[lrs1, lrs2, lrs3, lrs4]} />
   <footer class="container space-y-12 mt-12">
     <p>
       Mi participación en el proyecto fue de <span class="font-bold"

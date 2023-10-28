@@ -1,8 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import classNames from "classnames";
 
 interface Props {
-  slices: SliderSliceT[];
+  images: ImageMetadata[];
   className?: string;
 }
 
@@ -11,7 +12,7 @@ export type SliderSliceT = {
   maskSrc: string;
 };
 
-const { slices, className } = Astro.props;
+const { images, className } = Astro.props;
 ---
 
 <section
@@ -21,14 +22,13 @@ const { slices, className } = Astro.props;
   )}
 >
   {
-    slices.map((slice) => {
+    images.map((image, i) => {
       return (
         <li class="min-w-full snap-center list-none ">
-          <img
+          <Image
             class="w-full rounded-lg shadow-[0px_0px_40px_10px_#0000006e]"
-            src={slice.imgSrc}
-            alt="slider slice"
-            loading="lazy"
+            src={image}
+            alt={`image-${i}`}
           />
         </li>
       );

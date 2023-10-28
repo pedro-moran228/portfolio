@@ -3,10 +3,16 @@ import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import classNames from "classnames";
-import { isDevEnv } from "../../../utils/isDevEnv";
 
 import en1 from "../../../assets/envero/png/1.png";
-import { Image } from "astro:assets";
+import en2 from "../../../assets/envero/png/2.png";
+import en3 from "../../../assets/envero/png/3.png";
+import en4 from "../../../assets/envero/png/4.png";
+
+import en1m from "../../../assets/envero/mask/1.avif";
+import en2m from "../../../assets/envero/mask/2.avif";
+import en3m from "../../../assets/envero/mask/3.avif";
+import en4m from "../../../assets/envero/mask/4.avif";
 
 interface Props {
   color: `bg-${string}`;
@@ -17,19 +23,19 @@ const { color } = Astro.props;
 const images = [
   {
     imgSrc: en1.src,
-    maskSrc: isDevEnv("envero/") + "mask/1.avif",
+    maskSrc: en1m.src,
   },
   {
-    imgSrc: isDevEnv("envero/") + "png/2.png",
-    maskSrc: isDevEnv("envero/") + "mask/2.avif",
+    imgSrc: en2.src,
+    maskSrc: en2m.src,
   },
   {
-    imgSrc: isDevEnv("envero/") + "png/3.png",
-    maskSrc: isDevEnv("envero/") + "mask/3.avif",
+    imgSrc: en3.src,
+    maskSrc: en3m.src,
   },
   {
-    imgSrc: isDevEnv("envero/") + "png/4.png",
-    maskSrc: isDevEnv("envero/") + "mask/4.avif",
+    imgSrc: en4.src,
+    maskSrc: en4m.src,
   },
 ];
 ---
@@ -63,10 +69,7 @@ const images = [
       client:visible
     />
   </div>
-  <div>
-    <Image src={en1} alt="Envero" />
-  </div>
-  <Slider className="block md:hidden" slices={images} />
+  <Slider className="block md:hidden" images={[en1, en2, en3, en4]} />
   <footer class="container space-y-12 mt-12">
     <Technologies
       theme="dark"
