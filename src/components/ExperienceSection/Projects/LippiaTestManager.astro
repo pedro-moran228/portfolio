@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import Technologies from "../../common/technologies/index.astro";
+import { isDevEnv } from "../../../utils/isDevEnv";
 
 interface Props {
   color: `bg-${string}`;
@@ -11,10 +12,22 @@ interface Props {
 const { color } = Astro.props;
 
 const images = [
-  { imgSrc: "LTM/png/1.png", maskSrc: "LTM/mask/1.avif" },
-  { imgSrc: "LTM/png/2.png", maskSrc: "LTM/mask/2.avif" },
-  { imgSrc: "LTM/png/3.png", maskSrc: "LTM/mask/3.avif" },
-  { imgSrc: "LTM/png/4.png", maskSrc: "LTM/mask/4.avif" },
+  {
+    imgSrc: isDevEnv("crowdar/") + "LTM/png/1.png",
+    maskSrc: isDevEnv("crowdar/") + "LTM/mask/1.avif",
+  },
+  {
+    imgSrc: isDevEnv("crowdar/") + "LTM/png/2.png",
+    maskSrc: isDevEnv("crowdar/") + "LTM/mask/2.avif",
+  },
+  {
+    imgSrc: isDevEnv("crowdar/") + "LTM/png/3.png",
+    maskSrc: isDevEnv("crowdar/") + "LTM/mask/3.avif",
+  },
+  {
+    imgSrc: isDevEnv("crowdar/") + "LTM/png/4.png",
+    maskSrc: isDevEnv("crowdar/") + "LTM/mask/4.avif",
+  },
 ];
 ---
 

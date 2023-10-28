@@ -8,6 +8,7 @@ module.exports = {
         sm: "670px",
         // md	768px
         // lg	1024px
+        'lg-big': "1120px",
         'xl-small': "1230px",
         // xl	1280px
         'xl-big': "1340px",
@@ -35,7 +36,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         h1: { "@apply text-[40px] sm:text-[43px] md:text-[50px] font-bold text-white": {} },
-        h2: { "@apply text-[40px] sm:text-[43px] font-bold text-white": {} },
+        h2: { "@apply text-[40px] sm:text-[43px] md:text-[47px] font-bold text-white": {} },
         h3: { "@apply text-[28px] sm:text-[36px] font-bold text-white leading-[1.5]": {} },
         h4: { "@apply text-[20px] sm:text-[23px] font-bold text-white leading-[1] mb-[20px]": {} },
         p: { "@apply mt-5": {} },

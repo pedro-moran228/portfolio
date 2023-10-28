@@ -17,20 +17,19 @@ const {
 } = Astro.props;
 ---
 
-<a href={href} class="text-white hover:no-underline">
-  <article
-    class={classNames(
-      "flex space-x-5 items-center bg-[#3e486b40] p-10 rounded-xl shadow-md border border-[#1f2937] border-opacity-50 transition-colors duration-75",
-      `hover:${hoverColor}`
-    )}
-  >
-    <picture class="grid place-content-center w-[80px] h-[80px]">
-      <slot />
-    </picture>
-    <div class="flex-1 space-y-[1px]">
-      <h4 class="text-current m-0 leading-10">{title}</h4>
-      <p class="text-[22px] mt-[-10px]">{subtitle}</p>
-    </div>
-    <p class="self-end">{date}</p>
-  </article>
+<a
+  href={href}
+  class={classNames(
+    "text-white hover:no-underline flex flex-col sm:flex-row space-x-0 text-center sm:space-x-5 sm:text-left items-center bg-[#3e486b40] p-10 rounded-xl shadow-md border border-[#1f2937] border-opacity-50 transition-colors duration-75 active:ring active:ring-blue-500",
+    `hover:${hoverColor}`
+  )}
+>
+  <picture class="flex-center lg-big:w-[60px] xl:w-[80px] xl:h-[80px]">
+    <slot />
+  </picture>
+  <div class="flex-1 space-y-[1px] mt-4">
+    <h4 class="text-[24px] text-current m-0 leading-10">{title}</h4>
+    <p class="text-[22px] mt-[-10px]">{subtitle}</p>
+  </div>
+  <p class="self-center sm:self-end">{date}</p>
 </a>

@@ -3,6 +3,7 @@ import Technologies from "../../common/technologies/index.astro";
 import { Carousel } from "../../common/carousel";
 import Slider from "../../common/slider/index.astro";
 import classNames from "classnames";
+import { isDevEnv } from "../../../utils/isDevEnv";
 
 interface Props {
   color: `bg-${string}`;
@@ -11,10 +12,22 @@ interface Props {
 const { color } = Astro.props;
 
 const images = [
-  { imgSrc: "envero/png/1.png", maskSrc: "envero/mask/1.avif" },
-  { imgSrc: "envero/png/2.png", maskSrc: "envero/mask/2.avif" },
-  { imgSrc: "envero/png/3.png", maskSrc: "envero/mask/3.avif" },
-  { imgSrc: "envero/png/4.png", maskSrc: "envero/mask/4.avif" },
+  {
+    imgSrc: isDevEnv("envero/") + "png/1.png",
+    maskSrc: isDevEnv("envero/") + "mask/1.avif",
+  },
+  {
+    imgSrc: isDevEnv("envero/") + "png/2.png",
+    maskSrc: isDevEnv("envero/") + "mask/2.avif",
+  },
+  {
+    imgSrc: isDevEnv("envero/") + "png/3.png",
+    maskSrc: isDevEnv("envero/") + "mask/3.avif",
+  },
+  {
+    imgSrc: isDevEnv("envero/") + "png/4.png",
+    maskSrc: isDevEnv("envero/") + "mask/4.avif",
+  },
 ];
 ---
 

@@ -10,7 +10,7 @@ import Technologies from "../components/common/technologies/index.astro";
   <HeroSection />
   <section
     class={`
-    relative z-[3] mt-[10px] grid grid-cols-[700px,500px] gap-[100px] place-content-center bg-primary/50 text-white
+    relative z-[3] mt-[10px] space-y-[200px] 2xl:space-y-0 2xl:grid 2xl:grid-cols-[700px,500px] 2xl:gap-[100px] 2xl:place-content-center bg-primary/50 text-white
     before:absolute before:z-10 before:bg-gradient-to-t before:from-primary/50 before:to-transparent before:bottom-full before:h-[200px] before:w-full
 `}
   >
@@ -19,9 +19,9 @@ import Technologies from "../components/common/technologies/index.astro";
   </section>
   <section class="bg-primary/50">
     <div
-      class="container w-[90%] max-w-[1300px] space-y-12 pt-[100px] pb-[200px]"
+      class="container w-[90%] max-w-[1300px] space-y-12 pt-[200px] 2xl:pt-[100px] pb-[200px]"
     >
-      <h2 class="ml-[4px]">Technologies</h2>
+      <h2 class="ml-[4px] text-center 2xl:text-left">Technologies</h2>
       <Technologies />
     </div>
   </section>
