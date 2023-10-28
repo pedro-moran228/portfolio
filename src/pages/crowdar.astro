@@ -11,7 +11,7 @@ const PAGE_BG_COLOR = "bg-[#385B97]";
 
 <Layout title="Experience - Crowdar">
   <main class="pb-[300px] pt-[100px] bg-primary text-white">
-    <a
+    <!-- <a
       href="/"
       class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[50px] group text-white hover:underline"
     >
@@ -39,17 +39,19 @@ const PAGE_BG_COLOR = "bg-[#385B97]";
         </svg>
       </i>
       <p class="m-0 w-[100px] text-right">Go back</p>
-    </a>
+    </a> -->
     <header
       class={classNames(
-        "h-[160px] container flex-center py-5 shadow-sm mb-[50px] flex items-center space-x-5 rounded-2xl",
+        "container flex-center h-[100px] xs:h-[125px] sm:h-[150px] py-5 shadow-sm mb-[50px] space-x-5 rounded-2xl",
         PAGE_BG_COLOR
       )}
     >
-      <picture class="flex w-[110px] ml-[-8px]">
+      <picture class="w-[60px] xs:w-[70px] sm:w-[80px] ml-[-8px]">
         <CrowdarSVG />
       </picture>
-      <h1 class="text-[60px] text-current">Crowdar A.S.</h1>
+      <h1 class="text-[35px] xs:text-[45px] sm:text-[55px] text-current">
+        Crowdar A.S.
+      </h1>
     </header>
     <LippiaTestManager color={PAGE_BG_COLOR} />
     <CrowdarAcademy color={PAGE_BG_COLOR} />

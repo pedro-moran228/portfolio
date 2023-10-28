@@ -6,8 +6,8 @@ module.exports = {
       screens: {
         xs: "500px",
         sm: "670px",
-        // md	768px
-        // lg	1024px
+        md: "768px",
+        // lg	"1024px",
         'lg-big': "1120px",
         'xl-small': "1230px",
         // xl	1280px
@@ -42,7 +42,8 @@ module.exports = {
         p: { "@apply mt-5": {} },
         a: { "@apply text-[#3e87fe] hover:underline": {} },
         ul: { "@apply ml-7 space-y-2": {} },
-        ".container": { "@apply w-full px-[30px] sm:px-[60px] lg:px-0 mx-auto max-w-[800px]": {} },
+
+        ".container": { "@apply mx-auto w-[calc(100%_-_40px)] sm:w-[calc(100%_-_100px)] max-w-[800px]": {} },
 
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-70px] before:w-[125%] before:h-[150px] before:-rotate-3 before:bg-primary before:z-[5]": {} },
 

@@ -10,7 +10,7 @@ const PAGE_BG_COLOR = "bg-green-500/90";
 
 <Layout title="Experience - Crowdar">
   <main class="pb-[300px] pt-[100px] bg-primary text-white">
-    <a
+    <!-- <a
       href="/"
       class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[50px] text-white group hover:underline"
     >
@@ -38,21 +38,23 @@ const PAGE_BG_COLOR = "bg-green-500/90";
         </svg>
       </i>
       <p class="m-0 w-[100px] text-right">Go back</p>
-    </a>
+    </a> -->
     <header
       class={classNames(
-        "h-[160px] container flex-center py-5 shadow-sm mb-[50px] flex items-center space-x-5  rounded-2xl",
+        "container flex-center h-[100px] xs:h-[125px] sm:h-[150px] py-5 shadow-sm mb-[50px] space-x-5 rounded-2xl",
         PAGE_BG_COLOR
       )}
     >
       <Image
         src={NetworkIcon}
         alt="network"
-        class="w-[115px] ml-[-8px]"
+        class="w-[80px] xs:w-[90px] sm:w-[100px] ml-[-8px]"
         loading="eager"
         fetchpriority="high"
       />
-      <h1 class="text-[60px] text-current">Freelance</h1>
+      <h1 class="text-[38px] xs:text-[50px] sm:text-[55px] text-current">
+        Freelance
+      </h1>
     </header>
     <Envero color={PAGE_BG_COLOR} />
   </main>
