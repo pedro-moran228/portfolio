@@ -7,10 +7,11 @@ module.exports = {
         xs: "500px",
         sm: "670px",
         md: "768px",
-        // lg	"1024px",
+        'lg-small': "900px",
+        lg: "1024px",
         'lg-big': "1120px",
         'xl-small': "1230px",
-        // xl	1280px
+        xl: "1280px",
         'xl-big': "1340px",
         '2xl': '1420px'
       },
@@ -55,7 +56,8 @@ module.exports = {
 
         ".flex-center": { "@apply flex items-center justify-center": {} },
 
-        ".btn": { "@apply font-sans font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
+        // bg-[#2e3966]
+        ".btn": { "@apply font-sans text-white hover:no-underline font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded bg-[#3e486b6b] text-white hover:bg-secondary/50 active:ring active:ring-blue-500 duration-100": {} },
 
         ".circle-clip": { "@apply font-sans font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
         // shape-outside: circle(50%); clip-path: circle(50%); shape-margin: 20px;

@@ -5,57 +5,71 @@ import LippiaReportServer from "../components/ExperienceSection/Projects/LippiaR
 import LippiaTestManager from "../components/ExperienceSection/Projects/LippiaTestManager.astro";
 import Layout from "../components/Layouts/Layout.astro";
 import CrowdarSVG from "../components/common/Icons/CrowdarSVG.astro";
+import LinkedinButton from "../components/HeroSection/LinkedinButton.astro";
+import GithubButton from "../components/HeroSection/GithubButton.astro";
+import GmailButton from "../components/HeroSection/gmail-button/GmailButton.astro";
 
 const PAGE_BG_COLOR = "bg-[#385B97]";
 ---
 
 <Layout title="Experience - Crowdar">
-  <main class="pb-[300px] pt-[100px] bg-primary text-white">
-    <!-- <a
-      href="/"
-      class="sticky top-[120px] z-10 flex w-max items-center space-x-2 ml-[50px] group text-white hover:underline"
+  <div class="lg-small:flex">
+    <div class="flex-1"></div>
+    <!-- bg-[#242533] -->
+    <aside
+      class="hidden lg-small:block sticky mr-[100px] bg-[#242533] left-10 top-[100px] h-full w-fit z-10 rounded-xl shadow-lg"
     >
-      <i class="inline-block relative"
-        ><svg
-          width="21"
-          height="14"
-          viewBox="0 0 21 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="absolute left-0 top-1/2 -translate-y-1/2 group-hover:left-[-5px] transition-all duration-300"
+      <nav
+        class="top-[2px] w-[120px] h-[350px] m-0 flex flex-col justify-between items-center py-5"
+      >
+        <a id="linkedin-link" href="/" aria-label="back home link" class="btn">
+          <svg
+            stroke="#e2e2e2"
+            fill="#e2e2e2"
+            stroke-width="40"
+            viewBox="0 0 1024 1024"
+            width="25px"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M793 242H366v-74c0-6.7-7.7-10.4-12.9-6.3l-142 112a8 8 0 0 0 0 12.6l142 112c5.2 4.1 12.9.4 12.9-6.3v-74h415v470H175c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h618c35.3 0 64-28.7 64-64V306c0-35.3-28.7-64-64-64z"
+            ></path></svg
+          >
+        </a>
+
+        <section
+          aria-label="Social media links"
+          class="flex flex-col space-y-5"
         >
-          <path
-            d="M8 13L1 7L8 1"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-          <path
-            d="M20 7L2 7"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </svg>
-      </i>
-      <p class="m-0 w-[100px] text-right">Go back</p>
-    </a> -->
-    <header
-      class={classNames(
-        "container flex-center h-[100px] xs:h-[125px] sm:h-[150px] py-5 shadow-sm mb-[50px] space-x-5 rounded-2xl",
-        PAGE_BG_COLOR
-      )}
+          <LinkedinButton />
+          <GithubButton />
+          <GmailButton />
+        </section>
+      </nav>
+    </aside>
+    <main
+      class="lg-small:w-[900px] pb-[300px] pt-[100px] bg-primary text-white"
     >
-      <picture class="w-[60px] xs:w-[70px] sm:w-[80px] ml-[-8px]">
-        <CrowdarSVG />
-      </picture>
-      <h1 class="text-[35px] xs:text-[45px] sm:text-[55px] text-current">
-        Crowdar A.S.
-      </h1>
-    </header>
-    <LippiaTestManager color={PAGE_BG_COLOR} />
-    <CrowdarAcademy color={PAGE_BG_COLOR} />
-    <LippiaReportServer color={PAGE_BG_COLOR} />
-    <span class="hidden [&>li]:before:bg-[#385B97]"></span>
-  </main>
+      <header
+        class={classNames(
+          "container flex-center h-[100px] xs:h-[125px] sm:h-[150px] py-5 shadow-sm mb-[50px] space-x-5 rounded-2xl",
+          PAGE_BG_COLOR
+        )}
+      >
+        <picture class="w-[60px] xs:w-[70px] sm:w-[80px] ml-[-8px]">
+          <CrowdarSVG />
+        </picture>
+        <h1 class="text-[35px] xs:text-[45px] sm:text-[55px] text-current">
+          Crowdar A.S.
+        </h1>
+      </header>
+      <section>
+        <LippiaTestManager color={PAGE_BG_COLOR} />
+        <CrowdarAcademy color={PAGE_BG_COLOR} />
+        <LippiaReportServer color={PAGE_BG_COLOR} />
+        <span class="hidden [&>li]:before:bg-[#385B97]"></span>
+      </section>
+    </main>
+    <div class="flex-1 w-[120px] hidden xl-small:block"></div>
+    <div class="flex-1 w-[120px] hidden lg:block"></div>
+  </div>
 </Layout>

@@ -3,7 +3,7 @@ import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
-<html lang="en" class="relative z-[2]">
+<html lang="en" class="relative z-[2] text-white">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -19,13 +19,12 @@ import { ViewTransitions } from "astro:transitions";
     />
     <ViewTransitions />
   </head>
-  <body class="relative z-[2]">
+  <body class="bg-primary relative z-[2]">
     <slot />
     <style is:global>
       html,
       body {
         font-family: "Poppins", sans-serif;
-        background-color: #191e29;
         color: white;
         height: 100vh;
         widows: 100vw;
