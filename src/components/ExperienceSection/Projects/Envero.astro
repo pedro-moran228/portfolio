@@ -5,6 +5,9 @@ import Slider from "../../common/slider/index.astro";
 import classNames from "classnames";
 import { isDevEnv } from "../../../utils/isDevEnv";
 
+import en1 from "../../../assets/envero/png/1.png";
+import { Image } from "astro:assets";
+
 interface Props {
   color: `bg-${string}`;
 }
@@ -59,6 +62,9 @@ const images = [
       slices={images}
       client:visible
     />
+  </div>
+  <div>
+    <Image src={en1} alt="Envero" />
   </div>
   <Slider className="block md:hidden" slices={images} />
   <footer class="container space-y-12 mt-12">
