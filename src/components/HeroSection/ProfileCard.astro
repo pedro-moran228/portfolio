@@ -8,65 +8,68 @@ import GmailSection from "./gmail-button/GmailButton.astro";
 
 <div class="md:mx-auto md:w-[95%] max-w-[800px]">
   <article
-  class="w-full rounded-none text-white p-10 border border-[#04142a26] space-y-6 z-10 backdrop-blur-[100px] xs:rounded-2xl"
->
-  <header class="flex flex-col-reverse sm:block space-y-2 md:space-y-0">
-    <picture
-      class="block mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl",
-      style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
-    >
-      <Image
-        src={ProfileImg}
-        fetchpriority="high"
-        loading="eager"
-        alt="profile"
-      />
-    </picture>
-    <section>
-      <header>
-        <h1 class="text-white">Pedro Moran</h1>
-        <h2 class="text-[26px]">
-          <span
-            class="before:rounded before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary before:brightness-95 relative inline-block"
-            ><span class="relative text-white">+3 years</span></span
-          >
-          <span class="text-white px-[6px]">as a</span>
-          <span
-            class="before:rounded before:block before:absolute before:-inset-1 before:bg-secondary before:brightness-95 relative inline-block"
-            ><span class="relative text-white"> Frontend Developer</span></span
-          >
-        </h2>
-      </header>
-      <p class="mt-10">
-        Currently working full-time at <a
-          class="font-medium active:ring-0"
-          href="https://crowdar.com.ar/"
-          target="blank">Crowdar</a
-        > with development team building a product dedicated to the B2B sector.
-      </p>
-    </section>
-  </header>
-  <section class="space-y-4">
-    <article>
-      <h3 class="text-white text-[24px]">In charge of:</h3>
-      <ul class="mt-2 [&>li]:marker">
-        <li>Analysis and implementation of new functionalities.</li>
-        <li>Documentation.</li>
-        <li>Product delivery.</li>
-        <li>Tasks management</li>
-        <li>Training.</li>
-      </ul>
-    </article>
-  </section>
-  <footer
-    id="profile-footer"
-    aria-label="Social media links"
-    class="flex justify-center 2xl:justify-end pt-2 gap-4"
+    class="w-full rounded-none text-white p-10 border border-[#04142a26] space-y-6 z-10 backdrop-blur-[100px] xs:rounded-2xl"
   >
-    <LinkedinButton />
-    <GithubButton />
-    <GmailSection />
-  </footer>
-</article>
-
+    <header class="flex flex-col-reverse sm:block space-y-2 md:space-y-0">
+      <picture
+        class="block mx-auto relative mt-10 sm:mt-0 rounded-full w-[200px] h-max overflow-hidden shadow-2xl"
+        ,
+        style="shape-outside: circle(50%); clip-path: circle(50%); float: right; shape-margin: 20px; background-image: radial-gradient(circle, #6c426e, #503c5f, #3a344d, #292a38, #1e1f22);"
+      >
+        <Image
+          src={ProfileImg}
+          fetchpriority="high"
+          loading="eager"
+          alt="profile"
+        />
+      </picture>
+      <section>
+        <header>
+          <h1 class="text-white">Pedro Moran</h1>
+          <h2 class="text-[26px]">
+            <span
+              class="before:rounded before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-secondary before:brightness-95 relative inline-block"
+              ><span class="relative text-white">+3 years</span></span
+            >
+            <span class="text-white px-[6px]">as a</span>
+            <span
+              class="before:rounded before:block before:absolute before:-inset-1 before:bg-secondary before:brightness-95 relative inline-block"
+              ><span class="relative text-white">
+                Frontend Developer</span
+              ></span
+            >
+          </h2>
+        </header>
+        <p class="mt-10">
+          Currently working full-time at <a
+            class="active:ring-0"
+            href="https://crowdar.com.ar/"
+            target="blank">Crowdar</a
+          > with development team building a product dedicated to the B2B
+          sector.
+        </p>
+      </section>
+    </header>
+    <section class="space-y-4">
+      <article>
+        <h3 class="text-white text-[24px]">In charge of:</h3>
+        <ul class="mt-2 [&>li]:marker">
+          <li>Analysis and implementation of new functionalities.</li>
+          <li>Documentation.</li>
+          <li>Product delivery.</li>
+          <li>Tasks management</li>
+          <li>Training.</li>
+        </ul>
+      </article>
+    </section>
+    <footer
+      id="profile-footer"
+      aria-label="Social media links"
+      class="flex justify-center 2xl:justify-end pt-2 gap-4"
+    >
+      <LinkedinButton />
+      <GithubButton />
+      <GmailSection />
+    </footer>
+  </article>
 </div>
