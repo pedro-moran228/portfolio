@@ -44,19 +44,20 @@ const { color } = Astro.props;
   <header class="container">
     <h3 class="text-current">Crowdar Academy</h3>
     <p>
-      Recreé por completo el nuevo sitio de <a
+      I completely recreated the new <a
         target="_blank"
         href="https://crowdar.academy/">Crowdar Academy.</a
-      >
+      > site.
+    </p>
+
+    <p>
+      For this project I was asked to recreate the old website with some modern
+      technology suitable for the type of project.
     </p>
     <p>
-      Para este proyecto se me pidió recrear el antiguo sitio web con alguna
-      tecnología moderna y conveniente para el tipo de proyecto.
-    </p>
-    <p>
-      El diseño del sitio fue dato en figma. Al momento de iniciar solo se
-      proporcionó el formato desktop, progresivamente fui incorporando el diseño
-      responsive.
+      The design of the site was data in figma. At the beginning, only the
+      desktop format was provided, I progressively incorporated the responsive
+      design.
     </p>
   </header>
   <div class="container">
@@ -70,14 +71,14 @@ const { color } = Astro.props;
   <Slider className="block md:hidden" images={[acdm1, acdm2, acdm3, acdm4]} />
   <footer class="container mr-auto space-y-12">
     <section>
-      <p>Entre algunas de las caracterisiticas se encuentran:</p>
+      <p>Some of the features include:</p>
       <ul
         class={classNames(
           "space-y-1 mt-2 [&>li]:marker",
-          `[&>li]:before:${color}`
+          `[&>li]:before:${color}`,
         )}
       >
-        <li>Manejo de rutas.</li>
+        <li>Route management.</li>
         <li>Responsive web design (mobile first).</li>
         <li>Static Site Generation.</li>
       </ul>

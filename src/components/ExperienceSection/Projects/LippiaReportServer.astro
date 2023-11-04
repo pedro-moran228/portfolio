@@ -43,23 +43,33 @@ const { color } = Astro.props;
 <article id="box-project-experience" class="relative pt-[200px] z-0 space-y-12">
   <header class="container">
     <h3 class="text-current">Lippia Report Server</h3>
+
     <p>
-      Participé en la escalabilidad del proyecto, mejorando la experiencia de
-      usuario y las capacidades del producto.
+      I participated in the scalability of the project, improving the user
+      experience and product capabilities.
     </p>
-    <p>Agregué nuevas caracteristicas como:</p>
+
+    <p>I added new features like:</p>
     <ul
       class={classNames(
         "space-y-1 mt-2 [&>li]:marker",
-        `[&>li]:before:${color}`
+        `[&>li]:before:${color}`,
       )}
     >
       <li>
-        Cacheo y Revalidación de datos con <span class="font-bold">SWR</span>.
+        Cache and revalidation of data with <span class="font-bold">SWR</span>.
       </li>
-      <li>Nuevas Rutas dinámicas</li>
-      <li>Regionalización.</li>
-      <li>Estados globales con <span class="font-bold">useContext</span>.</li>
+      <li>New dynamic routes.</li>
+      <li>
+        New page with multi selection and composition of different records.
+      </li>
+      <li>
+        Integration with external api (<strong>Gitlab</strong>, <strong
+          >Attlasian</strong
+        >) for issue reports.
+      </li>
+      <li>Regionalization.</li>
+      <li>Global states with <span class="font-bold">useContext</span>.</li>
     </ul>
   </header>
   <div class="container">
@@ -73,10 +83,9 @@ const { color } = Astro.props;
   <Slider className="block md:hidden" images={[lrs1, lrs2, lrs3, lrs4]} />
   <footer class="container space-y-12 mt-12">
     <p>
-      Mi participación en el proyecto fue de <span class="font-bold"
-        >6 meses</span
-      >, en los que estuve trabajando en el Frontend de la aplicación arreglando
-      bugs y agregando nuevas funcionalidades.
+      My participation in the project was <span class="font-bold">6 months</span
+      >, during which I was working on the Frontend of the application, fixing
+      bugs and adding new functionalities.
     </p>
     <Technologies
       theme="dark"
