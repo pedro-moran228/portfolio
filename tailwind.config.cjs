@@ -44,7 +44,7 @@ module.exports = {
         a: { "@apply text-[#3e87fe] hover:underline": {} },
         ul: { "@apply ml-7 space-y-2": {} },
 
-        ".container": { "@apply mx-auto w-[calc(100%_-_40px)] sm:w-[calc(100%_-_100px)] max-w-[800px]": {} },
+        ".container": { "@apply mx-auto w-[calc(100%_-_55px)] sm:w-[calc(100%_-_100px)] max-w-[800px]": {} },
 
         ".mark-triangle--before": { "@apply before:absolute before:left-[-15%] before:top-[-70px] before:w-[125%] before:h-[150px] before:-rotate-3 before:bg-primary before:z-[5]": {} },
 
