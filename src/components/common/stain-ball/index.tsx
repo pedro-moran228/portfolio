@@ -42,26 +42,26 @@ export const StainBall = ({
       }}
     >
       <div class="w-full h-full relative">
-        {/* <i
-          class={`opacity-10 sm:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-cyan-500 to-blue-900 rounded-[49%_51%_52%_48%_/_75%_30%_70%_25%]`}
+        <i
+          class={`opacity-10 xs:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-cyan-500 to-blue-900 rounded-[49%_51%_52%_48%_/_75%_30%_70%_25%]`}
           style={{
             animationDuration: `${s1.current}s`,
           }}
         ></i>
         <i
-          class={`opacity-10 sm:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-purple-500 to-pink-900 rounded-[39%_61%_13%_87%_/_5%_30%_70%_95%]`}
+          class={`opacity-10 xs:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-purple-500 to-pink-900 rounded-[39%_61%_13%_87%_/_5%_30%_70%_95%]`}
           style={{
             animationDuration: `${s2.current}s`,
           }}
         ></i>
         <i
-          class={`opacity-10 sm:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-[86%_14%_13%_87%_/_77%_25%_75%_23%]`}
+          class={`opacity-10 xs:animate-[spin_0s_linear_infinite] bg-gradient-to-r from-indigo-500 to-sky-500 rounded-[86%_14%_13%_87%_/_77%_25%_75%_23%]`}
           style={{
             animationDuration: `${s3.current}s`,
           }}
-        ></i> */}
+        ></i>
         <i
-          class={`opacity-10 sm:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-teal-500/50 to-pink-900 rounded-[35%_65%_1%_99%_/_0%_90%_10%_100%]`}
+          class={`opacity-10 xs:animate-[spin_0s_linear_reverse_infinite] bg-gradient-to-r from-teal-500/50 to-pink-900 rounded-[35%_65%_1%_99%_/_0%_90%_10%_100%]`}
           style={{
             animationDuration: `${s4.current}s`,
           }}
