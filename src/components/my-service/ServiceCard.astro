@@ -1,0 +1,16 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    image?: string;
+}
+
+const { description, title } = Astro.props;
+---
+
+<article
+    class="z-[-1] bg-primary xs:bg-transparent xs:backdrop-blur-[100px] p-10 xs:rounded-xl xs:shadow-md xs:border xs:border-[#04142a26] xs:transition-colors xs:duration-100"
+>
+    <h4 class="text-current">{title}</h4>
+    <p>{description}</p>
+</article>
