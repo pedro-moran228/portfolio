@@ -56,8 +56,7 @@ module.exports = {
 
         ".flex-center": { "@apply flex items-center justify-center": {} },
 
-        // bg-[#2e3966]
-        ".btn": { "@apply text-white hover:no-underline font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded bg-[#3e486b6b] text-white hover:bg-secondary/50 active:ring active:ring-blue-500 duration-100": {} },
+        ".btn": { "@apply text-white hover:no-underline shadow-md grid place-content-center font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded bg-[#3e486b6b] text-white hover:bg-secondary/50 active:ring active:ring-blue-500 duration-100": {} },
 
         ".circle-clip": { "@apply font-medium inline-block py-[0.65rem] px-[1rem] shadow rounded duration-100": {} },
         // shape-outside: circle(50%); clip-path: circle(50%); shape-margin: 20px;
